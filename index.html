@@ -20,335 +20,246 @@
     --shadow: 0 8px 30px rgba(0,0,0,.45);
   }
   * { box-sizing: border-box; }
-  html, body { margin: 0; height: 100%; }
+  html, body { margin: 0; min-height: 100%; }
   body {
     background: radial-gradient(1200px 700px at 70% -10%, #14213a 0%, var(--bg) 55%);
     color: var(--ink);
     font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
-    min-height: 100%;
     display: flex;
     justify-content: center;
     padding: 20px;
     overflow-x: hidden;
   }
-  .app { width: 100%; max-width: 1100px; }
+  .app { width: 100%; max-width: 760px; }
+  .screen { display: none; }
+  .screen.active { display: block; animation: fade .35s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
+  /* ---------- Home screen ---------- */
+  .hero {
+    position: relative; border-radius: 18px; overflow: hidden;
+    box-shadow: var(--shadow); margin-bottom: 22px;
+  }
+  .hero img { width: 100%; height: 230px; object-fit: cover; display: block; filter: saturate(1.1); }
+  .hero .veil {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(12,16,24,.25) 0%, rgba(12,16,24,.92) 100%);
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 22px;
+  }
+  .hero h1 { margin: 0; font-size: 32px; letter-spacing: .3px; }
+  .hero p { margin: 6px 0 0; color: var(--muted); font-size: 14px; max-width: 540px; }
+
+  .howto {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px 18px; margin-bottom: 22px; font-size: 13.5px; line-height: 1.7; color: var(--muted);
+  }
+  .howto b { color: var(--ink); }
+
+  .pick-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 0 0 12px; }
+  .diffs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 600px){ .diffs { grid-template-columns: 1fr; } }
+  .diff-card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+    overflow: hidden; cursor: pointer; text-align: left; color: var(--ink); padding: 0;
+    transition: transform .15s, border-color .15s; display: flex; flex-direction: column;
+  }
+  .diff-card:hover { transform: translateY(-4px); border-color: var(--accent-2); }
+  .diff-card img { width: 100%; height: 110px; object-fit: cover; display: block; }
+  .diff-card .body { padding: 13px 14px 16px; }
+  .diff-card .name { font-size: 17px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+  .diff-card .name .pip { font-size: 12px; }
+  .diff-card .blurb { font-size: 12px; color: var(--muted); margin-top: 5px; line-height: 1.5; }
+  .easy .name { color: var(--good); }
+  .normal .name { color: var(--accent-2); }
+  .hard .name { color: var(--bad); }
+
+  /* ---------- Game screen ---------- */
   header.top {
     display: flex; align-items: center; justify-content: space-between;
-    gap: 16px; margin-bottom: 16px; flex-wrap: wrap;
+    gap: 12px; margin-bottom: 18px; flex-wrap: wrap;
   }
   .brand { display: flex; align-items: center; gap: 12px; }
   .logo {
-    width: 44px; height: 44px; border-radius: 12px;
+    width: 42px; height: 42px; border-radius: 12px;
     background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    display: grid; place-items: center; font-size: 24px; box-shadow: var(--shadow);
+    display: grid; place-items: center; font-size: 22px; box-shadow: var(--shadow);
   }
-  .brand h1 { font-size: 20px; margin: 0; letter-spacing: .3px; }
-  .brand p { margin: 0; color: var(--muted); font-size: 12px; }
-
-  .hud { display:flex; gap:10px; align-items:stretch; flex-wrap:wrap; }
+  .brand h2 { font-size: 18px; margin: 0; }
+  .brand small { color: var(--muted); font-size: 12px; }
+  .hud { display: flex; gap: 10px; }
   .hud .box {
     background: var(--panel); border: 1px solid var(--line);
-    border-radius: 12px; padding: 8px 14px; text-align: center; min-width: 92px;
+    border-radius: 12px; padding: 8px 16px; text-align: center; min-width: 84px;
   }
   .hud .box .big { font-size: 20px; font-weight: 800; }
-  .hud .box .lab { font-size: 10px; color: var(--muted); text-transform:uppercase; letter-spacing:.5px; }
+  .hud .box .lab { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
   #scoreBox .big { color: var(--accent); }
-  #streakBox .big { color: var(--warn); }
-  .pulse { animation: pulse .5s ease; }
-  @keyframes pulse { 0%{transform:scale(1)} 40%{transform:scale(1.25)} 100%{transform:scale(1)} }
 
-  .grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; }
-  @media (max-width: 880px){ .grid { grid-template-columns: 1fr; } }
-
-  .panel {
-    background: var(--panel); border: 1px solid var(--line);
-    border-radius: 16px; padding: 16px; box-shadow: var(--shadow); position:relative;
-  }
-  .panel h2 {
-    font-size: 13px; text-transform: uppercase; letter-spacing: 1px;
-    color: var(--muted); margin: 0 0 12px;
-  }
-
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  @media (max-width: 520px){ .stats { grid-template-columns: repeat(2,1fr);} }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
   .stat {
-    background: var(--panel-2); border: 1px solid var(--line);
-    border-radius: 12px; padding: 12px; position:relative; overflow:hidden;
-    transition: border-color .25s;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+    padding: 16px; position: relative; box-shadow: var(--shadow); transition: background .6s;
   }
   .stat.flash-good { animation: flashGood .8s ease; }
   .stat.flash-bad { animation: flashBad .8s ease; }
-  @keyframes flashGood { 0%{ background:rgba(77,214,163,.30);} 100%{ background:var(--panel-2);} }
-  @keyframes flashBad  { 0%{ background:rgba(255,107,107,.30);} 100%{ background:var(--panel-2);} }
-  .stat .label { font-size: 11px; color: var(--muted); display:flex; justify-content:space-between; }
-  .stat .value { font-size: 22px; font-weight: 700; margin-top: 4px; }
-  .stat .target { font-size: 10px; color: var(--muted); margin-top: 2px; }
-  .chip { font-size: 10px; padding: 1px 6px; border-radius: 999px; font-weight: 700; }
+  @keyframes flashGood { 0%{ background: rgba(77,214,163,.28);} 100%{ background: var(--panel);} }
+  @keyframes flashBad  { 0%{ background: rgba(255,107,107,.28);} 100%{ background: var(--panel);} }
+  .stat .label { font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; }
+  .stat .value { font-size: 34px; font-weight: 800; margin-top: 6px; }
+  .stat .target { font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .chip { font-size: 10px; padding: 2px 8px; border-radius: 999px; font-weight: 800; }
   .chip.good { background: rgba(77,214,163,.15); color: var(--good); }
   .chip.warn { background: rgba(255,207,92,.15); color: var(--warn); }
   .chip.bad  { background: rgba(255,107,107,.15); color: var(--bad); }
 
-  canvas#chart { width: 100%; display: block; border-radius: 10px; background: var(--panel-2); }
-  .legend { display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; font-size:11px; color:var(--muted); }
-  .legend span { display:flex; align-items:center; gap:6px; }
-  .dot { width:10px; height:3px; border-radius:2px; display:inline-block; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 18px; box-shadow: var(--shadow); }
+  .control .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .control .name { font-size: 14px; font-weight: 600; }
+  .control .val { font-size: 22px; font-weight: 800; color: var(--accent); }
+  input[type=range]{ width: 100%; accent-color: var(--accent-2); margin: 12px 0 4px; height: 6px; }
+  .hint { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
-  .control { margin-bottom: 16px; }
-  .control .row { display:flex; justify-content:space-between; align-items:baseline; }
-  .control .name { font-size: 13px; font-weight:600; }
-  .control .val { font-size: 16px; font-weight:700; color: var(--accent); }
-  .hint { font-size: 11px; color: var(--muted); margin-top: 4px; }
-  input[type=range]{ width:100%; accent-color: var(--accent-2); margin-top:8px; }
-
-  .toggle-row { display:flex; gap:8px; margin-top:8px; flex-wrap:wrap; }
-  .toggle-row button {
-    flex:1; min-width: 90px; padding:8px; border-radius:10px; cursor:pointer;
-    border:1px solid var(--line); background: var(--panel-2); color: var(--ink);
-    font-size:12px; transition:.15s;
+  .feedback {
+    min-height: 20px; margin: 14px 0; font-size: 13px; text-align: center;
+    color: var(--muted); transition: opacity .2s;
   }
-  .toggle-row button.active { border-color: var(--accent-2); background: rgba(91,155,255,.15); }
-  .toggle-row button:hover { border-color: var(--accent-2); }
+  .feedback .stars { color: var(--warn); letter-spacing: 3px; font-size: 16px; }
+  .feedback b.pts { color: var(--accent); }
 
-  .objective {
-    background: var(--panel-2); border:1px solid var(--line); border-radius:12px;
-    padding:12px; font-size:12px; line-height:1.5;
-  }
-  .objective b { color: var(--warn); }
-  .obj-progress { margin-top:8px; font-size:12px; }
-  .obj-progress .ok { color: var(--good); }
-  .obj-progress .no { color: var(--bad); }
-
-  .actions { display:flex; gap:10px; margin-top:8px; }
+  .actions { display: flex; gap: 10px; margin-top: 6px; }
   .btn {
-    flex:1; padding:14px; border:none; border-radius:12px; cursor:pointer;
-    font-size:15px; font-weight:700; transition:.15s; color:#08111f;
+    flex: 1; padding: 15px; border: none; border-radius: 12px; cursor: pointer;
+    font-size: 15px; font-weight: 800; transition: .15s; color: #08111f;
     background: linear-gradient(135deg, var(--accent), var(--accent-2));
   }
-  .btn:hover { filter:brightness(1.08); transform: translateY(-1px); }
+  .btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
   .btn:active { transform: translateY(1px); }
-  .btn.secondary { background: var(--panel-2); color: var(--ink); border:1px solid var(--line); flex:0 0 54px; }
+  .btn.ghost { background: var(--panel-2); color: var(--ink); border: 1px solid var(--line); flex: 0 0 auto; padding: 15px 18px; }
 
-  .log { max-height: 200px; overflow:auto; display:flex; flex-direction:column; gap:8px; }
-  .log .entry {
-    background: var(--panel-2); border-left:3px solid var(--line);
-    padding:8px 10px; border-radius:8px; font-size:12px; line-height:1.45;
-  }
-  .log .entry.event { border-left-color: var(--warn); }
-  .log .entry.good { border-left-color: var(--good); }
-  .log .entry.bad { border-left-color: var(--bad); }
-  .log .entry .t { color: var(--muted); font-size:10px; }
+  footer { margin-top: 16px; text-align: center; color: var(--muted); font-size: 11px; }
 
-  /* Quarter result banner */
-  #resultBanner {
-    position:fixed; top:18px; left:50%; transform:translateX(-50%) translateY(-120px);
-    background: var(--panel); border:1px solid var(--line); border-radius:14px;
-    padding:14px 22px; box-shadow:var(--shadow); z-index:40; text-align:center;
-    opacity:0; transition: transform .35s cubic-bezier(.2,1.4,.4,1), opacity .35s; pointer-events:none;
-  }
-  #resultBanner.show { transform:translateX(-50%) translateY(0); opacity:1; }
-  #resultBanner .stars { font-size:26px; letter-spacing:4px; }
-  #resultBanner .rmsg { font-size:13px; color:var(--muted); margin-top:2px; }
-  #resultBanner .rpts { font-size:14px; font-weight:800; color:var(--accent); margin-top:2px; }
-
-  /* Floating points */
-  .floater {
-    position:fixed; z-index:60; font-weight:800; font-size:16px; pointer-events:none;
-    animation: floatUp 1.1s ease forwards;
-  }
-  @keyframes floatUp { 0%{opacity:0; transform:translateY(6px) scale(.8);} 15%{opacity:1;} 100%{opacity:0; transform:translateY(-42px) scale(1.1);} }
-
-  /* Achievement toast */
-  #toastWrap { position:fixed; right:18px; bottom:18px; z-index:60; display:flex; flex-direction:column; gap:8px; }
-  .toast {
-    background: linear-gradient(135deg,#2a2030,#1d2636); border:1px solid var(--warn);
-    border-radius:12px; padding:10px 14px; box-shadow:var(--shadow); max-width:280px;
-    animation: toastIn .4s ease, toastOut .4s ease 3.6s forwards;
-  }
-  .toast .th { font-size:11px; color:var(--warn); font-weight:800; text-transform:uppercase; letter-spacing:.5px; }
-  .toast .tt { font-size:13px; margin-top:2px; }
-  @keyframes toastIn { 0%{opacity:0; transform:translateX(40px);} 100%{opacity:1; transform:translateX(0);} }
-  @keyframes toastOut { 0%{opacity:1;} 100%{opacity:0; transform:translateX(40px);} }
-
-  /* Overlay / modal */
+  /* ---------- Game over ---------- */
   .overlay {
-    position: fixed; inset:0; background: rgba(5,8,14,.82);
-    display:flex; align-items:center; justify-content:center; padding:20px; z-index:50;
+    position: fixed; inset: 0; background: rgba(5,8,14,.85);
+    display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 50;
     backdrop-filter: blur(2px);
   }
-  .overlay.hidden { display:none; }
+  .overlay.hidden { display: none; }
   .modal {
-    background: var(--panel); border:1px solid var(--line); border-radius:18px;
-    padding:26px; max-width:560px; width:100%; box-shadow: var(--shadow);
-    animation: modalIn .3s ease;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 18px;
+    padding: 28px; max-width: 460px; width: 100%; box-shadow: var(--shadow); text-align: center;
+    animation: fade .3s ease;
   }
-  @keyframes modalIn { 0%{opacity:0; transform:scale(.94) translateY(10px);} 100%{opacity:1; transform:scale(1);} }
-  .modal h2 { margin-top:0; }
-  .modal p { color: var(--muted); line-height:1.6; font-size:14px; }
-  .modal ul { color: var(--muted); font-size:13px; line-height:1.7; }
-  .diff { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:18px 0; }
-  .diff button {
-    padding:14px; border-radius:12px; border:1px solid var(--line); cursor:pointer;
-    background: var(--panel-2); color:var(--ink); text-align:left; transition:.15s;
-  }
-  .diff button:hover { border-color: var(--accent-2); transform:translateY(-2px); }
-  .diff button b { display:block; font-size:15px; margin-bottom:4px; }
-  .diff button small { color: var(--muted); font-size:11px; }
-
-  /* Crisis decision card */
-  #crisisModal .tag {
-    display:inline-block; background:rgba(255,107,107,.15); color:var(--bad);
-    font-size:11px; font-weight:800; padding:3px 10px; border-radius:999px; text-transform:uppercase; letter-spacing:.5px;
-  }
-  .choices { display:flex; flex-direction:column; gap:10px; margin-top:16px; }
-  .choice {
-    text-align:left; padding:13px 15px; border-radius:12px; border:1px solid var(--line);
-    background: var(--panel-2); color:var(--ink); cursor:pointer; transition:.15s;
-  }
-  .choice:hover { border-color: var(--accent-2); transform:translateX(3px); }
-  .choice b { font-size:14px; }
-  .choice small { display:block; color:var(--muted); font-size:11px; margin-top:3px; }
-
-  .score-big { font-size:46px; font-weight:800; color: var(--accent); margin:6px 0; }
-  .approval-bars { margin-top: 14px; }
-  .bar-wrap { margin-bottom:10px; }
-  .bar-wrap .lab { font-size:11px; color:var(--muted); display:flex; justify-content:space-between; margin-bottom:3px;}
-  .bar { height:10px; border-radius:6px; background: var(--panel-2); overflow:hidden; }
-  .bar > div { height:100%; border-radius:6px; transition:width .6s; }
-  footer { margin-top:14px; text-align:center; color:var(--muted); font-size:11px; }
+  .modal h2 { margin: 0 0 4px; font-size: 24px; }
+  .modal .grade { font-size: 64px; font-weight: 800; margin: 6px 0; }
+  .modal .final { font-size: 30px; font-weight: 800; color: var(--accent); }
+  .modal p { color: var(--muted); line-height: 1.6; font-size: 14px; }
 </style>
 </head>
 <body>
 <div class="app">
 
-  <header class="top">
-    <div class="brand">
-      <div class="logo">🏦</div>
-      <div>
-        <h1>Central Bank Tycoon</h1>
-        <p>Set the policy rate. Tame inflation. Keep the nation working.</p>
-      </div>
-    </div>
-    <div class="hud">
-      <div class="box" id="scoreBox"><div class="big" id="scoreVal">0</div><div class="lab">Score</div></div>
-      <div class="box" id="streakBox"><div class="big" id="streakVal">0🔥</div><div class="lab">Streak</div></div>
-      <div class="box"><div class="big" id="quarterVal">Q1·Y1</div><div class="lab" id="termVal">0 / 40</div></div>
-    </div>
-  </header>
-
-  <div class="grid">
-    <div style="display:flex; flex-direction:column; gap:16px;">
-      <div class="panel">
-        <h2>Economic Dashboard</h2>
-        <div class="stats" id="stats"></div>
-      </div>
-
-      <div class="panel">
-        <h2>Economic History</h2>
-        <canvas id="chart" width="640" height="220"></canvas>
-        <div class="legend">
-          <span><i class="dot" style="background:#ff6b6b"></i> Inflation</span>
-          <span><i class="dot" style="background:#5b9bff"></i> Unemployment</span>
-          <span><i class="dot" style="background:#4dd6a3"></i> Policy Rate</span>
-          <span><i class="dot" style="background:#ffcf5c"></i> 2% Target</span>
-        </div>
-      </div>
-
-      <div class="panel">
-        <h2>Policy Briefing</h2>
-        <div class="log" id="log"></div>
+  <!-- ============ HOME ============ -->
+  <section class="screen active" id="home">
+    <div class="hero">
+      <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&q=80" alt="Stacks of banknotes" />
+      <div class="veil">
+        <h1>🏦 Central Bank Tycoon</h1>
+        <p>You run the nation's central bank. Set the interest rate each quarter to keep inflation near 2% and unemployment low. Simple to learn — tricky to master.</p>
       </div>
     </div>
 
-    <div style="display:flex; flex-direction:column; gap:16px;">
-      <div class="panel">
-        <h2>Mission</h2>
-        <div class="objective" id="objective"></div>
+    <div class="howto">
+      <b>How to play:</b> Each quarter you set one number — the <b>interest rate</b>.
+      Raise it to cool <b>inflation</b> (but jobs suffer). Lower it to fight <b>unemployment</b> (but prices heat up).
+      The closer you keep inflation to the <b>2% target</b> and unemployment low, the more points you score.
+      Random shocks will test you. Survive your full term!
+    </div>
+
+    <p class="pick-label">Choose a difficulty</p>
+    <div class="diffs">
+      <button class="diff-card easy" data-diff="easy">
+        <img src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=600&q=70" alt="A roll of cash" />
+        <div class="body">
+          <div class="name"><span class="pip">●</span> Easy</div>
+          <div class="blurb">A calm economy with gentle shocks and a forgiving target. 12 quarters. Perfect for learning.</div>
+        </div>
+      </button>
+      <button class="diff-card normal" data-diff="normal">
+        <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=600&q=70" alt="A bank ATM keypad" />
+        <div class="body">
+          <div class="name"><span class="pip">●●</span> Normal</div>
+          <div class="blurb">A balanced economy with real volatility. 16 quarters. The standard challenge.</div>
+        </div>
+      </button>
+      <button class="diff-card hard" data-diff="hard">
+        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=70" alt="A falling market chart" />
+        <div class="body">
+          <div class="name"><span class="pip">●●●</span> Hard</div>
+          <div class="blurb">A turbulent economy with violent shocks and a strict target. 20 quarters. For veterans.</div>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ GAME ============ -->
+  <section class="screen" id="game">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">🏦</div>
+        <div>
+          <h2>Central Bank Tycoon</h2>
+          <small id="diffLabel">—</small>
+        </div>
       </div>
+      <div class="hud">
+        <div class="box" id="scoreBox"><div class="big" id="scoreVal">0</div><div class="lab">Score</div></div>
+        <div class="box"><div class="big" id="roundVal">Q1</div><div class="lab" id="termVal">0 / 12</div></div>
+      </div>
+    </header>
 
-      <div class="panel">
-        <h2>Monetary Policy Tools</h2>
-
-        <div class="control">
-          <div class="row">
-            <span class="name">Policy Interest Rate</span>
-            <span class="val"><span id="rateVal">2.5</span>%</span>
-          </div>
-          <input type="range" id="rate" min="0" max="15" step="0.25" value="2.5" />
-          <div class="hint">Higher rates cool inflation but raise unemployment. Move gradually — markets dislike shocks.</div>
-        </div>
-
-        <div class="control">
-          <div class="name">Balance Sheet Operations</div>
-          <div class="toggle-row" id="qeRow">
-            <button data-qe="-1">Tighten (QT)</button>
-            <button data-qe="0" class="active">Neutral</button>
-            <button data-qe="1">Stimulus (QE)</button>
-          </div>
-          <div class="hint">Asset purchases boost growth &amp; jobs but add inflationary pressure.</div>
-        </div>
-
-        <div class="control">
-          <div class="name">Forward Guidance</div>
-          <div class="toggle-row" id="guideRow">
-            <button data-g="hawk">Hawkish 🦅</button>
-            <button data-g="neutral" class="active">Neutral</button>
-            <button data-g="dove">Dovish 🕊️</button>
-          </div>
-          <div class="hint">Signaling steers expectations — cheap, but overuse drains credibility.</div>
-        </div>
-
-        <div class="actions">
-          <button class="btn" id="advanceBtn">Advance Quarter ▸</button>
-          <button class="btn secondary" id="restartBtn" title="New game">↻</button>
-        </div>
+    <div class="stats">
+      <div class="stat" id="stat-infl">
+        <div class="label"><span>Inflation</span><span class="chip" id="chip-infl"></span></div>
+        <div class="value" id="val-infl">—</div>
+        <div class="target">Target: 2.0%</div>
+      </div>
+      <div class="stat" id="stat-unemp">
+        <div class="label"><span>Unemployment</span><span class="chip" id="chip-unemp"></span></div>
+        <div class="value" id="val-unemp">—</div>
+        <div class="target">Healthy: under ~5%</div>
       </div>
     </div>
-  </div>
 
-  <footer>A monetary policy game · vanilla HTML/CSS/JS · press <b>Enter</b> to advance</footer>
+    <div class="panel">
+      <div class="control">
+        <div class="row">
+          <span class="name">Policy Interest Rate</span>
+          <span class="val"><span id="rateVal">3.0</span>%</span>
+        </div>
+        <input type="range" id="rate" min="0" max="12" step="0.25" value="3" />
+        <div class="hint">Neutral is around <b>3%</b>. Above neutral cools the economy (inflation ↓, unemployment ↑). Below neutral heats it up (inflation ↑, unemployment ↓).</div>
+      </div>
+
+      <div class="feedback" id="feedback">Set your rate, then advance the quarter.</div>
+
+      <div class="actions">
+        <button class="btn" id="advanceBtn">Advance Quarter ▸</button>
+        <button class="btn ghost" id="homeBtn" title="Quit to menu">⌂</button>
+      </div>
+    </div>
+
+    <footer>Set the rate · press <b>Enter</b> to advance · keep inflation near 2%</footer>
+  </section>
 </div>
 
-<div id="resultBanner"><div class="stars" id="rbStars">★★★</div><div class="rpts" id="rbPts"></div><div class="rmsg" id="rbMsg"></div></div>
-<div id="toastWrap"></div>
-
-<!-- INTRO -->
-<div class="overlay" id="introOverlay">
+<!-- ============ GAME OVER ============ -->
+<div class="overlay hidden" id="overOverlay">
   <div class="modal">
-    <h2>🏦 Welcome, Governor.</h2>
-    <p>You run the central bank. Each quarter you set policy, then face whatever the economy throws at you. Your <b style="color:var(--ink)">score</b> climbs when you keep <b style="color:var(--ink)">inflation near 2%</b> and <b style="color:var(--ink)">unemployment low</b> — and a hot <b style="color:var(--ink)">streak</b> multiplies your points.</p>
-    <ul>
-      <li><b style="color:var(--ink)">Interest rate</b> — raise to fight inflation, cut to fight unemployment.</li>
-      <li><b style="color:var(--ink)">Crisis cards</b> — shocks force a live decision with real trade-offs.</li>
-      <li><b style="color:var(--ink)">Missions</b> from the government — meet them or risk being fired.</li>
-      <li>Survive <b style="color:var(--ink)">40 quarters</b> and earn your legacy.</li>
-    </ul>
-    <p>Choose your economy:</p>
-    <div class="diff">
-      <button data-diff="easy"><b>Stable</b><small>Calm economy, mild shocks. Learn the ropes.</small></button>
-      <button data-diff="normal"><b>Realistic</b><small>Balanced volatility. The standard challenge.</small></button>
-      <button data-diff="hard"><b>Turbulent</b><small>Frequent, severe shocks. For veterans.</small></button>
-    </div>
-  </div>
-</div>
-
-<!-- CRISIS DECISION -->
-<div class="overlay hidden" id="crisisOverlay">
-  <div class="modal" id="crisisModal">
-    <span class="tag" id="crisisTag">⚠ Crisis</span>
-    <h2 id="crisisTitle" style="margin-top:10px;"></h2>
-    <p id="crisisText"></p>
-    <div class="choices" id="crisisChoices"></div>
-  </div>
-</div>
-
-<!-- GAME OVER -->
-<div class="overlay hidden" id="endOverlay">
-  <div class="modal">
-    <h2 id="endTitle">Your term has ended</h2>
-    <div class="score-big" id="endScore">—</div>
-    <p id="endVerdict"></p>
-    <div class="approval-bars" id="endBars"></div>
+    <h2 id="overTitle">Term complete</h2>
+    <div class="grade" id="overGrade">A</div>
+    <div class="final" id="overScore">0 pts</div>
+    <p id="overVerdict"></p>
     <div class="actions" style="margin-top:18px;">
       <button class="btn" id="playAgainBtn">Play Again</button>
     </div>
@@ -359,580 +270,213 @@
 "use strict";
 
 /* ============================================================
-   Central Bank Tycoon
+   Central Bank Tycoon — simplified
+   One control (the interest rate), two stats (inflation,
+   unemployment). Keep inflation near 2% and unemployment low.
    ============================================================ */
-const TARGET_INFLATION = 2.0;
-const NATURAL_UNEMPLOYMENT = 4.5;
-const NEUTRAL_RATE = 2.5;
-const TERM_LENGTH = 40;
 
-const DIFFICULTY = {
-  easy:   { shockChance: 0.22, shockScale: 0.6, label: "Stable" },
-  normal: { shockChance: 0.35, shockScale: 1.0, label: "Realistic" },
-  hard:   { shockChance: 0.50, shockScale: 1.6, label: "Turbulent" },
+const TARGET = 2.0;        // inflation target
+const NATURAL_U = 4.5;     // natural unemployment rate
+const NEUTRAL_RATE = 3.0;  // rate that leaves the economy stable
+
+const DIFF = {
+  easy:   { label: "Easy",   rounds: 12, shock: 0.4, evScale: 0.6, tol: 1.4, startInfl: 3.0, startUnemp: 5.0 },
+  normal: { label: "Normal", rounds: 16, shock: 0.9, evScale: 1.0, tol: 1.0, startInfl: 4.0, startUnemp: 5.5 },
+  hard:   { label: "Hard",   rounds: 20, shock: 1.6, evScale: 1.6, tol: 0.7, startInfl: 6.0, startUnemp: 6.5 },
 };
+
+/* Flavour shocks — a one-time nudge plus a headline. No decisions. */
+const EVENTS = [
+  { msg: "🛢️ Oil prices spike — costs surge.",        infl: +1.6, unemp:  0   },
+  { msg: "💻 A tech boom lifts output and hiring.",     infl: -0.4, unemp: -1.1 },
+  { msg: "🌍 A global recession hits exports.",         infl: -0.6, unemp: +1.5 },
+  { msg: "🛒 Consumer spending surges.",                infl: +1.1, unemp: -0.6 },
+  { msg: "🚢 Supply chains snarl up.",                  infl: +1.2, unemp: +0.3 },
+  { msg: "🏭 A productivity leap cools prices.",        infl: -0.9, unemp: -0.4 },
+];
 
 let G = null;
 
-function newGame(diff) {
-  return {
-    diff, cfg: DIFFICULTY[diff],
-    quarter: 0,
-    inflation: 2.2, unemployment: 5.0, gdp: 2.2,
-    rate: 2.5, expectations: 2.0,
-    credibility: 70, govApproval: 60, publicApproval: 60,
-    creditUsed: 0, qe: 0, guidance: "neutral",
-    mandate: null, history: [],
-    score: 0, streak: 0, bestStreak: 0,
-    pendingShock: null,
-    achieved: {},
+function startGame(diff) {
+  const cfg = DIFF[diff];
+  G = {
+    diff, cfg,
+    round: 0,
+    inflation: cfg.startInfl,
+    unemployment: cfg.startUnemp,
+    rate: NEUTRAL_RATE,
+    score: 0,
     alive: true,
   };
+  document.getElementById("diffLabel").textContent = cfg.label + " · " + cfg.rounds + " quarters";
+  document.getElementById("termVal").textContent = "0 / " + cfg.rounds;
+  document.getElementById("rate").value = NEUTRAL_RATE;
+  document.getElementById("rateVal").textContent = NEUTRAL_RATE.toFixed(2);
+  document.getElementById("feedback").innerHTML = "Set your rate, then advance the quarter.";
+  showScreen("game");
+  render();
 }
 
-/* ---- Missions ---- */
-const MANDATES = [
-  { id:"jobs", title:"Fight Unemployment",
-    text:"Election season — the government wants <b>jobs above all</b>. Keep unemployment <b>below 5%</b>.",
-    check: g => g.unemployment <= 5.0,
-    judge: g => g.unemployment <= 5.0 ? +6 : (g.unemployment >= 7 ? -7 : -2),
-    label: g => "Unemployment "+g.unemployment.toFixed(1)+"% (need ≤ 5.0%)" },
-  { id:"prices", title:"Crush Inflation",
-    text:"Cost-of-living anger is boiling. Get inflation <b>under 3%</b>, whatever it costs.",
-    check: g => g.inflation <= 3.0,
-    judge: g => g.inflation <= 3.0 ? +6 : (g.inflation >= 5 ? -7 : -2),
-    label: g => "Inflation "+g.inflation.toFixed(1)+"% (need ≤ 3.0%)" },
-  { id:"growth", title:"Boost Growth",
-    text:"A growth agenda is in vogue. Deliver GDP growth <b>above 2.5%</b>.",
-    check: g => g.gdp >= 2.5,
-    judge: g => g.gdp >= 2.5 ? +6 : (g.gdp <= 0 ? -8 : -2),
-    label: g => "GDP growth "+g.gdp.toFixed(1)+"% (need ≥ 2.5%)" },
-  { id:"indep", title:"Defend Independence",
-    text:"Populists question the bank itself. Keep <b>credibility above 60</b>.",
-    check: g => g.credibility >= 60,
-    judge: g => g.credibility >= 60 ? +5 : -6,
-    label: g => "Credibility "+Math.round(g.credibility)+" (need ≥ 60)" },
-];
+/* ---- one quarter ---- */
+function advance() {
+  if (!G || !G.alive) return;
+  const g = G, cfg = g.cfg;
+  g.rate = parseFloat(document.getElementById("rate").value);
+  const gap = g.rate - NEUTRAL_RATE;
 
-/* ---- Crisis decision events ---- */
-/* Each: base effect applied, then the chosen option modifies things. */
-const CRISES = [
-  {
-    title:"Oil Price Shock", tag:"⚠ Supply Shock",
-    text:"Crude prices spike 40% overnight. Energy costs are about to surge through the whole economy. How do you respond?",
-    base:(g,s)=>{ g.inflation += 1.4*s; g.gdp -= 0.4*s; },
-    options:[
-      { b:"Hike rates pre-emptively", s:"Crush inflation early — but jobs will hurt.",
-        apply:(g,s)=>{ g.rate=clamp(g.rate+1.0,0,15); g.inflation-=0.6*s; g.unemployment+=0.5*s; }, cred:+3 },
-      { b:"Hold steady, look through it", s:"Bet it's temporary. Cheap if right, costly if wrong.",
-        apply:(g,s)=>{ g.expectations+=0.5*s; }, cred:-2 },
-      { b:"Hawkish jawboning only", s:"Talk tough to anchor expectations without moving rates.",
-        apply:(g,s)=>{ g.expectations-=0.3*s; g.credibility-=2; }, cred:0 },
-    ]
-  },
-  {
-    title:"Banking Sector Stress", tag:"⚠ Financial Crisis",
-    text:"A major lender is teetering and interbank markets are freezing. Panic is spreading.",
-    base:(g,s)=>{ g.gdp -= 1.0*s; g.unemployment += 0.6*s; },
-    options:[
-      { b:"Slash rates & inject liquidity", s:"Save the system — risks reigniting inflation.",
-        apply:(g,s)=>{ g.rate=clamp(g.rate-1.0,0,15); g.gdp+=0.8*s; g.inflation+=0.5*s; }, cred:+2 },
-      { b:"Targeted bailout, rates unchanged", s:"Surgical fix, preserves your inflation stance.",
-        apply:(g,s)=>{ g.gdp+=0.4*s; g.govApproval-=4; }, cred:+1 },
-      { b:"Let them fail (moral hazard)", s:"Punish recklessness — but contagion may spread.",
-        apply:(g,s)=>{ g.gdp-=1.2*s; g.unemployment+=0.9*s; }, cred:+4 },
-    ]
-  },
-  {
-    title:"Wage-Price Spiral", tag:"⚠ Expectations Risk",
-    text:"Unions win double-digit pay deals and firms are raising prices to match. Inflation expectations are un-anchoring.",
-    base:(g,s)=>{ g.expectations += 0.7*s; g.inflation += 0.4*s; },
-    options:[
-      { b:"Shock hike — restore credibility", s:"Volcker-style. Brutal on jobs, decisive on prices.",
-        apply:(g,s)=>{ g.rate=clamp(g.rate+1.5,0,15); g.unemployment+=0.8*s; g.expectations-=0.9*s; }, cred:+5 },
-      { b:"Gradual tightening", s:"Ease pressure off slowly. Less pain, slower results.",
-        apply:(g,s)=>{ g.rate=clamp(g.rate+0.5,0,15); g.expectations-=0.3*s; }, cred:+1 },
-      { b:"Accommodate the wage gains", s:"Protect jobs and hope it fades. Dangerous.",
-        apply:(g,s)=>{ g.expectations+=0.6*s; g.publicApproval+=4; }, cred:-4 },
-    ]
-  },
-  {
-    title:"Global Recession", tag:"⚠ Demand Shock",
-    text:"Your largest trading partners have tipped into recession. Export orders are collapsing.",
-    base:(g,s)=>{ g.gdp -= 1.4*s; g.unemployment += 0.9*s; g.inflation -= 0.4*s; },
-    options:[
-      { b:"Aggressive rate cuts", s:"Stimulate hard to protect jobs.",
-        apply:(g,s)=>{ g.rate=clamp(g.rate-1.25,0,15); g.gdp+=0.9*s; g.unemployment-=0.5*s; }, cred:0 },
-      { b:"Modest cut + dovish guidance", s:"Balanced support without overcommitting.",
-        apply:(g,s)=>{ g.rate=clamp(g.rate-0.5,0,15); g.gdp+=0.4*s; }, cred:+2 },
-      { b:"Hold — protect the currency", s:"Defend stability and credibility over growth.",
-        apply:(g,s)=>{ g.unemployment+=0.4*s; }, cred:+3 },
-    ]
-  },
-  {
-    title:"Productivity Boom", tag:"✦ Opportunity",
-    text:"A technology breakthrough is lifting output. The economy can grow faster without overheating — if you let it.",
-    base:(g,s)=>{ g.gdp += 0.9*s; g.unemployment -= 0.3*s; },
-    options:[
-      { b:"Cut rates, ride the boom", s:"Maximize growth and jobs — watch for froth.",
-        apply:(g,s)=>{ g.rate=clamp(g.rate-0.5,0,15); g.gdp+=0.7*s; g.inflation+=0.3*s; }, cred:0 },
-      { b:"Hold and bank the disinflation", s:"Let productivity quietly lower inflation.",
-        apply:(g,s)=>{ g.inflation-=0.5*s; g.credibility+=2; }, cred:+3 },
-      { b:"Tighten to pre-empt a bubble", s:"Cautious — may choke off the gains.",
-        apply:(g,s)=>{ g.rate=clamp(g.rate+0.5,0,15); g.gdp-=0.4*s; }, cred:+1 },
-    ]
-  },
-  {
-    title:"Government Spending Spree", tag:"⚠ Fiscal Pressure",
-    text:"The treasury launches a huge stimulus package right before an election, pouring fuel on demand. They want you to keep rates low.",
-    base:(g,s)=>{ g.gdp += 0.9*s; g.unemployment -= 0.5*s; g.inflation += 0.7*s; },
-    options:[
-      { b:"Hike anyway — defend the mandate", s:"Stand up to politicians. They won't be happy.",
-        apply:(g,s)=>{ g.rate=clamp(g.rate+1.0,0,15); g.inflation-=0.5*s; g.govApproval-=8; }, cred:+5 },
-      { b:"Hold to keep the peace", s:"Play nice with government, risk overheating.",
-        apply:(g,s)=>{ g.inflation+=0.4*s; g.govApproval+=6; }, cred:-3 },
-      { b:"Quiet tightening via QT", s:"Drain liquidity without a headline rate move.",
-        apply:(g,s)=>{ g.qe=-1; g.inflation-=0.3*s; }, cred:+2 },
-    ]
-  },
-];
+  // base response to the rate
+  g.inflation     += -gap * 0.30 + rand(cfg.shock);
+  g.unemployment  +=  gap * 0.20 + rand(cfg.shock * 0.6);
+  // unemployment drifts back toward its natural level
+  g.unemployment  += (NATURAL_U - g.unemployment) * 0.10;
 
-/* ============================================================
-   Apply player's standing policy + base economic step
-   (run AFTER any crisis choice is resolved)
-   ============================================================ */
-function simulateStep(){
-  const g = G;
-  const rateGap = g.rate - NEUTRAL_RATE;
-
-  let gdpPull = -rateGap * 0.35 + g.qe * 0.5;
-  g.gdp += (2.2 - g.gdp) * 0.25 + gdpPull;
-
-  const okun = (2.2 - g.gdp) * 0.30;
-  g.unemployment += okun + rateGap * 0.12 - g.qe * 0.18;
-  g.unemployment += (NATURAL_UNEMPLOYMENT - g.unemployment) * 0.12;
-
-  const phillips = (NATURAL_UNEMPLOYMENT - g.unemployment) * 0.45;
-  let guidancePull = g.guidance === "hawk" ? -0.35 : g.guidance === "dove" ? 0.30 : 0;
-  g.inflation = g.expectations + phillips - rateGap * 0.25 + g.qe * 0.30 + guidancePull;
-
-  const anchor = g.credibility / 100;
-  g.expectations += (g.inflation - g.expectations) * (0.30 * (1 - anchor))
-                  + (TARGET_INFLATION - g.expectations) * (0.20 * anchor);
-
-  if (g.guidance !== "neutral") {
-    g.creditUsed += 1;
-    if (g.creditUsed > 3) g.credibility -= 2;
-  } else {
-    g.creditUsed = Math.max(0, g.creditUsed - 1);
+  // occasional headline shock
+  let headline = "";
+  if (Math.random() < 0.3) {
+    const ev = EVENTS[Math.floor(Math.random() * EVENTS.length)];
+    g.inflation    += ev.infl * cfg.evScale;
+    g.unemployment += ev.unemp * cfg.evScale;
+    headline = ev.msg;
   }
 
-  const missInfl = Math.abs(g.inflation - TARGET_INFLATION);
-  if (missInfl < 1.0) g.credibility += 1.5;
-  else if (missInfl > 3.0) g.credibility -= 2.5;
-  else g.credibility -= 0.4;
+  g.inflation    = clamp(g.inflation, -3, 25);
+  g.unemployment = clamp(g.unemployment, 1.5, 25);
+  g.round++;
 
-  g.gdp = clamp(g.gdp, -8, 8);
-  g.unemployment = clamp(g.unemployment, 1.5, 22);
-  g.inflation = clamp(g.inflation, -4, 25);
-  g.expectations = clamp(g.expectations, -2, 15);
-  g.credibility = clamp(g.credibility, 0, 100);
-
-  const md = g.mandate.judge(g);
-  g.govApproval = clamp(g.govApproval + md, 0, 100);
-
-  const misery = g.inflation + g.unemployment;
-  g.publicApproval = clamp(g.publicApproval + (10 - misery) * 0.9, 0, 100);
-}
-
-/* ============================================================
-   Scoring & feedback for the quarter
-   ============================================================ */
-function scoreQuarter(){
-  const g = G;
-  const missInfl = Math.abs(g.inflation - TARGET_INFLATION);
-  const excessU = Math.max(0, g.unemployment - NATURAL_UNEMPLOYMENT);
-
-  // star rating
-  let stars;
-  if (missInfl < 0.8 && excessU < 1.2 && g.gdp > 0.5) stars = 3;
-  else if (missInfl < 1.8 && excessU < 3.0 && g.gdp > -0.5) stars = 2;
-  else if (missInfl < 3.0 && excessU < 5.0) stars = 1;
-  else stars = 0;
-
-  // streak: on-target inflation builds it
-  const onTarget = missInfl < 1.0 && excessU < 2.0;
-  if (onTarget) { g.streak++; g.bestStreak = Math.max(g.bestStreak, g.streak); }
-  else g.streak = 0;
-
-  const mult = 1 + Math.min(g.streak, 10) * 0.15; // up to ~2.5x
-  let base = stars * 100;
-  // bonus for mission met
-  const missionMet = g.mandate.check(g);
-  if (missionMet) base += 60;
-  let pts = Math.round(base * (onTarget ? mult : 1));
-
+  // score this quarter
+  const inflScore  = clamp(100 - Math.abs(g.inflation - TARGET) / cfg.tol * 38, 0, 100);
+  const excessU    = Math.max(0, g.unemployment - NATURAL_U);
+  const unempScore = clamp(100 - excessU * 18, 0, 100);
+  const avg        = (inflScore + unempScore) / 2;
+  const pts        = Math.round(avg);
   g.score += pts;
 
-  const msgs = [
-    "Markets in turmoil — get a grip, Governor.",
-    "A rough quarter. The press is circling.",
-    "Steady hand. The economy holds.",
-    "Textbook policy. Inflation anchored, jobs safe!",
-  ];
-  return { stars, pts, msg: msgs[stars], onTarget, mult, missionMet };
-}
-
-/* ============================================================
-   Quarter flow
-   ============================================================ */
-function beginAdvance(){
-  if (!G || !G.alive) return;
-  G.rate = parseFloat(document.getElementById("rate").value);
-
-  // Roll for a crisis card
-  if (Math.random() < G.cfg.shockChance) {
-    const crisis = CRISES[Math.floor(Math.random()*CRISES.length)];
-    G.pendingShock = crisis;
-    showCrisis(crisis);
-  } else {
-    resolveQuarter(null);
-  }
-}
-
-function showCrisis(crisis){
-  document.getElementById("crisisTag").textContent = crisis.tag;
-  document.getElementById("crisisTitle").textContent = crisis.title;
-  document.getElementById("crisisText").textContent = crisis.text;
-  const box = document.getElementById("crisisChoices");
-  box.innerHTML = "";
-  crisis.options.forEach((opt, i)=>{
-    const btn = document.createElement("button");
-    btn.className = "choice";
-    btn.innerHTML = "<b>"+opt.b+"</b><small>"+opt.s+"</small>";
-    btn.addEventListener("click", ()=>{
-      document.getElementById("crisisOverlay").classList.add("hidden");
-      resolveQuarter(opt);
-    });
-    box.appendChild(btn);
-  });
-  document.getElementById("crisisOverlay").classList.remove("hidden");
-}
-
-function resolveQuarter(choice){
-  const g = G;
-  const s = g.cfg.shockScale;
-
-  if (g.pendingShock){
-    g.pendingShock.base(g, s);
-    if (choice){
-      choice.apply(g, s);
-      g.credibility = clamp(g.credibility + (choice.cred||0), 0, 100);
-      log("<b>"+g.pendingShock.title+"</b> — you chose: "+choice.b, "event");
-    }
-    // sync rate slider in case a choice moved it
-    document.getElementById("rate").value = g.rate;
-    document.getElementById("rateVal").textContent = g.rate.toFixed(2);
-    g.pendingShock = null;
-  }
-
-  const before = { infl:g.inflation, unemp:g.unemployment };
-  simulateStep();
-
-  g.history.push({ inflation:g.inflation, unemployment:g.unemployment, rate:g.rate });
-  g.quarter++;
-
-  const res = scoreQuarter();
-  checkAchievements(res);
-
-  // mission rotation
-  if (g.quarter % 8 === 0 && g.quarter < TERM_LENGTH) assignMandate(true);
-
-  render(before);
-  showResult(res);
+  const stars = avg >= 85 ? 3 : avg >= 60 ? 2 : avg >= 35 ? 1 : 0;
+  render(true);
+  showFeedback(stars, pts, headline);
 
   // end conditions
-  if (g.quarter >= TERM_LENGTH) return endGame();
-  if (g.govApproval <= 0) return endGame("fired");
-  if (g.inflation >= 22) return endGame("hyperinflation");
+  if (g.inflation >= 20)        return endGame("hyperinflation");
+  if (g.unemployment >= 18)     return endGame("depression");
+  if (g.round >= cfg.rounds)    return endGame("complete");
 }
 
-/* ============================================================
-   Achievements
-   ============================================================ */
-const ACHIEVEMENTS = [
-  { id:"firstStar3", test:(g,r)=> r.stars===3, th:"Soft Landing", tt:"Earned a perfect 3-star quarter." },
-  { id:"streak5", test:(g,r)=> g.streak===5, th:"On a Roll", tt:"5 quarters on target in a row! 🔥" },
-  { id:"streak10", test:(g,r)=> g.streak>=10, th:"Maestro", tt:"10-quarter streak — Greenspan would nod." },
-  { id:"score2k", test:(g,r)=> g.score>=2000, th:"Heavyweight", tt:"Crossed 2,000 points." },
-  { id:"score5k", test:(g,r)=> g.score>=5000, th:"Legend", tt:"Crossed 5,000 points!" },
-  { id:"ironCred", test:(g,r)=> g.credibility>=90, th:"Rock Solid", tt:"Credibility hit 90 — expectations fully anchored." },
-  { id:"crisisCool", test:(g,r)=> r.stars===3 && g.history.length>1, th:"Crisis Cool", tt:"Aced a quarter right after a tough call." },
-];
-function checkAchievements(res){
-  ACHIEVEMENTS.forEach(a=>{
-    if (!G.achieved[a.id] && a.test(G, res)){
-      G.achieved[a.id] = true;
-      toast(a.th, a.tt);
-    }
-  });
-}
-
-/* ============================================================
-   Helpers
-   ============================================================ */
-function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
-
-function assignMandate(announce){
-  let m;
-  do { m = MANDATES[Math.floor(Math.random()*MANDATES.length)]; }
-  while (G.mandate && m.id === G.mandate.id);
-  G.mandate = m;
-  if (announce) log("New government mission: <b>"+m.title+"</b>.", "event");
-}
-
-/* ============================================================
-   Rendering & juice
-   ============================================================ */
-function render(before){
+/* ---- rendering ---- */
+function render(flash) {
   const g = G;
-  document.getElementById("quarterVal").textContent =
-    "Q" + ((g.quarter % 4) + 1 === 0 ? 4 : ((g.quarter % 4) + 1)) + "·Y" + (Math.floor(g.quarter/4) + 1);
-  document.getElementById("termVal").textContent = g.quarter + " / " + TERM_LENGTH;
+  document.getElementById("scoreVal").textContent = g.score.toLocaleString();
+  document.getElementById("roundVal").textContent = "Q" + (g.round + (g.round < g.cfg.rounds ? 1 : 0));
+  document.getElementById("termVal").textContent = g.round + " / " + g.cfg.rounds;
 
-  animateScore();
-  const sv = document.getElementById("streakVal");
-  sv.textContent = g.streak + "🔥";
-  bump("streakBox");
+  setStat("infl", g.inflation, inflStatus(g.inflation));
+  setStat("unemp", g.unemployment, unempStatus(g.unemployment));
 
-  const cards = [
-    mkStat("inflation","Inflation", g.inflation, "%", "Target 2.0%", inflStatus(g.inflation)),
-    mkStat("unemp","Unemployment", g.unemployment, "%", "Natural ~4.5%", unempStatus(g.unemployment)),
-    mkStat("gdp","GDP Growth", g.gdp, "%", "Potential ~2.2%", gdpStatus(g.gdp)),
-    mkStat("rate","Policy Rate", g.rate, "%", "Neutral 2.5%", null),
-    mkStat("cred","Credibility", g.credibility, "", "Anchors expectations", scoreStatus(g.credibility,60,40)),
-    mkStat("gov","Gov. Approval", g.govApproval, "", "Below 0 = fired", scoreStatus(g.govApproval,55,30)),
-  ];
-  document.getElementById("stats").innerHTML = cards.join("");
-
-  // flash inflation/unemployment based on movement toward/away from good
-  if (before){
-    flashStat("inflation", Math.abs(g.inflation-2) < Math.abs(before.infl-2));
-    flashStat("unemp", g.unemployment < before.unemp);
+  if (flash) {
+    flashStat("infl", Math.abs(g.inflation - TARGET) <= 1.5);
+    flashStat("unemp", g.unemployment <= NATURAL_U + 1.5);
   }
-
-  // Mission panel
-  const met = g.mandate.check(g);
-  document.getElementById("objective").innerHTML =
-    "<b>"+g.mandate.title+"</b><br>"+g.mandate.text +
-    '<div class="obj-progress '+(met?'ok':'no')+'">'+(met?'✓ ':'✗ ')+g.mandate.label(g)+'</div>';
-
-  drawChart();
 }
 
-let _shownScore = 0;
-function animateScore(){
-  const el = document.getElementById("scoreVal");
-  const target = G.score;
-  const start = _shownScore;
-  const t0 = performance.now();
-  function step(now){
-    const k = Math.min(1, (now - t0)/500);
-    const v = Math.round(start + (target-start)*k);
-    el.textContent = v.toLocaleString();
-    if (k < 1) requestAnimationFrame(step); else _shownScore = target;
-  }
-  requestAnimationFrame(step);
-  bump("scoreBox");
-}
-function bump(id){ const e=document.getElementById(id); e.classList.remove("pulse"); void e.offsetWidth; e.classList.add("pulse"); }
-
-function flashStat(key, good){
-  const el = document.getElementById("stat-"+key);
-  if (!el) return;
-  el.classList.add(good?"flash-good":"flash-bad");
-  setTimeout(()=>el.classList.remove("flash-good","flash-bad"), 800);
+function setStat(key, value, status) {
+  document.getElementById("val-" + key).textContent = value.toFixed(1) + "%";
+  const chip = document.getElementById("chip-" + key);
+  chip.textContent = status.label;
+  chip.className = "chip " + status.cls;
 }
 
-function mkStat(key,label, value, unit, target, status){
-  let chip = status ? '<span class="chip '+status.cls+'">'+status.label+'</span>' : "";
-  const dec = (label==="Credibility"||label==="Gov. Approval") ? 0 : 1;
-  return '<div class="stat" id="stat-'+key+'">'
-    + '<div class="label"><span>'+label+'</span>'+chip+'</div>'
-    + '<div class="value">'+value.toFixed(dec)+unit+'</div>'
-    + '<div class="target">'+target+'</div></div>';
+function inflStatus(v) {
+  const d = Math.abs(v - TARGET);
+  if (d <= 1.0) return { cls: "good", label: "on target" };
+  if (d <= 2.5) return { cls: "warn", label: v > TARGET ? "running hot" : "too cold" };
+  return { cls: "bad", label: v > TARGET ? "out of control" : "deflation" };
 }
-function inflStatus(v){ const d=Math.abs(v-2);
-  if (d<=0.8) return {cls:"good",label:"on target"};
-  if (d<=2.0) return {cls:"warn",label:v>2?"high":"low"};
-  return {cls:"bad",label:v>2?"too hot":"deflation"}; }
-function unempStatus(v){
-  if (v<=5.5) return {cls:"good",label:"healthy"};
-  if (v<=7.5) return {cls:"warn",label:"elevated"};
-  return {cls:"bad",label:"recession"}; }
-function gdpStatus(v){
-  if (v>=1.5) return {cls:"good",label:"growing"};
-  if (v>=0) return {cls:"warn",label:"sluggish"};
-  return {cls:"bad",label:"contracting"}; }
-function scoreStatus(v,good,bad){
-  if (v>=good) return {cls:"good",label:"strong"};
-  if (v>=bad) return {cls:"warn",label:"shaky"};
-  return {cls:"bad",label:"critical"}; }
-
-/* Result banner + floating points */
-function showResult(res){
-  const banner = document.getElementById("resultBanner");
-  document.getElementById("rbStars").innerHTML =
-    "★".repeat(res.stars) + '<span style="color:#3a4660">'+"★".repeat(3-res.stars)+'</span>';
-  let ptsTxt = "+"+res.pts+" pts";
-  if (res.onTarget && res.mult>1.01) ptsTxt += "  ×"+res.mult.toFixed(2)+" 🔥";
-  if (res.missionMet) ptsTxt += "  · mission ✓";
-  document.getElementById("rbPts").textContent = ptsTxt;
-  document.getElementById("rbMsg").textContent = res.msg;
-  banner.classList.add("show");
-  setTimeout(()=>banner.classList.remove("show"), 2200);
-
-  floatPoints(res.pts, res.stars>=2);
-}
-function floatPoints(pts, good){
-  const box = document.getElementById("scoreBox").getBoundingClientRect();
-  const f = document.createElement("div");
-  f.className = "floater";
-  f.textContent = "+"+pts;
-  f.style.color = good ? "var(--accent)" : "var(--warn)";
-  f.style.left = (box.left + box.width/2 - 10) + "px";
-  f.style.top = (box.bottom - 6) + "px";
-  document.body.appendChild(f);
-  setTimeout(()=>f.remove(), 1200);
+function unempStatus(v) {
+  if (v <= 5.5) return { cls: "good", label: "healthy" };
+  if (v <= 8.0) return { cls: "warn", label: "elevated" };
+  return { cls: "bad", label: "recession" };
 }
 
-function toast(th, tt){
-  const wrap = document.getElementById("toastWrap");
-  const el = document.createElement("div");
-  el.className = "toast";
-  el.innerHTML = '<div class="th">🏆 '+th+'</div><div class="tt">'+tt+'</div>';
-  wrap.appendChild(el);
-  setTimeout(()=>el.remove(), 4200);
+function flashStat(key, good) {
+  const el = document.getElementById("stat-" + key);
+  el.classList.remove("flash-good", "flash-bad");
+  void el.offsetWidth;
+  el.classList.add(good ? "flash-good" : "flash-bad");
 }
 
-function log(msg, cls){
-  const box = document.getElementById("log");
-  const e = document.createElement("div");
-  e.className = "entry " + (cls||"");
-  const q = "Q" + ((G.quarter % 4)+1) + " Y" + (Math.floor(G.quarter/4)+1);
-  e.innerHTML = '<span class="t">'+q+'</span><br>'+msg;
-  box.prepend(e);
+function showFeedback(stars, pts, headline) {
+  const filled = "★".repeat(stars);
+  const empty = '<span style="color:#3a4660">' + "★".repeat(3 - stars) + "</span>";
+  const msgs = ["Markets in turmoil!", "Rough quarter.", "Steady hand.", "Textbook policy!"];
+  let html = '<span class="stars">' + filled + empty + "</span> &nbsp; "
+           + '<b class="pts">+' + pts + " pts</b> &nbsp;·&nbsp; " + msgs[stars];
+  if (headline) html += '<br><span style="color:var(--warn)">' + headline + "</span>";
+  document.getElementById("feedback").innerHTML = html;
 }
 
-/* Canvas chart */
-function drawChart(){
-  const cv = document.getElementById("chart");
-  const ctx = cv.getContext("2d");
-  const W = cv.width, H = cv.height;
-  const padL=34,padR=10,padT=14,padB=22;
-  ctx.clearRect(0,0,W,H);
-  const hist = G.history, maxPoints = TERM_LENGTH;
-  const yMin=-2,yMax=16;
-  const x=i=>padL+(W-padL-padR)*(i/(maxPoints-1));
-  const y=v=>padT+(H-padT-padB)*(1-(v-yMin)/(yMax-yMin));
-
-  ctx.strokeStyle="#243049"; ctx.lineWidth=1; ctx.fillStyle="#6b7c98"; ctx.font="10px sans-serif";
-  for(let v=0;v<=16;v+=4){ ctx.beginPath(); ctx.moveTo(padL,y(v)); ctx.lineTo(W-padR,y(v)); ctx.stroke(); ctx.fillText(v+"%",6,y(v)+3); }
-  ctx.strokeStyle="#ffcf5c"; ctx.setLineDash([4,4]); ctx.beginPath(); ctx.moveTo(padL,y(2)); ctx.lineTo(W-padR,y(2)); ctx.stroke(); ctx.setLineDash([]);
-
-  if(hist.length===0){ ctx.fillStyle="#6b7c98"; ctx.font="12px sans-serif"; ctx.fillText("Advance a quarter to begin plotting…",padL+20,H/2); return; }
-
-  [{k:"inflation",c:"#ff6b6b"},{k:"unemployment",c:"#5b9bff"},{k:"rate",c:"#4dd6a3"}].forEach(se=>{
-    ctx.strokeStyle=se.c; ctx.lineWidth=2; ctx.beginPath();
-    hist.forEach((h,i)=>{ const px=x(i),py=y(h[se.k]); i===0?ctx.moveTo(px,py):ctx.lineTo(px,py); });
-    ctx.stroke();
-    const last=hist[hist.length-1]; ctx.fillStyle=se.c;
-    ctx.beginPath(); ctx.arc(x(hist.length-1),y(last[se.k]),3,0,Math.PI*2); ctx.fill();
-  });
-}
-
-/* ============================================================
-   End game
-   ============================================================ */
-function endGame(reason){
+/* ---- end of term ---- */
+function endGame(reason) {
   G.alive = false;
   const g = G;
-  let standing = (g.credibility+g.govApproval+g.publicApproval)/3;
-  let finalScore = g.score + Math.round(standing*5) + g.bestStreak*25;
+  const maxScore = g.cfg.rounds * 100;
+  const pct = g.score / maxScore; // 0..1
+
+  let grade, color;
+  if (pct >= 0.9)      { grade = "S"; color = "var(--good)"; }
+  else if (pct >= 0.8) { grade = "A"; color = "var(--good)"; }
+  else if (pct >= 0.65){ grade = "B"; color = "var(--accent-2)"; }
+  else if (pct >= 0.5) { grade = "C"; color = "var(--warn)"; }
+  else if (pct >= 0.35){ grade = "D"; color = "var(--warn)"; }
+  else                 { grade = "F"; color = "var(--bad)"; }
 
   let title, verdict;
-  if (reason==="fired"){
-    title="🚪 You were dismissed!";
-    verdict="The government lost all confidence and forced you out after "+g.quarter+" quarters. You strayed too far from the mission.";
-  } else if (reason==="hyperinflation"){
-    title="🔥 Hyperinflation!";
-    verdict="Prices spiraled out of control and the currency collapsed. A cautionary tale for the textbooks.";
+  if (reason === "hyperinflation") {
+    title = "🔥 Hyperinflation!";
+    verdict = "Prices spiralled out of control and the currency collapsed. Your term ended early after " + g.round + " quarters.";
+    grade = "F"; color = "var(--bad)";
+  } else if (reason === "depression") {
+    title = "📉 Economic Depression!";
+    verdict = "Unemployment soared and the economy seized up. You were forced out after " + g.round + " quarters.";
+    grade = "F"; color = "var(--bad)";
   } else {
-    title="🎓 Full term complete!";
-    if (finalScore>=4500) verdict="A legendary tenure. Inflation anchored, jobs protected, independence untouchable. Your name goes in the textbooks.";
-    else if (finalScore>=2800) verdict="A credible, respected term. You weathered the shocks and leave the economy in good shape.";
-    else if (finalScore>=1500) verdict="A bumpy ride, but you kept the ship afloat. Mixed reviews from history.";
-    else verdict="A turbulent term — wild swings and missed targets dented your legacy.";
+    title = "🎓 Full term complete!";
+    if (pct >= 0.8)      verdict = "A masterful tenure. Inflation anchored, jobs protected — your name goes in the textbooks.";
+    else if (pct >= 0.5) verdict = "A credible term. You weathered the shocks and leave the economy in decent shape.";
+    else                 verdict = "A bumpy ride with plenty of missed targets. History will remember the swings.";
   }
 
-  document.getElementById("endTitle").textContent = title;
-  document.getElementById("endScore").textContent = finalScore.toLocaleString() + " pts";
-  document.getElementById("endVerdict").textContent =
-    verdict + "  (Best streak: " + g.bestStreak + " · Achievements: " + Object.keys(g.achieved).length + "/" + ACHIEVEMENTS.length + ")";
-  document.getElementById("endBars").innerHTML =
-    bar("Credibility", g.credibility, "#4dd6a3") +
-    bar("Government Approval", g.govApproval, "#5b9bff") +
-    bar("Public Approval", g.publicApproval, "#ffcf5c");
-  document.getElementById("endOverlay").classList.remove("hidden");
-}
-function bar(label,v,color){
-  return '<div class="bar-wrap"><div class="lab"><span>'+label+'</span><span>'+Math.round(v)+'</span></div>'
-    +'<div class="bar"><div style="width:'+clamp(v,0,100)+'%;background:'+color+'"></div></div></div>';
+  document.getElementById("overTitle").textContent = title;
+  const gradeEl = document.getElementById("overGrade");
+  gradeEl.textContent = grade; gradeEl.style.color = color;
+  document.getElementById("overScore").textContent = g.score.toLocaleString() + " pts";
+  document.getElementById("overVerdict").textContent = verdict;
+  document.getElementById("overOverlay").classList.remove("hidden");
 }
 
-/* ============================================================
-   Wiring
-   ============================================================ */
-function startGame(diff){
-  G = newGame(diff);
-  _shownScore = 0;
-  assignMandate(false);
-  document.getElementById("rate").value = G.rate;
-  document.getElementById("rateVal").textContent = G.rate.toFixed(2);
-  setActive("qeRow","data-qe","0"); setActive("guideRow","data-g","neutral");
-  G.qe=0; G.guidance="neutral";
-  document.getElementById("log").innerHTML = "";
-  document.getElementById("toastWrap").innerHTML = "";
-  log("You take office. Inflation "+G.inflation.toFixed(1)+"%, unemployment "+G.unemployment.toFixed(1)+"%. Good luck, Governor.", "good");
-  ["introOverlay","endOverlay","crisisOverlay"].forEach(id=>document.getElementById(id).classList.add("hidden"));
-  render(null);
-}
-function setActive(rowId,attr,val){
-  document.querySelectorAll("#"+rowId+" button").forEach(b=> b.classList.toggle("active", b.getAttribute(attr)===val));
+/* ---- helpers & wiring ---- */
+function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+function rand(mag) { return (Math.random() * 2 - 1) * mag; }
+
+function showScreen(id) {
+  document.querySelectorAll(".screen").forEach(s => s.classList.toggle("active", s.id === id));
 }
 
-document.getElementById("rate").addEventListener("input", e=>{
+document.getElementById("rate").addEventListener("input", e => {
   document.getElementById("rateVal").textContent = parseFloat(e.target.value).toFixed(2);
 });
-document.querySelectorAll("#qeRow button").forEach(b=> b.addEventListener("click", ()=>{
-  if(!G) return; G.qe=parseInt(b.getAttribute("data-qe")); setActive("qeRow","data-qe",b.getAttribute("data-qe"));
-}));
-document.querySelectorAll("#guideRow button").forEach(b=> b.addEventListener("click", ()=>{
-  if(!G) return; G.guidance=b.getAttribute("data-g"); setActive("guideRow","data-g",b.getAttribute("data-g"));
-}));
-document.getElementById("advanceBtn").addEventListener("click", beginAdvance);
-document.getElementById("restartBtn").addEventListener("click", ()=> document.getElementById("introOverlay").classList.remove("hidden"));
-document.getElementById("playAgainBtn").addEventListener("click", ()=>{
-  document.getElementById("endOverlay").classList.add("hidden");
-  document.getElementById("introOverlay").classList.remove("hidden");
+document.querySelectorAll(".diff-card").forEach(b =>
+  b.addEventListener("click", () => startGame(b.getAttribute("data-diff")))
+);
+document.getElementById("advanceBtn").addEventListener("click", advance);
+document.getElementById("homeBtn").addEventListener("click", () => { G = null; showScreen("home"); });
+document.getElementById("playAgainBtn").addEventListener("click", () => {
+  document.getElementById("overOverlay").classList.add("hidden");
+  showScreen("home");
 });
-document.querySelectorAll(".diff button").forEach(b=> b.addEventListener("click", ()=> startGame(b.getAttribute("data-diff"))));
-document.addEventListener("keydown", e=>{
-  if (e.key==="Enter" && G && G.alive &&
-      document.getElementById("introOverlay").classList.contains("hidden") &&
-      document.getElementById("endOverlay").classList.contains("hidden") &&
-      document.getElementById("crisisOverlay").classList.contains("hidden")){
-    beginAdvance();
+document.addEventListener("keydown", e => {
+  if (e.key === "Enter" && G && G.alive &&
+      document.getElementById("game").classList.contains("active") &&
+      document.getElementById("overOverlay").classList.contains("hidden")) {
+    advance();
   }
 });
 </script>
