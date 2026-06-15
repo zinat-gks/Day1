@@ -126,10 +126,13 @@
   .promptbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 12px; padding: 11px 14px; min-height: 56px; }
   .promptbar .ptext { font-size: 14px; color: var(--muted); } .promptbar .ptext b { color: var(--ink); }
 
-  .resultBanner { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin: 14px 0 0; font-size: 13.5px; line-height: 1.6; display: none; box-shadow: var(--shadow); }
-  .resultBanner.show { display: block; }
-  .resultBanner .big { font-size: 16px; font-weight: 800; }
-  .resultBanner .g { color: var(--good); } .resultBanner .y { color: var(--warn); } .resultBanner .r { color: var(--bad); }
+  /* results popup */
+  .resultmodal { max-width: 480px; text-align: left; }
+  .resultmodal h2 { margin: 0 0 12px; font-size: 21px; text-align: left; }
+  .resultbody { font-size: 14px; line-height: 1.7; color: var(--ink); }
+  .resultbody .g { color: var(--good); } .resultbody .y { color: var(--warn); } .resultbody .r { color: var(--bad); }
+  .resultbody .hint { margin-top: 12px; color: var(--muted); font-size: 13px; }
+  .resultmodal .actions { margin-top: 20px; display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
 
   /* tips panel */
   .tips { margin-top: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
@@ -238,17 +241,7 @@
   .howsteps .n { flex: none; width: 26px; height: 26px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #08111f; font-weight: 800; display: grid; place-items: center; font-size: 13px; }
   .howsteps b { color: var(--ink); }
 
-  /* ---------- on-screen move pad ---------- */
-  .controlrow { display: flex; gap: 14px; align-items: stretch; margin-top: 12px; flex-wrap: wrap; }
-  .controlrow .promptbar { flex: 1 1 280px; margin-top: 0; }
-  .movepad { display: grid; grid-template-columns: repeat(3, 42px); grid-template-rows: repeat(2, 42px); gap: 6px; flex: none; }
-  .movepad button { background: var(--panel-2); border: 1px solid var(--line); color: var(--ink); border-radius: 10px; font-size: 15px; cursor: pointer; user-select: none; touch-action: none; transition: .1s; }
-  .movepad button:hover { border-color: var(--accent-2); }
-  .movepad button:active { background: var(--accent-2); color: #08111f; }
-  .movepad .up { grid-column: 2; grid-row: 1; }
-  .movepad .left { grid-column: 1; grid-row: 2; }
-  .movepad .down { grid-column: 2; grid-row: 2; }
-  .movepad .right { grid-column: 3; grid-row: 2; }
+  /* keep the canvas from showing a focus outline when clicked/focused */
   #officeCanvas { outline: none; }
 
   /* ---------- toast ---------- */
@@ -338,21 +331,11 @@
 
     <div class="officewrap">
       <canvas id="officeCanvas" width="820" height="460" tabindex="0"></canvas>
-      <div class="controlrow">
-        <div class="movepad" id="movePad">
-          <button class="up" data-dir="up" aria-label="Move up">▲</button>
-          <button class="left" data-dir="left" aria-label="Move left">◀</button>
-          <button class="down" data-dir="down" aria-label="Move down">▼</button>
-          <button class="right" data-dir="right" aria-label="Move right">▶</button>
-        </div>
-        <div class="promptbar">
-          <div class="ptext" id="promptText">Click the office, then move with <b>WASD</b> / arrows. Press <b>E</b> at a desk.</div>
-          <button class="btn" id="promptBtn" disabled>Open (E)</button>
-        </div>
+      <div class="promptbar">
+        <div class="ptext" id="promptText">Click the office, then move with <b>WASD</b> / arrow keys. Press <b>E</b> at a desk.</div>
+        <button class="btn" id="promptBtn" disabled>Open (E)</button>
       </div>
     </div>
-
-    <div class="resultBanner" id="resultBanner"></div>
 
     <div class="tips">
       <h3>Controls &amp; tips</h3>
@@ -412,6 +395,18 @@
       <li><span class="n">5</span><span>Open all files, then go to the <b>Audit Desk</b> and submit your report.</span></li>
     </ol>
     <div style="margin-top:18px;"><button class="btn" id="howClose">Got it</button></div>
+  </div>
+</div>
+
+<!-- ============ RESULTS POPUP ============ -->
+<div class="overlay hidden" id="resultOverlay">
+  <div class="modal resultmodal">
+    <h2 id="resultTitle">Audit filed</h2>
+    <div class="resultbody" id="resultBody"></div>
+    <div class="actions">
+      <button class="btn ghost" id="resultReview">Review files</button>
+      <button class="btn" id="resultNext">Next Case ▸</button>
+    </div>
   </div>
 </div>
 
@@ -760,7 +755,7 @@ function loadCase() {
     hint.textContent = "🔎 Intel: this company is hiding " + n + " red flag" + (n === 1 ? "" : "s") + ".";
   } else hint.textContent = "Open every file. Flag the fakes. Then visit the Audit Desk.";
 
-  document.getElementById("resultBanner").classList.remove("show");
+  document.getElementById("resultOverlay").classList.add("hidden");
   document.getElementById("stmtOverlay").classList.add("hidden");
 
   updateHUD(); updatePrompt();
@@ -990,6 +985,13 @@ function closeStmt() {
   updatePrompt();
 }
 
+/* close the results popup and let the player walk again */
+function closeResult() {
+  document.getElementById("resultOverlay").classList.add("hidden");
+  if (G) G.modalOpen = false;
+  updatePrompt();
+}
+
 /* tabs inside the modal — only files the player has already opened */
 function renderTabs() {
   const g = G, c = g.cases[g.idx];
@@ -1115,7 +1117,7 @@ function updatePrompt() {
   const d = g.near;
 
   if (!d) {
-    pText.innerHTML = "Move with <b>WASD</b>, arrows, or the pad. Press <b>E</b> at a desk.";
+    pText.innerHTML = "Move with <b>WASD</b> or <b>arrow keys</b>. Press <b>E</b> at a desk.";
     pBtn.disabled = true; pBtn.textContent = "Open (E)";
     return;
   }
@@ -1165,18 +1167,21 @@ function doSubmit() {
   g.score += net;
   g.totals.catch += caught; g.totals.miss += missed; g.totals.false += falses; g.totals.real += real;
 
-  let line = '<div class="big">Audit filed — ' + caught + " / " + real + " red flags caught</div><div style='margin-top:6px'>";
-  line += '<span class="g">+' + gained + '</span> for catches';
-  if (lostFalse) line += ' &nbsp;·&nbsp; <span class="r">−' + lostFalse + '</span> for ' + falses + ' false alarm' + (falses === 1 ? "" : "s");
-  if (lostMiss)  line += ' &nbsp;·&nbsp; <span class="y">−' + lostMiss + '</span> for ' + missed + ' missed flag' + (missed === 1 ? "" : "s");
-  line += ' &nbsp;⟹&nbsp; <b>+' + net + ' pts</b></div>';
-  if (caught === real && falses === 0) line += '<div class="g" style="margin-top:6px">Flawless audit — every red flag caught, none innocent accused. 🏅</div>';
-  line += '<div style="margin-top:6px;color:var(--muted)">Walk back to any desk and open it to read what each flag meant.</div>';
-  const rb = document.getElementById("resultBanner");
-  rb.innerHTML = line; rb.classList.add("show");
+  document.getElementById("resultTitle").textContent =
+    "Audit filed — " + caught + " / " + real + " red flags caught";
+  let body = '<div><span class="g">+' + gained + '</span> for catches';
+  if (lostFalse) body += ' &nbsp;·&nbsp; <span class="r">−' + lostFalse + '</span> for ' + falses + ' false alarm' + (falses === 1 ? "" : "s");
+  if (lostMiss)  body += ' &nbsp;·&nbsp; <span class="y">−' + lostMiss + '</span> for ' + missed + ' missed flag' + (missed === 1 ? "" : "s");
+  body += ' &nbsp;⟹&nbsp; <b>+' + net + ' pts</b></div>';
+  if (caught === real && falses === 0) body += '<div class="g" style="margin-top:8px">Flawless audit — every red flag caught, none innocent accused. 🏅</div>';
+  body += '<div class="hint">Hit “Review files” and walk back to any desk to read what each flag meant.</div>';
+  document.getElementById("resultBody").innerHTML = body;
+  document.getElementById("resultNext").textContent = (g.idx + 1 < g.cfg.n) ? "Next Case ▸" : "See Results ▸";
+
+  g.modalOpen = true;   // freeze movement while the results popup is up
+  document.getElementById("resultOverlay").classList.remove("hidden");
 
   updateHUD(); renderTabs(); renderPage(); updatePrompt();
-  toast("Audit filed. " + caught + " of " + real + " red flags caught.", 3800);
 }
 
 function nextCase() {
@@ -1290,6 +1295,16 @@ document.getElementById("stmtOverlay").addEventListener("click", e => {
   if (e.target.id === "stmtOverlay") closeStmt();   // click backdrop to close
 });
 
+/* results popup */
+document.getElementById("resultReview").addEventListener("click", closeResult);
+document.getElementById("resultOverlay").addEventListener("click", e => {
+  if (e.target.id === "resultOverlay") closeResult();   // click backdrop to close
+});
+document.getElementById("resultNext").addEventListener("click", () => {
+  document.getElementById("resultOverlay").classList.add("hidden");
+  nextCase();   // advances, or opens the final results if it was the last case
+});
+
 /* end modal */
 document.getElementById("playAgainBtn").addEventListener("click", () => {
   document.getElementById("overOverlay").classList.add("hidden");
@@ -1301,7 +1316,7 @@ window.addEventListener("keydown", e => {
   if (currentScreen !== "office" || !G) return;
   const k = e.key.toLowerCase();
   if (["arrowup", "arrowdown", "arrowleft", "arrowright", " "].includes(k)) e.preventDefault();
-  if (G.modalOpen) { if (k === "escape") closeStmt(); return; }
+  if (G.modalOpen) { if (k === "escape") { closeStmt(); closeResult(); } return; }
   keys[k] = true;
   if (k === "e") { e.preventDefault(); tryInteract(); }
 });
@@ -1318,20 +1333,6 @@ canvas.addEventListener("click", e => {
     if (x >= d.x && x <= d.x + d.w && y >= d.y && y <= d.y + d.h) { interact(d); break; }
   }
 });
-
-/* on-screen move pad — works by pointer, so movement never depends on key focus */
-(function bindMovePad() {
-  const map = { up: "arrowup", down: "arrowdown", left: "arrowleft", right: "arrowright" };
-  document.querySelectorAll("#movePad button").forEach(btn => {
-    const key = map[btn.getAttribute("data-dir")];
-    const press = e => { e.preventDefault(); keys[key] = true; };
-    const release = e => { e.preventDefault(); keys[key] = false; };
-    btn.addEventListener("pointerdown", press);
-    btn.addEventListener("pointerup", release);
-    btn.addEventListener("pointerleave", release);
-    btn.addEventListener("pointercancel", release);
-  });
-})();
 
 /* set the theme button labels on load */
 applyTheme(currentThemeName());
