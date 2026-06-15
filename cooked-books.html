@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cooked Books — Forensic Audit</title>
+<style>
+  :root {
+    --bg: #0c1018; --panel: #151b27; --panel-2: #1d2636; --line: #2a3650;
+    --ink: #e7edf7; --muted: #8b9bb4; --accent: #4dd6a3; --accent-2: #5b9bff;
+    --warn: #ffcf5c; --bad: #ff6b6b; --good: #4dd6a3; --shadow: 0 8px 30px rgba(0,0,0,.45);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    background: radial-gradient(1200px 700px at 70% -10%, #221a2e 0%, var(--bg) 55%);
+    color: var(--ink);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    display: flex; justify-content: center; padding: 20px; overflow-x: hidden;
+  }
+  .app { width: 100%; max-width: 860px; }
+  .screen { display: none; }
+  .screen.active { display: block; animation: fade .35s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+  /* ---------- Home ---------- */
+  .hero { position: relative; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); margin-bottom: 22px; }
+  .hero img { width: 100%; height: 240px; object-fit: cover; display: block; }
+  .hero .veil {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(12,16,24,.30) 0%, rgba(12,16,24,.93) 100%);
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 22px;
+  }
+  .hero h1 { margin: 0; font-size: 32px; letter-spacing: .3px; }
+  .hero p { margin: 6px 0 0; color: var(--muted); font-size: 14px; max-width: 560px; }
+  .howto {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px 18px; margin-bottom: 22px; font-size: 13.5px; line-height: 1.7; color: var(--muted);
+  }
+  .howto b { color: var(--ink); } .howto .flag { color: var(--bad); }
+  .pick-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 0 0 12px; }
+  .diffs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 600px){ .diffs { grid-template-columns: 1fr; } }
+  .diff-card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+    overflow: hidden; cursor: pointer; text-align: left; color: var(--ink); padding: 0;
+    transition: transform .15s, border-color .15s; display: flex; flex-direction: column;
+  }
+  .diff-card:hover { transform: translateY(-4px); border-color: var(--accent-2); }
+  .diff-card img { width: 100%; height: 108px; object-fit: cover; display: block; }
+  .diff-card .body { padding: 13px 14px 16px; }
+  .diff-card .name { font-size: 17px; font-weight: 800; }
+  .diff-card .blurb { font-size: 12px; color: var(--muted); margin-top: 5px; line-height: 1.5; }
+  .easy .name { color: var(--good); } .normal .name { color: var(--accent-2); } .hard .name { color: var(--bad); }
+
+  /* ---------- Game ---------- */
+  header.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .logo {
+    width: 42px; height: 42px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--bad), var(--warn));
+    display: grid; place-items: center; font-size: 22px; box-shadow: var(--shadow);
+  }
+  .brand h2 { font-size: 18px; margin: 0; } .brand small { color: var(--muted); font-size: 12px; }
+  .hud { display: flex; gap: 10px; }
+  .hud .box { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 8px 16px; text-align: center; min-width: 84px; }
+  .hud .box .big { font-size: 20px; font-weight: 800; } .hud .box .lab { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  #scoreBox .big { color: var(--accent); }
+
+  .casehead { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; margin-bottom: 16px; box-shadow: var(--shadow); }
+  .casehead .co { font-size: 20px; font-weight: 800; }
+  .casehead .sector { color: var(--muted); font-size: 12px; margin-top: 2px; }
+  .casehead .intro { font-size: 13.5px; color: var(--muted); line-height: 1.6; margin-top: 8px; }
+  .casehead .instruct { font-size: 12.5px; color: var(--accent-2); margin-top: 10px; }
+  .casehead .hintline { font-size: 12px; color: var(--warn); margin-top: 6px; }
+
+  /* file tabs */
+  .filebar { display: flex; gap: 6px; flex-wrap: wrap; }
+  .filetab {
+    background: var(--panel); border: 1px solid var(--line); border-bottom: none;
+    border-radius: 10px 10px 0 0; padding: 9px 13px; cursor: pointer; color: var(--muted);
+    font-size: 12.5px; font-weight: 700; display: flex; align-items: center; gap: 7px; position: relative; top: 1px;
+  }
+  .filetab:hover { color: var(--ink); }
+  .filetab.active { background: #fbfaf5; color: #1a2230; border-color: #cfd6e4; }
+  .filetab .od { width: 7px; height: 7px; border-radius: 50%; background: var(--line); }
+  .filetab.opened .od { background: var(--accent); }
+  .filetab .fb { background: var(--bad); color: #fff; border-radius: 999px; font-size: 10px; padding: 0 6px; font-weight: 800; }
+
+  /* the "paper" document */
+  .page { background: #fbfaf5; color: #1a2230; border: 1px solid #cfd6e4; border-radius: 0 12px 12px 12px; padding: 24px 26px; box-shadow: var(--shadow); min-height: 320px; }
+  .page .doc-co { font-size: 12px; letter-spacing: .5px; text-transform: uppercase; color: #6b7280; }
+  .page .doc-title { font-size: 20px; font-weight: 800; margin: 2px 0; }
+  .page .doc-sub { font-size: 12px; color: #6b7280; }
+  .page table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  .page th { text-align: right; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: #6b7280; padding: 0 0 6px 24px; border-bottom: 1px solid #cfd6e4; }
+  .page th.lbl { text-align: left; padding-left: 0; }
+  .page td { padding: 6px 4px; font-size: 14px; border-bottom: 1px solid #eceae2; }
+  .page td.num { text-align: right; font-variant-numeric: tabular-nums; padding-left: 28px; white-space: nowrap; }
+  .page td.lbl { padding-left: 4px; }
+  .flagmark { display: inline-block; min-width: 1.5em; font-size: 13px; }
+  .page tr.section td { font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: .6px; color: #6b7280; padding-top: 15px; border: none; }
+  .page tr.spacer td { border: none; padding: 4px; }
+  .page tr.subtotal td { font-weight: 800; border-top: 2px solid #1a2230; border-bottom: none; }
+  .page tr.detail td { color: #52606d; font-size: 13px; }
+  .page tr.q { cursor: pointer; }
+  .page tr.q:hover td { background: #fff3c4; }
+  .page tr.flag-on td { background: #ffe27a; }
+  .page tr.correct td { background: #bff0d4; }
+  .page tr.missed td { background: #ffe2a3; }
+  .page tr.false td { background: #ffc9c9; }
+  .page tr.false td.lbl { text-decoration: line-through; text-decoration-color: #c0392b; }
+  .vtag { font-size: 9.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; padding: 1px 7px; border-radius: 999px; margin-left: 8px; }
+  .vt-correct { background: #1f9d63; color: #fff; } .vt-missed { background: #c98a12; color: #fff; } .vt-false { background: #c0392b; color: #fff; }
+  .page tr.why-row td { border: none; padding: 0 4px 10px; }
+  .whybox { font-size: 12.5px; line-height: 1.55; padding: 9px 12px; border-radius: 8px; background: rgba(0,0,0,.05); border-left: 3px solid #999; }
+  .whybox.correct { border-left-color: #1f9d63; } .whybox.missed { border-left-color: #c98a12; } .whybox.false { border-left-color: #c0392b; }
+
+  /* notes documents */
+  .note { padding: 13px 6px; border-bottom: 1px solid #eceae2; border-radius: 6px; }
+  .note.q { cursor: pointer; } .note.q:hover { background: #fff3c4; }
+  .note.flag-on { background: #ffe27a; } .note.correct { background: #bff0d4; } .note.missed { background: #ffe2a3; } .note.false { background: #ffc9c9; }
+  .note .nlabel { font-weight: 800; font-size: 14px; }
+  .note .ntext { font-size: 13.5px; color: #3a4250; margin-top: 4px; line-height: 1.6; }
+  .note .nwhy { font-size: 12.5px; line-height: 1.55; margin-top: 9px; padding: 9px 12px; border-radius: 8px; background: rgba(0,0,0,.06); border-left: 3px solid #999; }
+  .note.correct .nwhy { border-left-color: #1f9d63; } .note.missed .nwhy { border-left-color: #c98a12; } .note.false .nwhy { border-left-color: #c0392b; }
+
+  .flagbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 16px 0 8px; flex-wrap: wrap; }
+  .flagbar .meta { font-size: 12.5px; color: var(--muted); }
+  .flagbar .meta b { color: var(--ink); }
+  .actions { display: flex; gap: 10px; }
+  .btn { padding: 14px 22px; border: none; border-radius: 12px; cursor: pointer; font-size: 15px; font-weight: 800; transition: .15s; color: #08111f; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+  .btn:hover { filter: brightness(1.08); transform: translateY(-1px); } .btn:active { transform: translateY(1px); }
+  .btn.ghost { background: var(--panel-2); color: var(--ink); border: 1px solid var(--line); padding: 14px 18px; }
+
+  .caseresult { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin: 14px 0; font-size: 13.5px; line-height: 1.6; display: none; box-shadow: var(--shadow); }
+  .caseresult.show { display: block; }
+  .caseresult .big { font-size: 16px; font-weight: 800; }
+  .caseresult .g { color: var(--good); } .caseresult .y { color: var(--warn); } .caseresult .r { color: var(--bad); }
+  footer { margin-top: 14px; text-align: center; color: var(--muted); font-size: 11px; }
+
+  /* ---------- End ---------- */
+  .overlay { position: fixed; inset: 0; background: rgba(5,8,14,.85); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 50; backdrop-filter: blur(2px); }
+  .overlay.hidden { display: none; }
+  .modal { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 28px; max-width: 460px; width: 100%; box-shadow: var(--shadow); text-align: center; animation: fade .3s ease; }
+  .modal h2 { margin: 0 0 4px; font-size: 24px; } .modal .grade { font-size: 64px; font-weight: 800; margin: 6px 0; }
+  .modal .final { font-size: 28px; font-weight: 800; color: var(--accent); }
+  .modal .breakdown { font-size: 13px; color: var(--muted); margin: 12px 0; line-height: 1.7; } .modal p { color: var(--muted); line-height: 1.6; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ============ HOME ============ -->
+  <section class="screen active" id="home">
+    <div class="hero">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80" alt="Auditor's desk with documents and a calculator" />
+      <div class="veil">
+        <h1>🔍 Cooked Books</h1>
+        <p>You're the forensic auditor. Management swears the numbers are clean. Open each company's financial statements, read them like the real thing — and click any figure or note that's a red flag.</p>
+      </div>
+    </div>
+    <div class="howto">
+      <b>How to play:</b> Each case gives you a company and a set of <b>files</b> — income statement, balance sheet, cash flow, notes.
+      Open each one and read it. When something looks like a <span class="flag">red flag</span> (a sign of fraud or earnings manipulation), <span class="flag">click that line or note</span> to highlight it.
+      When you've examined everything, <b>Submit Audit</b>. You earn points for every real red flag you <b>catch</b>, lose points for <b>false accusations</b>, and (on harder levels) for flags you <b>miss</b>.
+      The clues corroborate across files — a number on one page is often explained by a note on another.
+    </div>
+    <p class="pick-label">Choose your engagement</p>
+    <div class="diffs">
+      <button class="diff-card easy" data-diff="easy">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=70" alt="Reviewing documents" />
+        <div class="body"><div class="name">Junior Auditor</div>
+          <div class="blurb">2 companies. Clearer red flags, the flag count is shown, and a missed flag costs nothing. Learn the trade.</div></div>
+      </button>
+      <button class="diff-card normal" data-diff="normal">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=70" alt="Financial dashboard" />
+        <div class="body"><div class="name">Senior Auditor</div>
+          <div class="blurb">3 companies. Subtler tricks, no hints, and missed red flags cost you. The standard engagement.</div></div>
+      </button>
+      <button class="diff-card hard" data-diff="hard">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=70" alt="Complex analytics" />
+        <div class="body"><div class="name">Forensic Partner</div>
+          <div class="blurb">4 companies, including a devious conglomerate. Heavy decoys, harsh penalties for crying wolf.</div></div>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ GAME ============ -->
+  <section class="screen" id="game">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">🔍</div>
+        <div><h2>Cooked Books</h2><small id="diffLabel">—</small></div>
+      </div>
+      <div class="hud">
+        <div class="box" id="scoreBox"><div class="big" id="scoreVal">0</div><div class="lab">Score</div></div>
+        <div class="box"><div class="big" id="caseVal">1</div><div class="lab" id="caseTerm">Case 1 / 2</div></div>
+      </div>
+    </header>
+
+    <div class="casehead">
+      <div class="co" id="coName">—</div>
+      <div class="sector" id="coSector">—</div>
+      <div class="intro" id="coIntro">—</div>
+      <div class="instruct">📂 Open each file below, read it, and click any suspicious figure or note. Switch freely between files — your flags are saved.</div>
+      <div class="hintline" id="coHint"></div>
+    </div>
+
+    <div class="filebar" id="fileTabs"></div>
+    <div class="page" id="page"></div>
+
+    <div class="caseresult" id="caseResult"></div>
+
+    <div class="flagbar">
+      <div class="meta"><b id="flagCount">0</b> items flagged &nbsp;·&nbsp; files examined <b id="openCount">0/0</b></div>
+      <div class="actions">
+        <button class="btn" id="submitBtn">Submit Audit</button>
+        <button class="btn ghost" id="homeBtn" title="Quit to menu">⌂</button>
+      </div>
+    </div>
+
+    <footer>Read every file · flag the red flags · don't accuse the innocent</footer>
+  </section>
+</div>
+
+<!-- ============ END ============ -->
+<div class="overlay hidden" id="overOverlay">
+  <div class="modal">
+    <h2 id="overTitle">Engagement complete</h2>
+    <div class="grade" id="overGrade">A</div>
+    <div class="final" id="overScore">0 pts</div>
+    <div class="breakdown" id="overBreak"></div>
+    <p id="overVerdict"></p>
+    <div class="actions" style="margin-top:18px; justify-content:center;">
+      <button class="btn" id="playAgainBtn">New Engagement</button>
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+
+/* ============================================================
+   Cooked Books — a forensic audit game
+   Each case = a company with several files (statements + notes).
+   Flaggable rows/notes carry a `flag` property (true = red flag,
+   false = clean decoy). Rows without `flag` are not clickable.
+   Numbers are internally consistent so a careful reader can
+   actually spot the anomalies across files.
+   ============================================================ */
+
+const CASES = [
+
+  /* ---------------- CASE 1 · Northwind Retail (clearest) ---------------- */
+  {
+    co: "Northwind Retail Co.", sector: "Consumer retail · audit file FY2024",
+    intro: "A fast-growing retailer reporting a blockbuster year ahead of a planned IPO. Profit is up sharply. Your job is to check whether the rest of the statements agree with that story.",
+    files: [
+      { name: "Income Statement", title: "Statement of Profit or Loss", period: "For the year ended 31 December 2024", unit: "(in US$ millions)", cols: ["2024","2023"], rows: [
+        { label: "Revenue", vals: ["1,420","1,000"], flag: false, why: "Revenue grew 42%. Rapid growth alone is not fraud — what matters is whether it turns into cash and isn't sitting in receivables." },
+        { label: "Cost of sales", vals: ["(951)","(670)"], flag: false, why: "Cost of sales rose in proportion to revenue; the gross margin is unchanged at ~33%. Nothing odd." },
+        { type: "subtotal", label: "Gross profit", vals: ["469","330"] },
+        { label: "Selling & administrative expenses", vals: ["(300)","(235)"], flag: false, why: "Overheads scaled with the business — unremarkable." },
+        { label: "Other income", vals: ["95","6"], flag: true, why: "Other income leapt from 6 to 95 and is over a third of operating profit, with only a one-line note. Large, unexplained 'other income' is a classic way to flatter earnings." },
+        { type: "subtotal", label: "Operating profit", vals: ["264","101"] },
+        { label: "Finance costs", vals: ["(28)","(32)"], flag: false, why: "Interest cost is broadly stable." },
+        { type: "subtotal", label: "Profit before tax", vals: ["236","69"] },
+        { label: "Income tax expense", vals: ["(59)","(17)"], flag: false, why: "The effective tax rate (~25%) is consistent year on year." },
+        { type: "subtotal", label: "Profit for the year", vals: ["177","52"] },
+      ]},
+      { name: "Balance Sheet", title: "Statement of Financial Position", period: "As at 31 December 2024", unit: "(in US$ millions)", cols: ["2024","2023"], rows: [
+        { type: "section", label: "Non-current assets" },
+        { label: "Property, plant & equipment", vals: ["410","395"], flag: false, why: "Moves in line with the capex and depreciation in the cash flow statement." },
+        { label: "Goodwill", vals: ["60","60"], flag: false, why: "Unchanged and a small share of assets — no concern." },
+        { type: "section", label: "Current assets" },
+        { label: "Inventories", vals: ["221","196"], flag: false, why: "Inventory rose ~13%, broadly consistent with the business." },
+        { label: "Trade receivables", vals: ["350","150"], flag: true, why: "Receivables jumped 133% while revenue rose only 42%. Customers owe far more than sales growth justifies — the hallmark of channel-stuffing or booking sales that may never be collected." },
+        { label: "Other current assets", vals: ["28","22"], flag: false, why: "Immaterial movement." },
+        { label: "Cash & cash equivalents", vals: ["40","95"], flag: false, why: "Cash fell sharply — a symptom worth noting, but the cash balance itself isn't manipulated. The real signal is in the cash flow statement." },
+        { type: "subtotal", label: "Total assets", vals: ["1,109","918"] },
+        { type: "section", label: "Equity" },
+        { label: "Share capital", vals: ["200","200"], flag: false, why: "Unchanged." },
+        { label: "Retained earnings", vals: ["429","292"], flag: false, why: "Moves by profit (177) less dividends (40) — reconciles cleanly." },
+        { type: "section", label: "Liabilities" },
+        { label: "Long-term borrowings", vals: ["325","230"], flag: false, why: "Borrowings rose to fund the cash shortfall. Higher leverage is a risk, but taking on disclosed debt isn't accounting manipulation in itself." },
+        { label: "Trade payables", vals: ["115","130"], flag: false, why: "Normal movement." },
+        { label: "Other payables & accruals", vals: ["40","66"], flag: false, why: "Immaterial movement." },
+        { type: "subtotal", label: "Total equity & liabilities", vals: ["1,109","918"] },
+      ]},
+      { name: "Cash Flow", title: "Statement of Cash Flows", period: "For the year ended 31 December 2024", unit: "(in US$ millions)", cols: ["2024","2023"], rows: [
+        { type: "section", label: "Operating activities" },
+        { type: "detail", label: "Profit before tax", vals: ["236","69"] },
+        { type: "detail", label: "Depreciation & amortisation", vals: ["45","42"] },
+        { type: "detail", label: "Increase in trade receivables", vals: ["(200)","(20)"] },
+        { type: "detail", label: "Increase in inventories", vals: ["(25)","(18)"] },
+        { type: "detail", label: "Decrease in trade payables", vals: ["(15)","(4)"] },
+        { type: "detail", label: "Interest paid", vals: ["(28)","(32)"] },
+        { type: "detail", label: "Income tax paid", vals: ["(57)","(15)"] },
+        { type: "detail", label: "Other working-capital movements", vals: ["(6)","8"] },
+        { label: "Net cash from operating activities", vals: ["(50)","110"], style: "subtotal", flag: true, why: "Operating cash flow is NEGATIVE 50 even though the company reported a 177 profit. Profit that doesn't convert into cash is one of the strongest warning signs in forensic accounting — it ties directly to the receivables explosion." },
+        { type: "section", label: "Investing activities" },
+        { type: "detail", label: "Purchase of property, plant & equipment", vals: ["(60)","(55)"] },
+        { label: "Net cash used in investing activities", vals: ["(60)","(55)"], style: "subtotal", flag: false, why: "Capex in line with prior year and with the PP&E movement — unremarkable." },
+        { type: "section", label: "Financing activities" },
+        { type: "detail", label: "Proceeds from borrowings", vals: ["95","30"] },
+        { type: "detail", label: "Dividends paid", vals: ["(40)","(40)"] },
+        { label: "Net cash from financing activities", vals: ["55","(10)"], style: "subtotal", flag: false, why: "The company borrowed to plug the cash gap — a consequence of the operating shortfall, not an accounting trick in itself." },
+        { type: "subtotal", label: "Net decrease in cash", vals: ["(55)","45"] },
+      ]},
+      { name: "Notes", title: "Notes to the Financial Statements", period: "Year ended 31 December 2024", notes: [
+        { label: "Note 1 — Basis of preparation", text: "The financial statements are prepared under IFRS on a going-concern basis, consistent with prior years.", flag: false, why: "Standard boilerplate — no issue." },
+        { label: "Note 2 — Revenue recognition", text: "Revenue is recognised when control of goods passes to the customer. During the year the group extended standard credit terms to key wholesale customers from 30 to 90 days to support sales growth.", flag: true, why: "Quietly tripling customer credit terms 'to support sales growth' is exactly how receivables balloon and weak sales get pulled forward. This note both explains and confirms the receivables red flag." },
+        { label: "Note 3 — Other income", text: "Other income of 95 comprises sundry items. Further detail has not been provided.", flag: true, why: "A material 95 dismissed as 'sundry items' with no breakdown is a deliberate gap in disclosure — precisely where fabricated or one-off gains hide." },
+        { label: "Note 4 — Dividends", text: "A dividend of 40 was paid during the year, consistent with the group's stated policy.", flag: false, why: "Routine, disclosed and consistent — not a concern." },
+      ]},
+    ],
+  },
+
+  /* ---------------- CASE 2 · Aurora Software ---------------- */
+  {
+    co: "Aurora Software Inc.", sector: "Enterprise software / SaaS · FY2024",
+    intro: "A high-flying software firm with margins that make its rivals envious. The growth story is dazzling. Check whether the accounting choices behind it hold up.",
+    files: [
+      { name: "Income Statement", title: "Statement of Profit or Loss", period: "For the year ended 31 December 2024", unit: "(in US$ millions)", cols: ["2024","2023"], rows: [
+        { label: "Revenue", vals: ["400","300"], flag: false, why: "Strong growth — but see Note 2: the precise, identical quarterly figures behind this total are the real concern, not the growth itself." },
+        { label: "Cost of sales", vals: ["(140)","(120)"], flag: false, why: "Gross margin is high but stable for software; not itself a flag." },
+        { type: "subtotal", label: "Gross profit", vals: ["260","180"] },
+        { label: "Research & development", vals: ["(60)","(45)"], flag: false, why: "R&D is expensed as incurred — conservative, correct accounting. A decoy designed to look relevant." },
+        { label: "Sales & marketing", vals: ["(70)","(60)"], flag: false, why: "Scales with growth — unremarkable." },
+        { type: "subtotal", label: "Operating profit", vals: ["130","75"] },
+        { label: "Income tax expense", vals: ["(33)","(19)"], flag: false, why: "Effective rate ~25%, consistent year on year." },
+        { type: "subtotal", label: "Profit for the year", vals: ["97","56"] },
+      ]},
+      { name: "Balance Sheet", title: "Statement of Financial Position", period: "As at 31 December 2024", unit: "(in US$ millions)", cols: ["2024","2023"], rows: [
+        { type: "section", label: "Non-current assets" },
+        { label: "Property, plant & equipment", vals: ["90","85"], flag: false, why: "Stable." },
+        { label: "Capitalised software & development costs", vals: ["180","70"], flag: true, why: "The capitalised-software asset more than doubled. Per Note 3 this now includes routine maintenance that was previously expensed — shifting ordinary costs onto the balance sheet inflates current profit." },
+        { type: "section", label: "Current assets" },
+        { type: "detail", label: "Trade receivables (gross)", vals: ["120","90"] },
+        { label: "Less: allowance for doubtful debts", vals: ["(2)","(6)"], flag: true, why: "The bad-debt allowance was cut from ~6% to under 2% of receivables even as the balance grew and collections slowed — releasing reserves to boost profit, the opposite of prudence." },
+        { type: "subtotal", label: "Trade receivables (net)", vals: ["118","84"] },
+        { label: "Cash & cash equivalents", vals: ["60","75"], flag: false, why: "Down modestly; not a flag on its own." },
+        { type: "subtotal", label: "Total assets", vals: ["448","314"] },
+        { type: "section", label: "Equity" },
+        { label: "Share capital", vals: ["100","100"], flag: false, why: "Unchanged." },
+        { label: "Retained earnings", vals: ["178","89"], flag: false, why: "Moves with profit — reconciles." },
+        { type: "section", label: "Liabilities" },
+        { label: "Deferred revenue", vals: ["90","60"], flag: false, why: "Deferred revenue growing with the subscriber base is healthy and completely normal for a subscription business — a tempting decoy." },
+        { label: "Borrowings", vals: ["50","40"], flag: false, why: "Modest, stable leverage." },
+        { label: "Trade payables", vals: ["30","25"], flag: false, why: "Normal." },
+        { type: "subtotal", label: "Total equity & liabilities", vals: ["448","314"] },
+      ]},
+      { name: "Notes", title: "Notes to the Financial Statements", period: "Year ended 31 December 2024", notes: [
+        { label: "Note 1 — Basis of preparation", text: "Prepared under IFRS, consistent with prior years except for the policy change described in Note 3.", flag: false, why: "Boilerplate, though it points you to Note 3." },
+        { label: "Note 2 — Revenue", text: "Software-licence revenue was 100 in each of the four quarters of the year (400 in total).", flag: true, why: "Revenue landing on exactly 100 every single quarter is statistically implausible — a strong sign numbers are being managed to a target rather than reported as they occur." },
+        { label: "Note 3 — Capitalisation policy", text: "From this year, the costs of maintaining and updating existing software are capitalised and amortised over five years; previously such costs were expensed as incurred.", flag: true, why: "A convenient mid-stream policy change to capitalise routine maintenance is what inflated the intangible asset and the year's profit." },
+        { label: "Note 4 — Key management", text: "The Chief Financial Officer has held office for nine years.", flag: false, why: "A long-tenured, stable finance chief is reassuring — a decoy crafted to look meaningful." },
+        { label: "Note 5 — Profitability", text: "The group's net profit margin of 24% compares with an industry average of approximately 9%.", flag: true, why: "A margin more than double every peer, combined with the aggressive accounting choices above, is 'too good to be true' and demands scrutiny." },
+      ]},
+    ],
+  },
+
+  /* ---------------- CASE 3 · Meridian Manufacturing ---------------- */
+  {
+    co: "Meridian Manufacturing", sector: "Industrial manufacturing · FY2024",
+    intro: "An old-line manufacturer that just beat expectations after two weak years, even as its share price slid 40%. The turnaround looks almost too tidy. Examine the books.",
+    files: [
+      { name: "Income Statement", title: "Statement of Profit or Loss", period: "For the year ended 31 December 2024", unit: "(in US$ millions)", cols: ["2024","2023"], rows: [
+        { label: "Revenue", vals: ["612","577"], flag: false, why: "Revenue rose only ~6% — modest. Hold this number in mind when you look at inventories." },
+        { label: "Cost of sales", vals: ["(430)","(415)"], flag: false, why: "In line with revenue." },
+        { type: "subtotal", label: "Gross profit", vals: ["182","162"] },
+        { label: "Operating expenses", vals: ["(120)","(118)"], flag: false, why: "Flat — unremarkable." },
+        { type: "subtotal", label: "Operating profit", vals: ["62","44"] },
+        { label: "Finance costs", vals: ["(10)","(11)"], flag: false, why: "Low and stable — leverage is modest." },
+        { type: "subtotal", label: "Profit before tax", vals: ["52","33"] },
+        { label: "Income tax expense", vals: ["(13)","(8)"], flag: false, why: "Effective rate ~25%." },
+        { type: "subtotal", label: "Profit for the year", vals: ["39","25"] },
+      ]},
+      { name: "Balance Sheet", title: "Statement of Financial Position", period: "As at 31 December 2024", unit: "(in US$ millions)", cols: ["2024","2023"], rows: [
+        { type: "section", label: "Non-current assets" },
+        { label: "Property, plant & equipment", vals: ["120","125"], flag: false, why: "Stable." },
+        { label: "Goodwill", vals: ["700","700"], flag: true, why: "Goodwill is over half of total assets and has NOT been impaired despite a 40% fall in the share price. Avoiding the impairment test keeps overvalued assets propping up equity." },
+        { type: "section", label: "Current assets" },
+        { label: "Inventories", vals: ["240","150"], flag: true, why: "Inventory grew 60% while revenue rose only 6%. Stock building up far ahead of sales is likely obsolete or overstated — and parking costs in inventory defers them from the income statement." },
+        { label: "Trade receivables", vals: ["95","90"], flag: false, why: "In line with sales — fine." },
+        { label: "Cash & cash equivalents", vals: ["105","95"], flag: false, why: "Healthy and rising." },
+        { type: "subtotal", label: "Total assets", vals: ["1,260","1,160"] },
+        { type: "section", label: "Equity" },
+        { label: "Share capital", vals: ["150","150"], flag: false, why: "Unchanged." },
+        { label: "Retained earnings", vals: ["740","625"], flag: false, why: "Moves with profit." },
+        { type: "section", label: "Liabilities" },
+        { label: "Long-term borrowings", vals: ["200","210"], flag: false, why: "Debt-to-equity is only ~0.22 and falling — below the industry. A genuine strength, not a flag." },
+        { label: "Trade payables", vals: ["110","120"], flag: false, why: "Normal." },
+        { label: "Provisions", vals: ["60","55"], flag: false, why: "Immaterial movement." },
+        { type: "subtotal", label: "Total equity & liabilities", vals: ["1,260","1,160"] },
+      ]},
+      { name: "Notes", title: "Notes to the Financial Statements", period: "Year ended 31 December 2024", notes: [
+        { label: "Note 1 — Restatement of comparatives", text: "Prior-year profit has been restated downward by 18% to correct the timing of revenue recognised on certain long-term contracts.", flag: true, why: "A downward restatement is an admission the earlier numbers were wrong, and signals an aggressive revenue-recognition culture worth probing." },
+        { label: "Note 2 — Goodwill", text: "Goodwill is allocated to the Industrial segment. No impairment charge was recognised in the year; the directors consider that no impairment indicators are present.", flag: true, why: "Claiming 'no impairment indicators' while the market value of the company has crashed 40% is an untenable judgement that keeps inflated goodwill on the books." },
+        { label: "Note 3 — Subsequent events", text: "On 2 February 2025 the Chief Financial Officer resigned with immediate effect, citing personal reasons.", flag: true, why: "An abrupt CFO departure right around the reporting date is a recognised warning sign — finance chiefs often leave before problems surface." },
+        { label: "Note 4 — Pensions", text: "The group's defined-benefit pension plan is fully funded on an actuarial basis.", flag: false, why: "A fully funded pension is a good sign — a decoy." },
+        { label: "Note 5 — Legal", text: "A one-off legal settlement of 14 was recognised during the year; the related cash outflow is reflected in the period.", flag: false, why: "A clearly disclosed one-off, with its cash effect shown, is exactly what good reporting looks like — a decoy." },
+      ]},
+    ],
+  },
+
+  /* ---------------- CASE 4 · Helios Energy (hardest) ---------------- */
+  {
+    co: "Helios Energy Holdings", sector: "Energy conglomerate · group accounts FY2024",
+    intro: "A sprawling energy group with a dizzying structure and a charismatic CEO. The headline numbers look strong. Your predecessors didn't last long in this seat. Read carefully — and read the auditor's report.",
+    files: [
+      { name: "Income Statement", title: "Consolidated Statement of Profit or Loss", period: "For the year ended 31 December 2024", unit: "(in US$ millions)", cols: ["2024","2023"], rows: [
+        { label: "Revenue", vals: ["2,600","2,100"], flag: false, why: "Growth of ~24%; not a flag by itself — but compare it with the receivables on the balance sheet." },
+        { label: "Cost of sales", vals: ["(1,900)","(1,560)"], flag: false, why: "In proportion to revenue." },
+        { type: "subtotal", label: "Gross profit", vals: ["700","540"] },
+        { label: "Administrative expenses", vals: ["(240)","(210)"], flag: false, why: "Scales with the business." },
+        { label: "Share of profit from associates", vals: ["180","40"], flag: true, why: "Profit is increasingly coming from opaque associates rather than core operations — and per the notes those entities are tied to related parties and off-balance-sheet vehicles. A favourite place to book soft, hard-to-verify profit." },
+        { type: "subtotal", label: "Operating profit", vals: ["640","370"] },
+        { label: "Finance costs", vals: ["(160)","(120)"], flag: false, why: "High but disclosed on the balance sheet. The bigger worry is the debt that is NOT on the balance sheet (see notes)." },
+        { type: "subtotal", label: "Profit before tax", vals: ["480","250"] },
+        { label: "Income tax expense", vals: ["(120)","(62)"], flag: false, why: "Effective rate ~25%, consistent." },
+        { type: "subtotal", label: "Profit for the year", vals: ["360","188"] },
+      ]},
+      { name: "Balance Sheet", title: "Consolidated Statement of Financial Position", period: "As at 31 December 2024", unit: "(in US$ millions)", cols: ["2024","2023"], rows: [
+        { type: "section", label: "Non-current assets" },
+        { label: "Property, plant & equipment", vals: ["1,800","1,700"], flag: false, why: "Stable for a capital-heavy energy group." },
+        { label: "Investments in associates & special-purpose entities", vals: ["900","300"], flag: true, why: "Investments in unconsolidated entities tripled in a year. Read with Note 2, these are the vehicles being used to park debt and assets off the group's balance sheet." },
+        { type: "section", label: "Current assets" },
+        { label: "Trade receivables", vals: ["980","520"], flag: true, why: "Receivables rose 88% while revenue rose only 24% — days-sales-outstanding leapt from ~90 to ~138 days. The group is booking revenue it isn't collecting." },
+        { label: "Cash & cash equivalents", vals: ["120","240"], flag: false, why: "Down, but not itself manipulated." },
+        { type: "subtotal", label: "Total assets", vals: ["3,800","2,760"] },
+        { type: "section", label: "Equity" },
+        { label: "Share capital", vals: ["500","500"], flag: false, why: "Unchanged." },
+        { label: "Retained earnings", vals: ["1,300","700"], flag: false, why: "Grows with profit." },
+        { type: "section", label: "Liabilities" },
+        { label: "Long-term borrowings", vals: ["1,500","1,200"], flag: false, why: "High but on the balance sheet and disclosed. The concern is the additional debt hidden OFF balance sheet, per Note 2." },
+        { label: "Other long-term liabilities", vals: ["200","100"], flag: false, why: "Immaterial in context." },
+        { label: "Trade payables", vals: ["300","260"], flag: false, why: "Normal." },
+        { type: "subtotal", label: "Total equity & liabilities", vals: ["3,800","2,760"] },
+      ]},
+      { name: "Notes", title: "Notes to the Financial Statements", period: "Year ended 31 December 2024", notes: [
+        { label: "Note 1 — Basis of preparation", text: "Prepared under IFRS on a going-concern basis.", flag: false, why: "Boilerplate." },
+        { label: "Note 2 — Off-balance-sheet arrangements", text: "The group has established a number of special-purpose entities which hold the majority of the group's project financing (approximately 1,400). These entities are not consolidated, as the group does not hold a majority equity interest.", flag: true, why: "Most of the group's debt sits in unconsolidated SPEs — the Enron playbook. The balance sheet vastly understates true leverage." },
+        { label: "Note 3 — Related-party transactions", text: "Revenue of 210 was recognised on sales to Sunfield Trading, an entity controlled by a member of the Chief Executive's family.", flag: true, why: "Material sales to a relative's company can manufacture revenue with no genuine arm's-length substance behind it." },
+        { label: "Note 4 — Dividends", text: "A final dividend was proposed in line with the group's progressive dividend policy.", flag: false, why: "Routine and disclosed — a decoy." },
+      ]},
+      { name: "Auditor's Report", title: "Independent Auditor's Report", period: "To the members of Helios Energy Holdings", notes: [
+        { label: "Opinion", text: "In our opinion, the financial statements give a true and fair view of the state of the group's affairs as at 31 December 2024.", flag: false, why: "A clean opinion on its own is not a flag — though here it sits uncomfortably beside what follows." },
+        { label: "Appointment & tenure", text: "We were appointed as auditor on 14 January 2024. We are the group's third firm of auditors in three years; the predecessor auditor resigned citing 'disagreements over the recognition of certain revenue and the consolidation of related entities.'", flag: true, why: "Three auditors in three years, with a predecessor resigning over revenue recognition and consolidation disputes, is a screaming sign of opinion-shopping — and points straight at the issues in Notes 2 and 3." },
+        { label: "Responsibilities", text: "The directors are responsible for the preparation of the financial statements and for being satisfied that they give a true and fair view.", flag: false, why: "Standard wording — no issue." },
+      ]},
+    ],
+  },
+];
+
+const DIFF = {
+  easy:   { label: "Junior Auditor",   n: 2, ptCatch: 100, penFalse: 30,  penMiss: 0,   hints: true  },
+  normal: { label: "Senior Auditor",   n: 3, ptCatch: 100, penFalse: 60,  penMiss: 30,  hints: false },
+  hard:   { label: "Forensic Partner", n: 4, ptCatch: 100, penFalse: 100, penMiss: 60,  hints: false },
+};
+
+let G = null;
+
+/* iterate flaggable entries of a case: cb(row, id, fileIdx, file) */
+function eachFlaggable(c, cb) {
+  c.files.forEach((file, fi) => {
+    const arr = file.rows || file.notes || [];
+    arr.forEach((row, ri) => { if ("flag" in row) cb(row, fi + "|" + ri, fi, file); });
+  });
+}
+
+function startGame(diff) {
+  const cfg = DIFF[diff];
+  G = { diff, cfg, cases: CASES.slice(0, cfg.n), idx: 0, score: 0,
+        flagged: new Set(), opened: new Set(), submitted: false, fileIdx: 0,
+        totals: { catch: 0, miss: 0, false: 0, real: 0 } };
+  document.getElementById("diffLabel").textContent = cfg.label + " · " + cfg.n + " companies";
+  showScreen("game");
+  loadCase();
+}
+
+function loadCase() {
+  const g = G, c = g.cases[g.idx];
+  g.flagged = new Set(); g.opened = new Set(); g.submitted = false; g.fileIdx = 0;
+
+  document.getElementById("scoreVal").textContent = g.score.toLocaleString();
+  document.getElementById("caseVal").textContent = g.idx + 1;
+  document.getElementById("caseTerm").textContent = "Case " + (g.idx + 1) + " / " + g.cfg.n;
+  document.getElementById("coName").textContent = c.co;
+  document.getElementById("coSector").textContent = c.sector;
+  document.getElementById("coIntro").textContent = c.intro;
+
+  const hint = document.getElementById("coHint");
+  if (g.cfg.hints) {
+    let n = 0; eachFlaggable(c, r => { if (r.flag) n++; });
+    hint.textContent = "🔎 Intelligence: this company is hiding " + n + " red flag" + (n === 1 ? "" : "s") + " across its files.";
+  } else hint.textContent = "";
+
+  document.getElementById("caseResult").classList.remove("show");
+  const btn = document.getElementById("submitBtn");
+  btn.textContent = "Submit Audit"; btn.disabled = false;
+
+  renderTabs(); renderPage(); updateBar();
+}
+
+function renderTabs() {
+  const g = G, c = g.cases[g.idx];
+  const bar = document.getElementById("fileTabs");
+  bar.innerHTML = "";
+  c.files.forEach((file, fi) => {
+    const flags = [...g.flagged].filter(id => id.split("|")[0] === String(fi)).length;
+    const t = document.createElement("button");
+    t.className = "filetab" + (fi === g.fileIdx ? " active" : "") + (g.opened.has(fi) ? " opened" : "");
+    t.innerHTML = '<span class="od"></span>' + file.name +
+                  (!g.submitted && flags ? ' <span class="fb">' + flags + '</span>' : "");
+    t.addEventListener("click", () => { g.fileIdx = fi; renderTabs(); renderPage(); });
+    bar.appendChild(t);
+  });
+}
+
+function verdictOf(row, flagged) {
+  if (row.flag && flagged) return "correct";
+  if (row.flag && !flagged) return "missed";
+  if (!row.flag && flagged) return "false";
+  return "";
+}
+const VTAGS = { correct: "caught", missed: "missed flag", false: "false alarm" };
+
+function renderPage() {
+  const g = G, c = g.cases[g.idx], file = c.files[g.fileIdx];
+  g.opened.add(g.fileIdx);
+  const page = document.getElementById("page");
+
+  let html = '<div class="doc-co">' + c.co + '</div>' +
+             '<div class="doc-title">' + file.title + '</div>' +
+             '<div class="doc-sub">' + file.period + (file.unit ? " &nbsp;·&nbsp; " + file.unit : "") + '</div>';
+
+  if (file.rows) {
+    const cols = file.cols || [];
+    html += '<table><tr><th class="lbl">&nbsp;</th>' + cols.map(ccol => '<th>' + ccol + '</th>').join("") + '</tr>';
+    file.rows.forEach((row, ri) => {
+      if (row.type === "section") { html += '<tr class="section"><td colspan="' + (cols.length + 1) + '">' + row.label + '</td></tr>'; return; }
+      if (row.type === "spacer") { html += '<tr class="spacer"><td colspan="' + (cols.length + 1) + '"></td></tr>'; return; }
+      const clickable = "flag" in row;
+      const id = g.fileIdx + "|" + ri;
+      const flagged = g.flagged.has(id);
+      const cls = [];
+      if (row.type === "subtotal" || row.style === "subtotal") cls.push("subtotal");
+      if (row.type === "detail") cls.push("detail");
+      let mark = "", tag = "";
+      if (clickable) {
+        cls.push("q");
+        if (!g.submitted) { if (flagged) { cls.push("flag-on"); mark = "🚩"; } }
+        else {
+          const v = verdictOf(row, flagged);
+          if (v) { cls.push(v); mark = v === "correct" ? "✓" : v === "missed" ? "!" : "✕";
+                   tag = ' <span class="vtag vt-' + v + '">' + VTAGS[v] + '</span>'; }
+        }
+      }
+      const labelCell = '<td class="lbl">' + (clickable ? '<span class="flagmark">' + mark + '</span>' : "") + row.label + tag + '</td>';
+      const valCells = (row.vals || []).map(v => '<td class="num">' + v + '</td>').join("");
+      html += '<tr class="' + cls.join(" ") + '"' + (clickable ? ' data-id="' + id + '"' : "") + '>' + labelCell + valCells + '</tr>';
+      if (g.submitted && clickable) {
+        const v = verdictOf(row, flagged);
+        const show = row.flag || (!row.flag && flagged);
+        if (show) html += '<tr class="why-row"><td colspan="' + (cols.length + 1) + '"><div class="whybox ' + v + '">' + row.why + '</div></td></tr>';
+      }
+    });
+    html += '</table>';
+  } else if (file.notes) {
+    file.notes.forEach((note, ri) => {
+      const clickable = "flag" in note;
+      const id = g.fileIdx + "|" + ri;
+      const flagged = g.flagged.has(id);
+      const cls = ["note"]; let mark = "", tag = "", why = "";
+      if (clickable) {
+        cls.push("q");
+        if (!g.submitted) { if (flagged) { cls.push("flag-on"); mark = "🚩"; } }
+        else {
+          const v = verdictOf(note, flagged);
+          if (v) { cls.push(v); cls.push("locked"); mark = v === "correct" ? "✓ " : v === "missed" ? "! " : "✕ ";
+                   tag = ' <span class="vtag vt-' + v + '">' + VTAGS[v] + '</span>'; }
+          const show = note.flag || (!note.flag && flagged);
+          if (show) why = '<div class="nwhy">' + note.why + '</div>';
+        }
+      }
+      html += '<div class="' + cls.join(" ") + '"' + (clickable ? ' data-id="' + id + '"' : "") + '>' +
+              '<div class="nlabel"><span class="flagmark">' + mark + '</span>' + note.label + tag + '</div>' +
+              '<div class="ntext">' + note.text + '</div>' + why + '</div>';
+    });
+  }
+
+  page.innerHTML = html;
+  if (!g.submitted) {
+    page.querySelectorAll("[data-id]").forEach(el =>
+      el.addEventListener("click", () => onToggle(el.getAttribute("data-id"))));
+  }
+}
+
+function onToggle(id) {
+  if (G.submitted) return;
+  if (G.flagged.has(id)) G.flagged.delete(id); else G.flagged.add(id);
+  renderPage(); renderTabs(); updateBar();
+}
+
+function updateBar() {
+  document.getElementById("flagCount").textContent = G.flagged.size;
+  document.getElementById("openCount").textContent = G.opened.size + "/" + G.cases[G.idx].files.length;
+}
+
+function submitAudit() {
+  const g = G;
+  if (g.submitted) { nextCase(); return; }
+  if (g.opened.size < g.cases[g.idx].files.length) {
+    if (!confirm("You haven't opened every file. A real auditor reads them all. Submit anyway?")) return;
+  }
+  g.submitted = true;
+
+  const c = g.cases[g.idx], cfg = g.cfg;
+  let caught = 0, missed = 0, falses = 0, real = 0;
+  eachFlaggable(c, (row, id) => {
+    const f = g.flagged.has(id);
+    if (row.flag) real++;
+    if (row.flag && f) caught++; else if (row.flag && !f) missed++; else if (!row.flag && f) falses++;
+  });
+  const gained = caught * cfg.ptCatch;
+  const lostFalse = falses * cfg.penFalse;
+  const lostMiss = missed * cfg.penMiss;
+  const net = Math.max(0, gained - lostFalse - lostMiss);
+  g.score += net;
+  g.totals.catch += caught; g.totals.miss += missed; g.totals.false += falses; g.totals.real += real;
+
+  document.getElementById("scoreVal").textContent = g.score.toLocaleString();
+
+  let line = '<div class="big">Audit filed — ' + caught + " / " + real + " red flags caught</div><div style='margin-top:6px'>";
+  line += '<span class="g">+' + gained + '</span> for catches';
+  if (lostFalse) line += ' &nbsp;·&nbsp; <span class="r">−' + lostFalse + '</span> for ' + falses + ' false alarm' + (falses === 1 ? "" : "s");
+  if (lostMiss)  line += ' &nbsp;·&nbsp; <span class="y">−' + lostMiss + '</span> for ' + missed + ' missed flag' + (missed === 1 ? "" : "s");
+  line += ' &nbsp;⟹&nbsp; <b>+' + net + ' pts</b></div>';
+  if (caught === real && falses === 0) line += '<div class="g" style="margin-top:6px">Flawless audit — every red flag caught, no innocent figure accused. 🏅</div>';
+  line += '<div style="margin-top:6px;color:var(--muted)">Open each file to review the findings and explanations, then continue.</div>';
+  const res = document.getElementById("caseResult");
+  res.innerHTML = line; res.classList.add("show");
+
+  renderTabs(); renderPage();
+  document.getElementById("submitBtn").textContent = (g.idx + 1 < g.cfg.n) ? "Next Case ▸" : "See Results ▸";
+}
+
+function nextCase() {
+  G.idx++;
+  if (G.idx >= G.cfg.n) return endGame();
+  loadCase();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function endGame() {
+  const g = G, t = g.totals;
+  const maxScore = t.real * g.cfg.ptCatch;
+  const pct = maxScore ? g.score / maxScore : 0;
+  let grade, color;
+  if (pct >= 0.9)       { grade = "S"; color = "var(--good)"; }
+  else if (pct >= 0.78) { grade = "A"; color = "var(--good)"; }
+  else if (pct >= 0.6)  { grade = "B"; color = "var(--accent-2)"; }
+  else if (pct >= 0.45) { grade = "C"; color = "var(--warn)"; }
+  else if (pct >= 0.3)  { grade = "D"; color = "var(--warn)"; }
+  else                  { grade = "F"; color = "var(--bad)"; }
+
+  let verdict;
+  if (pct >= 0.78)      verdict = "Outstanding work. You caught the schemes and kept your accusations clean — the kind of audit that ends careers (the fraudsters', not yours).";
+  else if (pct >= 0.45) verdict = "A solid engagement. A few flags slipped past you, but the partners trust your judgement.";
+  else                  verdict = "A rough audit. Too many red flags missed — or too many innocent figures accused. Back to training.";
+
+  document.getElementById("overTitle").textContent = "🗂️ Engagement complete";
+  const ge = document.getElementById("overGrade"); ge.textContent = grade; ge.style.color = color;
+  document.getElementById("overScore").textContent = g.score.toLocaleString() + " pts";
+  document.getElementById("overBreak").innerHTML =
+    "Red flags caught: <b>" + t.catch + " / " + t.real + "</b><br>" +
+    "Missed flags: <b>" + t.miss + "</b> &nbsp;·&nbsp; False alarms: <b>" + t.false + "</b>";
+  document.getElementById("overVerdict").textContent = verdict;
+  document.getElementById("overOverlay").classList.remove("hidden");
+}
+
+/* ---- wiring ---- */
+function showScreen(id) { document.querySelectorAll(".screen").forEach(s => s.classList.toggle("active", s.id === id)); }
+document.querySelectorAll(".diff-card").forEach(b => b.addEventListener("click", () => startGame(b.getAttribute("data-diff"))));
+document.getElementById("submitBtn").addEventListener("click", submitAudit);
+document.getElementById("homeBtn").addEventListener("click", () => { G = null; showScreen("home"); });
+document.getElementById("playAgainBtn").addEventListener("click", () => { document.getElementById("overOverlay").classList.add("hidden"); showScreen("home"); });
+</script>
+</body>
+</html>
