@@ -16,6 +16,26 @@
     <div class="hero__overlay"></div>
     <div class="hero__stripes"></div>
 
+    <!-- reusable F1 car silhouette (generic shape, tinted per team via CSS color) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="f1car" viewBox="0 0 300 110">
+        <path d="M6 40 h22 v14 H6 z" />                         <!-- rear wing -->
+        <path d="M22 70 C 30 54, 66 56, 100 55 L 124 42
+                 C 146 34, 172 34, 188 44 L 252 52 L 294 50
+                 L 294 64 L 250 68 Z" />                        <!-- body -->
+        <path d="M150 42 q16 -18 34 2 z" />                     <!-- halo / cockpit -->
+        <path d="M284 60 h14 v12 h-14 z" />                     <!-- front wing -->
+        <circle cx="82" cy="74" r="21" />                       <!-- rear wheel -->
+        <circle cx="236" cy="74" r="21" />                      <!-- front wheel -->
+      </symbol>
+    </svg>
+
+    <div class="hero__cars" aria-hidden="true">
+      <div class="f1car f1car--ferrari"><svg><use href="#f1car"/></svg><span>Ferrari</span></div>
+      <div class="f1car f1car--mclaren"><svg><use href="#f1car"/></svg><span>McLaren</span></div>
+      <div class="f1car f1car--redbull"><svg><use href="#f1car"/></svg><span>Red Bull</span></div>
+    </div>
+
     <div class="hero__content">
       <p class="hero__eyebrow">DATA STORY · 1950 – 2026</p>
       <h1 class="hero__title">FORMULA&nbsp;1</h1>
@@ -84,7 +104,16 @@
               <li>Old vs young drivers climb almost the same — the link is just <b>−0.02</b></li>
               <li>Rookies climb a little more, but only because they tend to start near the back</li>
             </ul>
-            <p class="card__foot">It's the grid slot doing the work, not the driver's age.</p>
+            <p class="card__caption">Proof · avg places gained by age</p>
+            <table class="proof">
+              <thead><tr><th>Age group</th><th>Places gained</th><th>Races</th></tr></thead>
+              <tbody>
+                <tr><td>Under 25</td><td>+0.56</td><td>4,865</td></tr>
+                <tr><td>25–30</td><td>+0.01</td><td>10,141</td></tr>
+                <tr><td>30–35</td><td>−0.28</td><td>7,707</td></tr>
+                <tr><td>35 +</td><td>−0.11</td><td>4,679</td></tr>
+              </tbody>
+            </table>
           </article>
 
           <!-- Card 2 — Pole -->
@@ -97,7 +126,20 @@
               <li>Slipstream tracks like Monza <b>~30%</b></li>
               <li>Pole is a big head start, never a guarantee</li>
             </ul>
-            <p class="card__foot">Where you race matters more than where you qualify.</p>
+            <p class="card__caption">Proof · pole → win conversion (overall 43%)</p>
+            <table class="proof">
+              <thead><tr><th>Grand Prix</th><th>Pole → Win</th><th>Poles</th></tr></thead>
+              <tbody>
+                <tr><td>Abu Dhabi</td><td>71%</td><td>17</td></tr>
+                <tr><td>Singapore</td><td>69%</td><td>16</td></tr>
+                <tr><td>China</td><td>63%</td><td>19</td></tr>
+                <tr><td>Spain</td><td>56%</td><td>55</td></tr>
+                <tr><td>Japan</td><td>55%</td><td>40</td></tr>
+                <tr><td>Bahrain</td><td>52%</td><td>21</td></tr>
+                <tr><td>Germany</td><td>49%</td><td>65</td></tr>
+                <tr><td>Italy (Monza)</td><td>33%</td><td>78</td></tr>
+              </tbody>
+            </table>
           </article>
 
           <!-- Card 3 — Asia DNFs -->
@@ -108,7 +150,24 @@
             <ul class="card__stats">
               <li>Raw numbers: Europe <b>43%</b> DNF vs Asia <b>21%</b></li>
             </ul>
-            <p class="card__foot">Compare like-for-like and the gap vanishes.</p>
+            <p class="card__caption">Proof · DNF rate by continent</p>
+            <table class="proof">
+              <thead><tr><th>Continent</th><th>DNF rate</th><th>Race entries</th></tr></thead>
+              <tbody>
+                <tr><td>Europe</td><td>42.6%</td><td>16,456</td></tr>
+                <tr><td>Asia</td><td>21.3%</td><td>3,664</td></tr>
+              </tbody>
+            </table>
+            <p class="card__caption">Proof · highest-DNF venues (all European, all old)</p>
+            <table class="proof">
+              <thead><tr><th>Grand Prix</th><th>DNF rate</th><th>Entries</th></tr></thead>
+              <tbody>
+                <tr><td>Monaco</td><td>50.3%</td><td>1,706</td></tr>
+                <tr><td>Germany</td><td>45.5%</td><td>1,926</td></tr>
+                <tr><td>Netherlands</td><td>45.2%</td><td>787</td></tr>
+                <tr><td>Italy</td><td>45.0%</td><td>2,687</td></tr>
+              </tbody>
+            </table>
           </article>
 
           <!-- Card 4 — Dominant nations -->
@@ -121,7 +180,14 @@
               <li>Podium rate <b>13.7%</b> vs <b>11.1%</b></li>
               <li>Finish ~<b>1 place</b> higher on average</li>
             </ul>
-            <p class="card__foot">Mostly access to the best teams — not the passport.</p>
+            <p class="card__caption">Proof · dominant vs other nations</p>
+            <table class="proof">
+              <thead><tr><th>Driver group</th><th>Win rate</th><th>Podium rate</th><th>Entries</th></tr></thead>
+              <tbody>
+                <tr class="hl"><td>Dominant nations</td><td>4.7%</td><td>13.7%</td><td>17,667</td></tr>
+                <tr><td>Other nations</td><td>3.3%</td><td>11.1%</td><td>9,725</td></tr>
+              </tbody>
+            </table>
           </article>
 
           <!-- Card 5 — Max vs Lewis -->
@@ -134,7 +200,19 @@
               <li>Wins <b>106 vs 71</b> · poles <b>104 vs 48</b></li>
               <li>Win rate: Max <b>29.6%</b> just edges Lewis <b>27.4%</b></li>
             </ul>
-            <p class="card__foot">Lewis has the career; Max has the recent dominance.</p>
+            <p class="card__caption">Proof · career head-to-head</p>
+            <table class="proof">
+              <thead><tr><th>Stat</th><th>Hamilton</th><th>Verstappen</th></tr></thead>
+              <tbody>
+                <tr><td>Race entries</td><td>387</td><td>240</td></tr>
+                <tr><td>Wins</td><td>106</td><td>71</td></tr>
+                <tr><td>Podiums</td><td>206</td><td>128</td></tr>
+                <tr><td>Poles</td><td>104</td><td>48</td></tr>
+                <tr><td>Points</td><td>5,058</td><td>3,351</td></tr>
+                <tr><td>Win rate</td><td>27.4%</td><td>29.6%</td></tr>
+                <tr><td>Avg finish</td><td>3.97</td><td>3.75</td></tr>
+              </tbody>
+            </table>
           </article>
 
           <!-- Card 6 — Hamilton GOAT (last) -->
@@ -147,7 +225,22 @@
               <li><b>206</b> podiums · most ever</li>
               <li><b>104</b> poles · <b>5,058</b> points</li>
             </ul>
-            <p class="card__foot">…though Juan Fangio's <b>41%</b> win rate is still untouched.</p>
+            <p class="card__caption">Proof · most career wins (top 10)</p>
+            <table class="proof">
+              <thead><tr><th>Driver</th><th>Wins</th></tr></thead>
+              <tbody>
+                <tr class="hl"><td>Lewis Hamilton</td><td>106</td></tr>
+                <tr><td>Michael Schumacher</td><td>91</td></tr>
+                <tr><td>Max Verstappen</td><td>71</td></tr>
+                <tr><td>Sebastian Vettel</td><td>53</td></tr>
+                <tr><td>Alain Prost</td><td>51</td></tr>
+                <tr><td>Ayrton Senna</td><td>41</td></tr>
+                <tr><td>Fernando Alonso</td><td>32</td></tr>
+                <tr><td>Nigel Mansell</td><td>31</td></tr>
+                <tr><td>Jackie Stewart</td><td>27</td></tr>
+                <tr><td>Niki Lauda</td><td>25</td></tr>
+              </tbody>
+            </table>
           </article>
 
         </div>

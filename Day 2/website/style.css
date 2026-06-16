@@ -60,6 +60,23 @@ body {
   opacity: .8;
 }
 
+/* faint team cars floating in the hero background */
+.hero__cars { position: absolute; inset: 0; z-index: 1; overflow: hidden; pointer-events: none; }
+.f1car { position: absolute; }
+.f1car svg { width: 100%; height: auto; display: block; fill: currentColor; filter: drop-shadow(0 0 18px currentColor); }
+.f1car span {
+  display: block; text-align: center; margin-top: 6px;
+  font-family: "Orbitron", sans-serif; font-weight: 700;
+  letter-spacing: .28em; text-transform: uppercase;
+  font-size: .62rem; color: currentColor; opacity: .9;
+}
+.f1car--ferrari { color: #ff2800; width: 360px; left: -36px; bottom: 48px; opacity: .16; animation: carFerrari 9s ease-in-out infinite; }
+.f1car--mclaren { color: #ff8000; width: 300px; right: -28px; top: 20%;   opacity: .15; animation: carMclaren 11s ease-in-out infinite; }
+.f1car--redbull { color: #4666ff; width: 250px; left: 6%;    top: 9%;     opacity: .13; animation: carRedbull 13s ease-in-out infinite; }
+@keyframes carFerrari { 0%,100% { transform: translateY(0)    rotate(-4deg); } 50% { transform: translateY(-16px) rotate(-4deg); } }
+@keyframes carMclaren { 0%,100% { transform: translateY(0)    rotate(3deg);  } 50% { transform: translateY(-22px) rotate(3deg);  } }
+@keyframes carRedbull { 0%,100% { transform: translateY(0)    rotate(-2deg); } 50% { transform: translateY(-13px) rotate(-2deg); } }
+
 .hero__content { position: relative; z-index: 2; padding: 24px; max-width: min(1000px, 94vw); width: 100%; }
 
 .hero__eyebrow {
@@ -243,6 +260,26 @@ body {
   width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
 }
 .card__stats b { color: #fff; }
+
+/* proof table */
+.card__caption {
+  margin: 22px 0 8px;
+  font-family: "Orbitron", sans-serif;
+  font-size: .62rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--accent);
+}
+.proof { width: 100%; border-collapse: collapse; font-size: .8rem; }
+.proof th, .proof td { padding: 6px 8px; border-bottom: 1px solid rgba(255,255,255,.08); text-align: left; }
+.proof th {
+  font-family: "Orbitron", sans-serif; font-size: .58rem;
+  letter-spacing: .06em; text-transform: uppercase; color: #9a9aa8; font-weight: 700;
+}
+.proof td { color: #c9c9d4; }
+.proof td:not(:first-child), .proof th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.proof tbody tr.hl { background: color-mix(in srgb, var(--accent) 20%, transparent); }
+.proof tbody tr.hl td { color: #fff; font-weight: 700; }
+.proof tbody tr:last-child td { border-bottom: none; }
+
 .card__foot {
   margin-top: auto; padding-top: 22px;
   color: #8f8f9e; font-style: italic; font-size: .92rem;
