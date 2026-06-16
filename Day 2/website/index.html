@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formula 1 Reveal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ HERO / REVEAL SCREEN ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__stripes"></div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">DATA STORY · 1950 – 2026</p>
+      <h1 class="hero__title">FORMULA&nbsp;1</h1>
+      <h2 class="hero__subtitle">REVEAL</h2>
+      <p class="hero__tag">Seventy-six seasons of racing, turned into six honest answers.</p>
+
+      <div class="hero__buttons">
+        <button class="btn btn--primary" id="getToKnowBtn">Get to know the data</button>
+        <button class="btn btn--ghost" id="exploreBtn">See the cards ↓</button>
+      </div>
+    </div>
+
+    <div class="hero__scroll">scroll</div>
+  </section>
+
+  <!-- ============ INFO MODAL ============ -->
+  <div class="modal" id="infoModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" data-close aria-label="Close">&times;</button>
+      <h3 class="modal__title" id="modalTitle">About this dataset</h3>
+      <p class="modal__lead">
+        The classic <strong>Formula 1 World Championship</strong> dataset (Ergast / Kaggle) —
+        every race from the very first championship in <strong>1950</strong> up to the
+        <strong>2026</strong> calendar.
+      </p>
+
+      <div class="modal__grid">
+        <div class="stat"><span class="stat__num">27,392</span><span class="stat__lbl">race results</span></div>
+        <div class="stat"><span class="stat__num">1,171</span><span class="stat__lbl">races</span></div>
+        <div class="stat"><span class="stat__num">865</span><span class="stat__lbl">drivers</span></div>
+        <div class="stat"><span class="stat__num">214</span><span class="stat__lbl">teams</span></div>
+        <div class="stat"><span class="stat__num">78</span><span class="stat__lbl">circuits</span></div>
+        <div class="stat"><span class="stat__num">35</span><span class="stat__lbl">countries</span></div>
+      </div>
+
+      <p class="modal__note">
+        It links together <strong>drivers, constructors, circuits, races, qualifying,
+        pit stops, lap times and standings</strong> — each result carries a starting grid
+        slot, finishing position, points and status (finished / retired). Every question
+        on the next screens is answered straight from these tables.
+      </p>
+    </div>
+  </div>
+
+  <!-- ============ CARDS / SLIDER ============ -->
+  <section class="cards" id="cards">
+    <header class="cards__head">
+      <h2>Six questions, six answers</h2>
+      <p>Swipe, drag, or use the arrows.</p>
+    </header>
+
+    <div class="slider">
+      <button class="slider__arrow slider__arrow--prev" id="prevBtn" aria-label="Previous">‹</button>
+
+      <div class="slider__viewport">
+        <div class="slider__track" id="track">
+
+          <!-- Card 1 — Age -->
+          <article class="card" style="--accent:#00a19c">
+            <div class="card__no">01</div>
+            <h3 class="card__q">Do older drivers gain more places than younger ones?</h3>
+            <p class="card__verdict">Barely — age hardly matters.</p>
+            <ul class="card__stats">
+              <li>"Gaining places" = finishing higher than you started (e.g. start 15th, finish 8th = +7)</li>
+              <li>Old vs young drivers climb almost the same — the link is just <b>−0.02</b></li>
+              <li>Rookies climb a little more, but only because they tend to start near the back</li>
+            </ul>
+            <p class="card__foot">It's the grid slot doing the work, not the driver's age.</p>
+          </article>
+
+          <!-- Card 2 — Pole -->
+          <article class="card" style="--accent:#ff8700">
+            <div class="card__no">02</div>
+            <h3 class="card__q">Does starting on pole always mean a win?</h3>
+            <p class="card__verdict">No — pole wins just 43% of the time.</p>
+            <ul class="card__stats">
+              <li>Track matters: Abu Dhabi/Singapore <b>~70%</b></li>
+              <li>Slipstream tracks like Monza <b>~30%</b></li>
+              <li>Pole is a big head start, never a guarantee</li>
+            </ul>
+            <p class="card__foot">Where you race matters more than where you qualify.</p>
+          </article>
+
+          <!-- Card 3 — Asia DNFs -->
+          <article class="card" style="--accent:#9d4edd">
+            <div class="card__no">03</div>
+            <h3 class="card__q">Do Asian races cause more breakdowns than European ones?</h3>
+            <p class="card__verdict">No — that's an illusion.</p>
+            <ul class="card__stats">
+              <li>Raw numbers: Europe <b>43%</b> DNF vs Asia <b>21%</b></li>
+            </ul>
+            <p class="card__foot">Compare like-for-like and the gap vanishes.</p>
+          </article>
+
+          <!-- Card 4 — Dominant nations -->
+          <article class="card" style="--accent:#1e6fff">
+            <div class="card__no">04</div>
+            <h3 class="card__q">Do drivers from dominant F1 nations perform better?</h3>
+            <p class="card__verdict">Yes — about 40% more wins.</p>
+            <ul class="card__stats">
+              <li>Win rate <b>4.7%</b> vs <b>3.3%</b></li>
+              <li>Podium rate <b>13.7%</b> vs <b>11.1%</b></li>
+              <li>Finish ~<b>1 place</b> higher on average</li>
+            </ul>
+            <p class="card__foot">Mostly access to the best teams — not the passport.</p>
+          </article>
+
+          <!-- Card 5 — Max vs Lewis -->
+          <article class="card" style="--accent:#36c5ff">
+            <div class="card__no">05</div>
+            <h3 class="card__q">Max Verstappen vs Lewis Hamilton — who's ahead?</h3>
+            <p class="card__verdict">Lewis on totals, Max on rate.</p>
+            <ul class="card__stats">
+              <li>Both raced in 239 GPs: <b>Hamilton finished ahead 134–105</b></li>
+              <li>Wins <b>106 vs 71</b> · poles <b>104 vs 48</b></li>
+              <li>Win rate: Max <b>29.6%</b> just edges Lewis <b>27.4%</b></li>
+            </ul>
+            <p class="card__foot">Lewis has the career; Max has the recent dominance.</p>
+          </article>
+
+          <!-- Card 6 — Hamilton GOAT (last) -->
+          <article class="card" style="--accent:#e10600">
+            <div class="card__no">06</div>
+            <h3 class="card__q">So… is Lewis Hamilton the GOAT?</h3>
+            <p class="card__verdict">Yes — by the record books.</p>
+            <ul class="card__stats">
+              <li><b>106</b> wins · most ever</li>
+              <li><b>206</b> podiums · most ever</li>
+              <li><b>104</b> poles · <b>5,058</b> points</li>
+            </ul>
+            <p class="card__foot">…though Juan Fangio's <b>41%</b> win rate is still untouched.</p>
+          </article>
+
+        </div>
+      </div>
+
+      <button class="slider__arrow slider__arrow--next" id="nextBtn" aria-label="Next">›</button>
+    </div>
+
+    <div class="slider__dots" id="dots"></div>
+  </section>
+
+  <footer class="foot">Built from the F1 World Championship dataset · 1950–2026</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
