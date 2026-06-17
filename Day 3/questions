@@ -1,0 +1,24 @@
+sector with biggest share 
+education or healthcare funded more?
+which regions receive most, which least?
+do big 3 cities (astana, shymkent, almaty) receive more?
+which ministries have largest budget?
+how much from taxes and non taxes? why?
+gap between planned and executed budget. + show by regions + by ministries 
+which secotrs do better, which underperform?
+where KZ spends more?
+local vs repiblic budget? where more important?
+top and bottom by execution rate (nonzero values)
+
+
+q1 horizontal bar chart
+q2 two hor bar charts
+q3 box plot + highlighted dots
+q4 hor bar chart
+q5 stacked bar chart
+q6 diverging bar chart, 6a, b (by region and ministry) hor diverg bar chart
+q7 bar chart of execution rate 
+q8 treemap 
+q9 stacked bar chart 
+q10 two hor bar charts
+q11 heatmap
