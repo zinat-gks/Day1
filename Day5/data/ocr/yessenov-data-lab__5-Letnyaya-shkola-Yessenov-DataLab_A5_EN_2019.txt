@@ -1,0 +1,593 @@
+SHAKHMARDAN YESSENOV Sorina
+
+FOUNDATION
+
+YESSENOV
+DATA LAB
+
+10" June - 2™ August 2019
+Almaty
+
+In partnership with: ндекс IGDATA TEAM
+
+
+ҮЕ55ЕМОУ
+шә DATA (АВ
+a
+
+№ Contents
+
+m What is the Yessenov Data Lab Summer School?
+Ш Programme of Study
+> Week 1: Python Programming
+> Week 2: Linear models of classification and regression
+> Week 3: Trees and Boosting
+> Week 4: Independent learning and neural networks
+> Week 5: ML Applications
+> Week 6: Big Data - |
+> Week 7: Big Data - II
+> Week 8: Project Work
+
+‘ALMA ‘SHAKHMARDAN YESSENOV
+
+ЕЕ FOUNDATION
+
+
+
+YESSENOV
+шә DATA (АВ
+a
+
+№ What is the Yessenov Data Lab?
+
+The Yessenov Data Lab summer school is an 8-week intensive course that allows
+you to familiarize yourself with the data analytics profession for 8 weeks, solve real
+business problems and continue to improve the knowledge you gain independently.
+
+weeks
+of intensive
+
+week solving
+business case-
+studies
+
+Course location
+Almaty Management University
+
+COURSE GRADUATES WILL ACQUIRE THE SKILLS OF:
+Ф Python programming for data analysis
+Ф Preprocessing data in preparation for further analysis
+Ф Data visualization and finding correlations
+® Making a forecast based on historical data
+Ф Understanding different learning algorithms
+@ Choosing the right learning model Ш
+11 Fundamental understanding of the work of neural networks 5 =
+
+‘ALMA ЗНАКНМАВОАН YESSENOV
+
+ЕЕ FOUNDATION
+
+
+
+№ Programme of Study
+Week 1. Python Programming
+
+Day 1
+09:00 - 10:00 Registration of participants
+10:00 - 14:30 What is Data Mining, Big Data, examples
+12:00 - 13:15 Introduction to Python: variables, lists
+14:30 - 16:00 Introduction to Python: conditions, cycles
+16:15 - 18:00 Lab: The Basics of Python
+
+Day 2
+10:00 - 11:30 Work with lines of code
+12:00 - 13:15 Acquaintance with the library NumPy
+14:30 - 16:00 Lab: NumPy tasks
+16:15 - 18:00 Lab: NumPy tasks
+
+Day3
+
+10:00 - 11:30 Data structures: lists, sets, dictionaries
+12:00 - 13:15 Python Algorithms: Sorting, Search
+14:30 - 16:00 Lab: data structures and NumPy
+16:15 - 18:00 Lab: Implementation of Algorithms
+
+Day 4
+10:00 - 11:30 Introduction to the Pandas Library, MatPlotLib
+12:00 - 13:15 Grouping of data. Filters, sorting.
+14:30 - 16:00 Lab: work with Pandas.
+16:15 - 18:00 Lab: work with MatPlotLib
+
+Day5
+
+10:00 - 11:30 Fastening material by Pandas and MatplotLib
+12:00 - 13:15 Acquaintance with the regression task, SciKitLearn
+14:30 - 16:00 Lab: Linear Regression
+
+16:15 - 18:00 Lab: Linear Regression
+
+YESSENOV
+шә DATA (АВ
+a
+
+Kuanish Abeshev Timur Bakibayev
+Dean of the School Professor, AlmaU
+Of Engineering and
+Management, AlmaU
+
+Ш
+
+‘SHAKHMARDAN УЕЗЗЕНОМ
+FOUNDATION
+
+
+
+№ Programme of Study
+
+Week 2.Linear models of classification
+
+and regression
+
+Day 1
+
+10:00 - 11:30 Optimization task, gradient descent method
+
+12:00 - 13:15 Labora
+14:30 - 16:00 Labora
+16:15 - 18:00 Labora
+
+‘ory worl
+‘ory worl
+‘ory worl
+
+Day 2
+10:00 - 11:30 Quality
+12:00 - 13:15 Labora
+14:30 - 16:00 Labora
+16:15 - 18:00 Labora
+
+Day3
+
+metrics
+‘ory wor
+‘ory wor
+‘ory wor
+
+10:00 - 11:30 Cross-validatio
+
+12:00 - 13:15 Labora
+14:30 - 16:00 Labora
+16:15 - 18:00 Labora
+
+Day 4
+
+n
+‘ory worl
+‘ory worl
+‘ory worl
+
+10:00 - 14:30 Linear classification and regression models
+
+12:00 - 13:15 Labora
+14:30 - 16:00 Labora
+
+16:15 - 18:00 Labora
+
+‘ory worl
+‘ory worl
+‘ory worl
+
+Day5
+
+10:00 - 11:30 Review
+12:00 - 13:15 Labora
+14:30 - 16:00 Labora
+
+16:15 - 18:00 Labora
+
+of study, generalization
+
+‘ory worl
+‘ory worl
+‘ory worl
+
+YESSENOV
+шә DATA (АВ
+a
+
+Dimitri Rusanov
+Data Scientist
+
+@) elama-ru
+
+‘SHAKHMARDAN YESSENOV
+FOUNDATION
+
+
+
+YESSENOV
+шә DATA (АВ
+a
+
+> Programme of Study
+Week 3. Trees and Boosting
+
+Day 1
+10:00 - 11:30 SVM, optimization tasks
+12:00 - 13:15 Practice, master class
+14:30 - 16:00 Laboratory work BIGDATA TEAM
+16:15 - 18:00 Lab,Q & A, discussion of standard errors
+
+Day 2
+10:00 - 11:30 Trees
+12:00 - 13:15 Practice, master class
+14:30 - 16:00 Laboratory work
+16:15 - 18:00 Lab,Q & A, discussion of standard errors
+
+Day 3
+10:00 - 11:30 DecisiveTree Ensembles (bagging
+12:00 - 13:15 Practice, master class
+14:30 - 16:00 Laboratory work
+16:15 - 18:00 Lab,Q & А, discussion of standard errors
+
+Day 4
+10:00 - 11:30 Informational features of signs, SHAP (SHapley Additive exPlanations)
+12:00 - 13:15 Practice, master class
+14:30 - 16:00 Laboratory work
+16:15 -18:00 Lab,Q & А, discussion of standard errors
+
+Day5
+
+10:00 - 11:30 Decisive Tree Ensembles (bias-variance trade-off, XGBoost)
+12:00 - 13:15 Practice, master class
+
+14:30 - 16:00 Laboratory work
+
+16:15 -18:00 Lab,Q & А, discussion of standard errors
+
+Day 6
+
+10:00 - 11:30 Detailed CatBoost Review
+
+12:00 - 13:15 Practice, master class
+
+14:30 - 16:00 Laboratory work
+
+16:15 - 18:00 Lab,Q & А, discussion of standard errors
+
+‘SHAKHMARDAN YESSENOV
+FOUNDATION
+
+
+
+№» Programme of Study
+
+Week 4. Independent learning and neural networks
+
+Day 1
+10:00 - 11:30
+12:00 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+ndependent Learning
+
+Practice, masterclass
+
+Laboratory work
+
+Lab,Q & A, discussion of standard errors
+
+Day 2
+10:00 - 11:30
+12:00 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+N
+
+ndependent Learning, par'
+Practice, master class
+aboratory work
+
+Lab,Q & A, discussion of standard errors
+
+Day 3
+10:00 - 11:30
+12:00 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+ntroduction to Neural Networks
+Practice, masterclass
+aboratory work
+
+Lab,Q & A, discussion of standard errors
+
+Day 4
+10:00 - 11:30
+12:00 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Day5
+
+Complex neural networks
+
+Practice, masterclass
+
+Laboratory work
+
+Lab,Q & A, discussion of standard errors
+
+10:00 - 11:30
+12:00 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Recurrent Neural Networks
+
+Practice, masterclass
+
+Laboratory work
+
+Lab,Q & A, discussion of standard errors
+
+Day 6
+
+10:00 - 11:30
+12:00 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+ML applications: RecSys
+
+Practice, masterclass
+
+Laboratory work
+
+Lab,Q & A, discussion of standard errors
+
+YESSENOV
+шә DATA (АВ
+a
+
+BIGDATA TEAM
+———
+
+‘SHAKHMARDAN УЕЗЗЕНОМ
+FOUNDATION
+
+
+
+№ Programme of Study
+Week 5. МЕ Applications
+
+Day 1
+10:00 - 11:30
+12:00 - 13:15
+
+14:30 - 16:00
+16:15 - 18:00
+
+Recommender systems. User /
+
+Item based. Collaborative filtering
+Recommender systems. Hybrid recommender
+Laboratory wor!
+Laboratory wor!
+
+Day 2
+10:00 - 11:30
+12:00 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Day3
+
+Image analysis. Solving problems pre-neural networks
+Image analysis. Neural Network Applications
+
+Laboratory wor!
+Laboratory wor!
+
+10:00 - 11:30
+12:00 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Day 4
+
+Text analysis. Embedding
+
+Text analysis. Applications
+Laboratory wor!
+Laboratory wor!
+
+10:00 - 11:30
+12:00 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Time series. Statistical approaches
+
+Time series. Neural Network Applications
+Laboratory work
+
+Laboratory work
+
+Day5
+
+10:00 - 11:30
+12:00 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Analysis of graphs
+Laboratory work
+Case-studies
+Case-studies
+
+YESSENOV
+шә DATA (АВ
+a
+
+Marina Gorlova
+Analyst
+
+Yandex
+
+money &
+
+‘SHAKHMARDAN YESSENOV
+FOUNDATION
+
+
+
+№ Programme of Study
+Week 6. Big Data -|
+
+Day 1
+10:00 - 11:30 Business problems
+12:00 - 13:15 №501
+14:30 - 16:00 Надоор: Yarn, MapReduce, Hive, Hdfs, Spark
+16:15 - 18:00 Continuation
+
+Day 2
+10:00 - 11:30 MapReduce Internals + Hive
+12:00 - 13:15 Німейі Basics (UI or CLI?)
+14:30 - 16:00 Laboratory work
+16:15 - 18:00 Laboratory work
+
+Day3
+
+10:00 - 11:30 Spark Core
+
+12:00 - 13:15 Practical exercises for pySpark + RDD
+14:30 - 16:00 Practical exercises for pySpark + RDD
+16:15 - 18:00 Practical exercises for pySpark + RDD
+
+Day 4
+10:00 - 11:30 Spark SQL
+12:00 - 13:15 Practical exercises for pySpark + DataFrame
+14:30 - 16:00 Practical exercises for pySpark + DataFrame
+16:15 - 18:00 Practical exercises for pySpark + DataFrame
+
+Day5
+10:00 - 11:30 Difference іп the use of the resources of Compute & Storage
+12:00 - 13:15 Analogs of Tools
+14:30 - 16:00 Case studies
+16:15 - 18:00 Case studies
+
+YESSENOV
+шә DATA (АВ
+a
+
+Valery Zhuk
+Senior Cloud Computing Engineer
+
+зао
+
+clearscale
+
+‘SHAKHMARDAN YESSENOV
+FOUNDATION
+
+
+
+№ Programme of Study
+Week 7. Big Data - II
+
+Day 1
+
+10:00 - 11:30 Business problems
+
+12:00 - 13:15 Тһе Problem of Using Data Science on Big Data
+14:30 - 16:00 Overview of tools
+
+16:15 - 18:00 Laboratory work
+
+Day 2
+10:00 - 11:30 Spark МИ
+12:00 - 13:15 Spark МЫШЬ (continued)
+14:30 - 16:00 Practical exercises for pySpark + MLLib
+16:15 - 18:00 Practical exercises for pySpark + MLlib
+
+Day3
+
+10:00 - 11:30 Analysis of data on columns
+
+12:00 - 13:15 бгарһХ Review
+
+14:30 - 16:00 Practical exercises for pySpark + бгарһХ
+16:15 - 18:00 Practical exercises for pySpark + GraphX
+
+Day 4
+10:00 - 11:30 Data Science on the Cloud
+12:00 - 13:15 General questions: where to get the data from?
+14:30 - 16:00 General questions: implementation solutions
+16:15 - 18:00 General questions: work as a data analyst
+
+Day5
+
+10:00 - 11:30 Case studies
+12:00 - 13:15 Case studies
+14:30- 16:00 Case studies
+16:15 - 18:00 Case studies
+
+YESSENOV
+шә DATA (АВ
+a
+
+Mikhael Lipkovich
+Senior Data Scientist
+
+assaia
+
+The Apron Al
+
+‘SHAKHMARDAN YESSENOV
+FOUNDATION
+
+
+
+ҮЕ55ЕМОУ
+шә DATA (АВ
+a
+
+> Programme of Study
+Week 8. Project Work
+
+Participants are expected to work
+6 hours a day during project week
+
+OUR PROGRAMS
+Knowledge | Science | Resources
+Yessenov 1 ЕЗ Research @ IT skills
+Lectures internships
+Ye
+English language (ше scholarship Vv Komanda SOS
+
+шт PB
+
+Promotion of Graduate боҙ Personal
+science studies performance
+
+:Ф. = Kazakhstan Almaty
+sie Chess < Almaty Marathon %» Triathlon
+
+“” Federation Federation
+
+STAY: yessenovfoundation.org
+IN: info@yessenovfoundation.org
+TOUCH: +7727 346 92 88
+
+
+
+ҮЕ55ЕМОУ
+шә DATA LAB
+
+SHAKHMARDAN YESSENOV onivensity
+FOUNDATION
+
+In partnership with: 4 нде КС BIGDATA TEAM

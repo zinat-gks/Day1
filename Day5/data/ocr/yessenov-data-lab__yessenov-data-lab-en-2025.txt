@@ -1,0 +1,369 @@
+Yessenov
+Data Lab
+
+and ne dws se
+201121101000 : 28 ің! vie о НІ, ор?
+: ШІ | if ДІ ШІ
+
+еі ты 6418
+101 149 |
+Үні; ai tite М қ 4.
+
+І;
+
+: | ШЕ. et 181869,
+9 if К ie 5 ет
+
+8°
+
+че
+
+Almaty 2025
+
+
+
+Table of contents
+
+ш What is Yessenov
+Б Data Lab 2025
+Summer School?
+
+Ш Training program
+
+Week 1 Python and Chatbots
+
+Week 2 Machine Learning
+
+Week 3 Large Language
+Models (LLM)
+
+Week 4 Computer Vision
+
+YDL
+
+Yessenov
+Data Lab
+
+
+
+[мое |
+
+Yessenov
+Data Lab
+
+What is Yessenov Data Lab 2025?
+
+Yessenov Data Lab 2025 summer school is
+
+- an annual summer school on artificial intelligence, where
+professionals from different countries teach best practices
+in working with big data and machine learning
+
+- is a 4-week intensive. 2 weeks online training,
+
+2 weeks offline training (in Almaty)
+
+Dates of the event: 16 June — 11 July 2025
+
+29 June - Teambuilding. Networking
+
+DURING THE 4 WEEKS OF SCHOOL
+YOU WILL BE ABLE TO:
+
+@ learn big data analysis skills that you can apply in practice;
+
+@ communicate with lecturers, ask questions of interest;
+@ meet like-minded people and make new connections.
+
+Participants will receive certificates from YDL school,
+
+as well as an academic transcript from AlmaU corresponding
+to international educational standards of the Bologna system
+(recognition in universities)
+
+This year we are focusing on NLP and
+Large Language Models (LLM)
+
+We
+
+Shakhmardan
+Yessenov
+Foundation
+
+
+
+[мое |
+
+Yessenov
+Data Lab
+
+Training Program
+
+Lecturer:
+
+Timur Bakibayev
+
+Ph.D. in Computer Science,
+Director of the Digital
+
+Transformation Institute,
+Narxoz
+
+№ Week 1 Python and Chat Bots
+
+‘S10 Objective: to learn the best practices of the Python
+June programming language for working with data
+
+Programming Fundamentals for Data Science
+
+10:00 - 10:10 Opening of the Summer School, welcome message
+
+10:10 - 11:50 YDL Program Overview. Fundamentals of Artificial Intelligence
+11:45 - 13:15 ChatGPT Principles
+
+14:30 - 16:00 Laboratory Work with ChatGPT АР!
+
+16:15 - 18:00 Laboratory Work Analysis
+
+Working with Data
+
+10:00 - 11:30 NumPy and Pandas Libraries Review
+11:45 - 13:15 Data Grouping. Filters, Sorting
+
+14:30 - 16:00 Laboratory Work: Work with Pandas. * 101°
+16:15 - 18:00 Laboratory Work Analysis . 101071 0
+о 10707,
+
+Data Visualization Gi
+
+10:00 - 11:30 Matplotlib Library Review . eZ
+
+11:45 - 13:15 Seaborn Library Review
+14:30 - 16:00 Laboratory Work: Visualization
+16:15 - 18:00 Laboratory Work Analysis
+
+Forecasting Basics
+
+10:00 - 11:30 Regression Problem Review
+
+11:45 - 13:15 Feature Importance in Model Building
+14:30 - 16:00 Laboratory Work: Analysis and Data Preprocessing
+16:00 - 17:00 Laboratory Work Analysis
+17:00 - 18:00 Motivational Meeting
+
+10:00 - 11:30 Streamlit Review Shakhmardan
+11:45 - 13:15 How Chat bots work Yessenov
+14:30 - 16:00 Laboratory Work: Streamlit and Chat bots Foundation
+
+16:00 - 18:00 Streamlit Deployment on the server (Deployment)
+
+
+[мое |
+
+Yessenov
+Data Lab
+
+Training Program
+
+Coach:
+Kuanysh Abeshev
+
+Ph.D. in Mathematics,
+Dean of the School of
+Digital Technologies, AlmaU
+
+> Week 2 Machine Learning
+УАСЕРЛІ Т) Objective: to master the methods of predictive
+June analysis and machine learning
+
+10:00 - 11:30 Exploratory analysis, statistics
+11:45 - 13:15 Model evaluation metrics
+14:30 - 16:00 Laboratory Work
+16:15 - 18:00 Laboratory Work, discussion
+Regression modelling
+10:00 - 11:30 Linear Regression Basics. Metrics. Data Verification.
+11:45 - 13:15 Data Preprocessing
+14:30 - 16:00 Laboratory Work
+16:15 - 18:00 Laboratory Work, discussion
+
+Evaluating Performance - Classification
+
+10:00 - 11:30 Metrics for Classification Problems
+
+11:45 - 13:15 Logistic regression (Binary, Multi-Class)
+
+14:30 - 16:00 Laboratory Work
+
+16:00 - 18:00 Laboratory Works Analysis, Distribution of Datasets for the Project Defence
+
+Unsupervised learning
+
+10:00 - 11:30 Feature Importance
+
+11:45 - 13:15 Unsupervised learning. Dimensionality Reduction
+14:30 - 16:00 Laboratory Work
+
+16:00 - 17:00 Laboratory Work, discussion
+
+17:00 - 18:00 Motivational Meeting
+
+Project on Regression Modelling
+10:00 - 11:30 Complete Machine Learning Project
+
+We
+
+11:45 - 13:15 Q&A Shakhmardan
+14:30 - 16:00 Project Defence Yessenov
+16:00 - 18:00 Project Defence and Discussion of the Results Foundation
+
+ШИ 29 June (Sunday). Almaty 10:00 - 14:00 Team building
+
+
+ЕН Алматы
+
+8
+д
+I
+
+Yessenov
+Data Lab
+
+Training Program
+
+Lecturer:
+
+Nikita Saxena
+
+Google Deepmind Research
+Engineer
+
+> Week 3 Large Language Models (LLM)
+
+SUSIE Objective: theoretical and practical basics
+4 July
+of large language models
+
+10:00 - 11:30 Transformers and the Self-Attention Mechanism
+11:45 - 13:15 Sampling Strategies and Prompt Engineering
+14:30 - 16:00 Laboratory Work
+
+16:15 - 18:00 Laboratory Works Analysis
+
+10:00 - 11:30 Pre-training
+
+11:45 - 13:15 Рові-ігаіпіпо (SFT апа LoRA)
+14:30 - 16:00 Laboratory Work
+
+16:15 - 18:00 Laboratory Works Analysis
+
+Alignment Бу preference
+
+10:00 - 11:30 Introduction to RL and PPO
+
+11:45 - 13:15 Reinforcement learning with feedback
+14:30 - 16:00 Laboratory Work
+
+16:00 - 18:00 Laboratory Works Analysis
+
+Assessment and security
+
+10:00 - 11:30 LLM assessment
+
+11:45 - 13:15 Ethics and safety of Al
+14:30 - 16:00 Laboratory Work
+
+16:00 - 17:00 Laboratory Works Analysis
+17:00 - 18:00 Motivational Meeting
+
+Designing an application based on LLM
+
+10:00 - 11:30 Introduction to Langchain
+11:45 - 13:15 Laboratory Work Shakhmardan
+14:30 - 16:00 Project Implementation Yessenov
+16:00 - 18:00 Presentation of the Project Foundation
+
+We
+
+
+
+ЕН Алматы
+
+8
+д
+I
+
+Yessenov
+Data Lab
+
+Training Program
+
+Lecturer:
+
+Vladislav Yushchenko
+
+Senior ML Engineer,
+Meta London
+
+№ Week 4 Computer Vision
+
+7- Objective: to master deep learning methods
+11 July and neural networks
+
+Deep learning (MLP, ANN)
+
+10:00 - 11:30 Introduction to Neural Networks. Multilayer Perceptron
+11:45 - 13:15 Backpropagation Algorithm
+
+14:30 - 16:00 Laboratory Work
+
+16:15 - 18:00 Laboratory Work, discussion
+
+10:00 - 11:30 Introduction to PyTorch Library
+
+11:45 - 13:15 Convolutional Neural Networks (CNN). Image Classification. Metrics
+14:30 - 16:00 Laboratory Work
+
+16:15 - 18:00 Laboratory Work, discussion
+
+Segmentation
+
+10:00 - 11:30 Data Preparation
+
+11:45 - 13:15 Model Building, Training, Quality Metrics
+14:30 - 16:00 Laboratory Work
+
+16:00 - 18:00 Laboratory Work, discussion
+
+Object Detecion
+10:00 - 11:30 Data Preparation
+11:45 - 13:15 Model Building, Training, Quality Metrics
+14:30 - 16:00 Laboratory Work
+16:00 - 18:00 Laboratory Work, discussion
+
+Introduction to MLOps
+
+10:00 - 11:30 Introduction to MLOps, Levels of Automation
+
+11:45 - 13:15 Experiment Tracking and Model Deployment. —
+MLOps Best Practices
+
+14:30 - 16:00 Laboratory Work
+16:00 - 17:00 Laboratory Work, discussion
+17:00 - 18:00 Motivational Meeting. Closing
+
+Shakhmardan
+Yessenov
+Foundation
+
+
+
+YDL
+
+Yessenov
+Data Lab
+
+Stay In Touch With Us
+
+STAY IN yessenovfoundation.org
+TOUCH  info@yessenovfoundation.org
+WITH US +7 771 759 5944

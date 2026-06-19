@@ -1,0 +1,31 @@
+# ===== SECRETS — NEVER COMMIT =====
+API kays
+**/API kays
+API*kays*
+**/API*kays*
+*.env
+.env
+.env.*
+**/secret*
+**/*_key*
+**/*apikey*
+
+# ===== Local harness / editor config =====
+.claude/
+**/.claude/
+
+# ===== OS =====
+.DS_Store
+**/.DS_Store
+
+# ===== Python =====
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# ===== Large raw downloads (regenerable via scripts) =====
+Day5/data/files/*.pdf
+**/data/files/*.pdf
+
+# ===== Project brief PDFs (contain a shared API key) =====
+**/YDL2026_day5_project.pdf

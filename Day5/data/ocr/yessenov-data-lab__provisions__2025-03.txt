@@ -1,0 +1,320 @@
+PROVISIONS
+of the Yessenov Data Lab Program
+
+|. General terms.
+
+1.1 The Yessenov Data Lab Program (hereinafter referred to as the “Program’) is a 4-week intensive
+training course for young Kazakhstani scientists and professionals in the basic skills of working with Big
+Data and artificial intelligence. Participants will acquire knowledge and practical skills that will help them
+apply advanced technologies in their professional activities.
+
+1.2. The Program is funded by the initiative of the private “Тһе Shakhmardan Yessenov Science and
+Education Foundation” (hereinafter referred to as “the Foundation’).
+
+1.3. The Program is aimed to support the acquisition of skills in working with Big Data and artificial
+intelligence by young scientists, which are essential for further professional growth and independent
+work in this field.
+
+1.4. In these Provisions, the term “sponsorship” refers to funding for training, including payment of
+lecturer fees, as well as technical and administrative costs.
+
+1.5. Participation in the Program is free of charge for the winners. Twenty (20) Program winners are
+selected from among the Program competitors annually.
+
+1.6. The winners of the Program are determined in an open contest. The contest is held once a year.
+
+1.7. The Program involves training in Big Data and artificial intelligence skills for four (4) weeks from
+June 16 through July 11, 2025, at the Yessenov Data Lab Summer School of the Foundation. This
+includes two (2) weeks online - from June 16 through June 27, 2025, and two (2) weeks offline -
+from June 30 through July 11, 2025, in Almaty. Language of instruction is Russian, with the possible
+use of technical English elements.
+
+|. Requirements for the Program participants.
+
+2.1. Only citizens of the Republic of Kazakhstan who are over eighteen (18) years of age, undergraduate
+students, master’s students, doctoral students and working professionals in the following areas* can
+participate in the Program:
+
+- natural sciences, mathematics and statistics;
+
+- information and communication technologies;
+
+- engineering, manufacturing and construction industries;
+
+- healthcare.
+
+* according to the Classifier of Training Programs for Personnel with Higher and Post-Graduate
+Education (Approved by the Order of the Minister of Education and Science of the Republic of
+Kazakhstan as of October 13, 2018, No. 569).
+
+2.2. The following qualities of applicants will be taken into consideration when determining the winner of
+the Program:
+
+2.2.1. high intellectual potential;
+
+2.2.2. willingness to develop professional skills;
+
+2.2.3. focusing on results;
+
+2.2.4. adaptability.
+
+2.5. The applicants must declare and provide documentation of their active professional, scientific, social
+activities, as well as demonstrate that their professional skills meet the following requirements:
+
+2.3.1. strong analytical skills;
+
+2.3.2. interest and willingness to engage in scientific activities and/or develop IT technologies in
+Kazakhstan;
+
+2.5.5. basic knowledge of statistics and linear algebra;
+
+2.3.4. basic knowledge of programming (in any programming language).
+
+2.4. The applicant must have a personal laptop with characteristics sufficient for comfortable
+programming. Recommended parameters:
+
+2.4.1. CPU Intel Core Gen 7 and higher, Mac Silicon M1 and higher.
+
+2.4.2. RAM 6 GB and higher.
+
+2.5. To have a stable Internet connection with a recommended speed of 20 Mbps, but not less than 10
+Mbps, or higher.
+
+
+2.6 Тһе following will be an advantage:
+
+2.6.1 interest in science;
+
+2.6.2 own scientific papers, materials, results of any research, etc.;
+2.6.3 B1 or higher proficiency in English.
+
+lll. Stages of competitive selection process of the Program.
+
+3.1. The competition implies three (3) selection stages, at the end of each of which the best applicants
+are selected. The announcement about the opening of the competition is published on the Foundation’s
+website: yessenovfoundation.org and on the Foundation’s social media.
+
+3.2. An Expert Council is created at the Foundation to conduct the competitive selection among the
+participants of the Program. The decision of the Expert Council is submitted to the Head of the
+Foundation for consideration.
+5.5. The decision of the Head of the Foundation is approved by the order which contains officially
+certified list of the Program winners. The list of the Program winners is published on the Foundation’s
+website: yessenovfoundation.org
+
+5.4. The first round is acceptance and selection of applications. To participate in the selection
+process for the Program, the candidate must:
+
+3.4.1. fill out the online application on the Foundation's website: yessenovfoundation.org;
+
+3.4.2. attach to the application:
+
+Mandatory documents:
+
+1. copy of ID;
+
+2. student transcript (GPA not lower than 3.0). Applications with a GPA lower than 3.0 will not be
+considered.
+
+3. certificate of no criminal record/presence of a criminal record.
+
+4. a copy of the transcript (all semesters) or undergraduate diploma with grades (for undergraduates and
+professionals);
+
+5. an essay on the topic "| want to learn how to analyze data so that...” (not less than 7 sentences and no
+more than 750 words) must be submitted only in an editable Microsoft Word document and written in the
+language of the application form — Kazakh, Russian, or English.
+
+6.CV
+
+Additional documents:
+
+1. a portfolio demonstrating the candidate’s achievements in scientific research and/or expressed
+interests in a specific scientific/technical area, along with providing relevant supporting documents:
+
+a. certificates for participation/victories in an olympiad — no more than two (2) certificates*;
+
+Б. certificates confirming completion of courses, etc. — no more than two (2) certificates”;
+
+с. certificates for social activity and volunteering — no more than two (2) certificates*;
+
+а. publications — no more than two (2) publications”;
+
+e. links to projects in which the candidate participated or implemented independently - no more than 3
+examples (for each example, no more than 2 photos/screenshots of pages/links to websites and/or social
+media, along with a text explanation of no more than 150 words)*.
+
+*When reviewing additional documents, the Foundation considers the limited number of
+certificates/publications provided by the candidate. The candidate must independently select the
+certificates/publications/others that best represent personal achievements.
+
+3.4.3. Applications are accepted on the Foundation’s website: yessenovfoundation.org, from March 31
+through May 5, 2025.
+
+The deadline for acceptance of applications is May 5, 2025, 3:00 P.M. Astana time (GMT+5).
+Applications received after the deadline will not be considered.
+
+3.4.4. An application and essay сап be submitted in the Kazakh, Russian, or English languages.
+Documents (certificates, diplomas, recommendations, etc.) can be provided in their original languages.
+3.4.5. Submission documents to the competition means that the applicant shares the goals of the
+Program and agrees with all the terms of the competition’s procedure set out in these Provisions and is
+ready to fully comply with them.
+
+3.4.6. All the applications received on time are reviewed and assessed by the Foundation employees and
+independent experts by May 19, 2025, inclusive.
+
+
+3.4.7. Lists of the applicants who advanced to the second round will be published по later than Мау 20,
+2025, on the Foundation’s website: yessenovfoundation.org. Upon completion of the first round of the
+competition, no more than sixty (60) candidates will be selected.
+
+3.5. The second round is testing.
+
+3.5.1. The second round is held from May 21 through Мау 25, 2025.
+
+3.5.1 The Maths and Logic test. The test consists of thirty (30) questions and lasts 60 minutes. It is held
+online;
+
+5.5.2. Data analysis exam. The exam is a regression problem.
+
+5.5.5. For a successful passing the test, the candidate must have basic knowledge of the following
+topics:
+
+1) matrices, linear equations;
+
+2) graphs (mathematics);
+
+3) linear regression, means, medians;
+
+4) graphing functions;
+
+5) variables, loops, conditions, arrays (in any programming language);
+
+6) basic knowledge of statistics and probability theory - probability distributions, random variable, math.
+expectation, covariance, normal distribution.
+
+5.5.4. Lists of the applicants who advanced to the third round will be published no later than May 26,
+2025, on the Foundation’s website. Upon completion of the second round, no more than forty (40)
+candidates will be selected.
+
+3.6. The third round is an interview.
+3.6.1. The third round is held from May 27 through June 5, 2025.
+
+3.6.2. Participants of the third round are invited to an online interview with the Foundation’s Expert
+Council. During the interview process independent experts evaluate:
+
+a. analytical skills;
+
+b. professional qualities of the candidates;
+
+с. programming skills and experience (if there are any);
+
+d. high intellectual potential;
+
+e. striving for continuous professional development;
+
+f. other
+
+5.6.5. During the interview, the experts will also assess candidates based on the following criteria:
+
+a. general communication;
+
+b. value system and attitudes, motivation;
+
+c. general activity;
+
+d. emotional intelligence;
+
+e. understanding of the demands of the modern world;
+
+f. general psychological maturity;
+
+g. thinking;
+
+h. willingness of the applicants to post motivational content on social media.
+
+3.6.4. Duration of the interview is up to forty (40) minutes. Upon completion of the third round of the
+competition, twenty (20) winners will be selected.
+
+5.6.5. The Foundation reserves the right not to comment on its decisions to the participants of the
+competition.
+
+3.6.6. The list of the winners of the competition will be published no later than June 6, 2025, on the
+Foundation’s website: yessenovfoundation.org.
+
+№. Sponsorship Procedure.
+
+4.1. Sponsorship assistance is granted to twenty (20) winners from among the best participants of the
+Program's competition. The number of the Program winners may be increased or decreased depending
+on the quantity and quality of the applications received, and the decision of the Foundation’s Expert
+Council.
+
+4.2. As a result of the competitive selection process of the Program, the winners will undergo a 4-week
+training at the Foundation’s Yessenov Data Lab Summer School (hereinafter referred to as “the School”)
+free of charge, from June 16 through July 11, 2025, including two (2) weeks online - from June 16
+through June 27, 2025, and two (2) weeks offline - from June 30 through July 11, 2025, in Almaty.
+The Foundation covers travel and accommodation expenses for the winners residing outside of
+Almaty. The Foundation provides meals for all participants of the School during the offline training
+in Almaty.
+
+
+
+4.3. Before commencement of the training at the School, the Foundation and the winner of the Program
+sign a Sponsorship Agreement (hereinafter referred to as “the Agreement”).
+
+4.4. Тре winner of the Program, who has received the grant for training, is required to comply with
+the terms of the Agreement with the Foundation, including but not limited to the following:
+
+1) attend the School classes according to the schedule and not miss classes without a valid reason;
+
+2) responsibly complete all assignments, including independent work tasks as part of the training at the
+School. The completion of practical tasks will be checked using artificial intelligence systems that
+analyze the quality and completeness of the work;
+
+3) pass the exams at the School timely;
+
+4) comply with other obligations and rules of the School;
+
+5) disseminate information about the Foundation in any acceptable form, including posts on personal
+social media accounts that promote a positive reputation for the Foundation, as well as distribute
+information and advertising materials provided by the Foundation. There must be at least 1 post on
+Instagram, Facebook, or LinkedIn from the end of the competition until one week after the training is
+completed.
+
+6) provide the Foundation with information about personal achievements in professional activities and
+soft skills;
+
+7) participate in filming, information sessions and other communication activities as and when requested
+by the Foundation. These photos and videos may be used in the future on the Foundation’s social media
+and in its publications;
+
+8) provide information as and when requested by the Foundation, no later than three (3) business days
+from the date of receipt of the request sent to the email specified in the application;
+
+9) as and when requested by the Foundation, provide assistance in its activities and programs;
+
+10) as and when requested by the Foundation, provide personal photos, textual materials and videos
+(from the places of study/work/internship/social events, etc.) (the appearance апа clothing of
+individuals in the photos and videos must be neat and secular), as well as participate in photo and
+video sessions during the Foundation events, in order to create success stories for the Foundation’s
+information resources and other publications, aiming to motivate the youth of Kazakhstan;
+
+11) in performing the obligations under the Agreement, the winner of the Program and employees of the
+Foundation refrain from committing, inducing to commit actions that violate or contribute to the
+violation of the legislation of the Republic of Kazakhstan, including in the field of combating corruption,
+do not pay, do not offer to pay and do not authorize disbursement of any money or valuables, directly or
+indirectly, to any individuals, in order to influence the actions or decisions of such individuals to obtain
+any improper advantage or achieve any other improper purpose.
+
+4.5. For any questions regarding the Program and/or the Provisions, please contact the authorized
+representatives of the Foundation:
+
+- Grigoriy Lee: grigoriy.|\@yessenovfoundation.org, phone number: +7 705 888 5788;
+
+- Irina Grishchenko: irina.g@yessenovfoundation.org, phone number: +7 771775 1815.
+
+4.6. The Foundation reserves the right to verify the information provided by applicants and/or winners of
+the Program by any legal means and to exclude any applicant from the Program’s competitive selection
+(at any stage) and/or from the Program itself if the information does not correspond to reality.
+
+4.7. The Foundation reserves the right not to provide explanations regarding the motives and reasons
+for its decisions concerning applicants for the Program grants.

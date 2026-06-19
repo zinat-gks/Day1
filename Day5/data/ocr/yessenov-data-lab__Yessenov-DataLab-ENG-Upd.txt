@@ -1,0 +1,904 @@
+SHAKHMARDAN
+YESSENOV
+FOUNDATION
+
+%-9797:-ө
+АХО
+
+In partnership with
+
+Kaspi.kz
+
+
+
+YESSENOV
+шә DATA LAB
+
+» Table of Contents
+
+About Yessenov Data Lab
+
+Program stages
+
+Who can apply for the program?
+
+Apply to the Program
+
+School's Syllabus
+> Week 1. Python
+> Week 2. Linear Models for Classification and Regression
+> Week 3. Working with Features (PCA, Classification)
+> Week 4. Neural Networks
+> Week 5.Deep Learning in Computer Vision and Reinforcement Learning
+Solving Kaggle cases?
+> Week 6. Natural Language Processing (NLP)
+
+> Weeks 7-8. Project challenge
+
+SHAKHMARDAN
+YESSENOV
+FOUNDATION
+
+
+
+99 ЧИН
+
+YESSENOV
+шә DATA LAB
+
+> About Yessenov Data Lab
+
+The Yessenov Data Lab is an 8-week long intensive summer school that fast
+launches into the Data Scientist specialization. Participants solve the challenges
+businesses face and are equipped with knowledge to continue growing by
+self-learning.
+
+weeks of
+fast-paced
+learning
+
+weeks business
+academics cases
+
+Venue:
+Almaty Management University
+
+THE GRADUATES OF THE SUMMER SCHOOL CAN LOOK FOR TO
+ACQUIRE THE FOLLOWING SKILLS:
+
+ө Programming in Python within data analysis
+
+(D Preprocessing
+
+Г] Visualization of data and finding data dependencies
+
+( Forecasting based on historical data
+
+(5) Understanding different algorithms of training
+
+(6. Right choice of training model
+
+(7) Fundamental understanding of Neural Networks
+
+
+
+YESSENOV
+шә DATA LAB
+
+№ Program stages
+
+Round 3:
+Interviews
+
+Apr 30 -
+Мау 13
+
+240
+candidates
+760
+
+candidates
+
+Feb 26 - Mar 25
+
+Applications
+
+SHAKHMARDAN
+YESSENOV
+FOUNDATION
+
+
+
+90
+
+YESSENOV
+шә DATA LAB
+
+№ Who can apply for the program?
+
+йл ©. :0
+І
+
+Students іп
+
+their last year:
+Kazakhstan citizens | undergraduate, Professionals
+above 18 graduate and
+
+Ph.D. programs
+
+REQUIREMENTS FOR CANDIDATES:
+
+¢ Strong analytical skills
+
+“ Basic knowledge of statistics and linear algebra
+¢ Determination and result-oriented
+
+THE FOLLOWING ARE A PLUS:
+
+Certificates of successful completion
+of programming courses or a bachelor
+diploma in CS or other tech disciplines
+
+Programming skills (math, physics, and engineering)
+
+(Ы 1-5
+
+Upper intermediate English
+(6.5 IELTS/90 TOEFL ibt) Е
+or higher
+
+SHAKHMARDAN
+
+TOEFL. |ELTS TESSENGY
+
+(OVERVIEW AND FORMAT eh for nteratonal Oppertun
+
+
+
+90
+
+ҮЕ55ЕМОУ
+
+шә DATA LAB
+
+> Apply to the Program
+
+ге Fill out : |
+Visit > ra 5
+yessenovfoundation.org 2 ар катет,
+
+additional documents
+
+Send them to Round 1 results
+> % info@yessenovfoundation.org > April 9 =
+
+before March 25
+
+ADDITIONAL DOCUMENTS LIST:
+
+м 1. Application form
+
+м 2. Copy of ID
+
+Е 5. Copy of diplomas, certificates on completion of courses
+(programming, statistics, etc.), participation in Olympiads
+(math, IT or any other tech disciplines)
+
+м 4. Copy of transcript (all completed semesters) and a copy of bachelor
+degree diploma with transcript (for graduates and specialists)
+
+№ 5. Essay on “| want to learn data analysis to...
+
+м 6. Detailed portfolio demonstrating achievements in IT field
+(where possible)
+
+м 7. Certificates of English language tests (where possible)
+
+SHAKHMARDAN
+YESSENOV
+FOUNDATION
+
+
+
+©
+
+-ө
+
+> School's Syllabus
+
+Week 1. Python
+
+June 11-15
+
+Day 1
+
+09:00 - 10:00 Registration
+
+10:00 - 11:30 What is Dat
+11:30 - 11:45 Coffee breal
+12:00 - 13:15 Case study:
+13:15 - 14:30 Lunch
+
+‘a Mining, Big Data? Examples
+k
+Titanic on Kaggle
+
+14:30 - 16:00 Python: Introduction. Variables, list, conditions, loops
+
+16:00-16:15 Coffee breal
+16:15 - 18:00 Lab work: В
+
+k
+asics of Python
+
+Day 2
+
+10:00 - 11:30 Data structures: list, sets, dictionaries
+
+11:30 - 11:45 Coffee breal
+
+k
+
+12:00 - 13:15 МитРу library: Introduction
+
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab work: а
+16:00 - 18:00 Team buildi
+
+аға structures and NumPy
+ng
+
+Day 3
+
+10:00 - 11:30 Pandas and
+11:50-11:45 Coffee breal
+12:00 - 13:15 Grouping 0
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab work: С
+16:00-16:15 Coffee breal
+16:15 - 18:00 Lab work: С
+
+SciPy libraries: Introduction. Data upload
+data. Filters, sorting
+
+SV, TXT, Quandl.
+
+SV, TXT, Quandl.
+
+Day 4
+
+10:00 - 11:30 Object-oriented programming
+
+11:30-11:45 Coffee brea
+12:00 - 13:15 Case study:
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab worl
+16:00 - 16:15 Coffee brea
+16:15 - 18:00 Lab worl
+
+Coders Strike Back on codingame.com
+
+: codingame.com: simple tasks
+
+: codingame.com: Coders Strike Back
+
+Day 5
+
+10:00 - 11:30 Data upload. Data pre-processing
+
+11:50-11:45 Coffee breal
+12:00 - 13:15 Simple visu
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab work: P.
+
+alization (2D Arrays)
+
+andas
+
+16:00-16:15 Coffee breal
+
+16:15 - 18:00 Lab work: MatPlotLib
+
+Kuanysh Abeshev
+AlmaU
+
+YESSENOV
+DATA LAB
+
+Timur Bakibayev
+Professor AlmaU
+
+SHAKHMARDAN
+YESSENOV
+FOUNDATION
+
+
+90
+
+> School's Syllabus
+
+Week 2. Linear Models for Classification
+and Regression
+
+June 18-22
+
+Day 1
+10:00 - 11:30 Optimization, gradient decent method
+11:30-11:45 Coffee brea
+12:00 - 13:15 Lab wor
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab work:
+16:00- 16:15 Coffee brea
+16:15 - 18:00 Lab worl
+
+Day 2
+10:00 - 14:30 Linear models for classification and regression
+11:50-11:45 Coffee brea!
+12:00 - 13:15 Lab worl
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab wor
+16:00-16:15 Coffee brea!
+16:15 - 18:00 Lab worl
+
+Day 3
+10:00 - 11:30 Overfitting, generalization
+11:30-11:45 Coffee brea
+12:00 - 13:15 1а worl
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab worl
+16:00 - 18:00 Team building
+
+Day 4
+10:00 - 11:30 Cross-validation
+11:30 -11:45 Coffee brea
+12:00 - 13:15 1а worl
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab worl
+16:00- 16:15 Coffee brea
+16:15-18:00 Та worl
+
+Пау5
+10:00 - 11:30 Quality metrics
+11:30 -11:45 Coffee brea
+12:00 - 13:15 [аб wor
+13:15 - 14:30 Lunch
+14:30 - 16:00 (аһ worl
+16:00- 16:15 Coffee brea
+16:15 - 18:00 Lab wor
+
+YESSENOV
+шә DATA LAB
+
+Dmitriy Rusanov
+Data Scientist,
+EPAM Systems
+
+SHAKHMARDAN
+UNIVERSITY: YESSENOV
+FOUNDATION
+
+
+
+90
+
+> School's Syllabus
+Week 3. Working with Features
+
+(PCA, С
+
+June 25-29
+
+lassification)
+
+Day 1
+10:00 - 11:30  Classific
+11:30 - 11:45 Coffee b
+12:00 - 13:15 (аһ worl
+13:15 - 14:30 Lunch
+14:30 - 16:00 (аһ worl
+16:00 - 16:15 Coffee b
+16:15-18:00 Lab worl
+
+Day 2
+
+ation, decision tree and k-Nearest Neighbours
+real
+
+real
+
+10:00 - 11:30 Decision tree ensembles: bagging, boosting, random forest
+
+11:30 - 11:45 Coffee b
+12:00 - 13:15 [аб мог
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab wor
+16:00 - 16:15 Coffee b
+16:15 - 18:00 Lab wor
+
+real
+
+real
+
+Day 3
+
+10:00 - 11:30 Unsupervised learning: PCA, clustering
+
+11:30-11:45 Coffee b
+12:00 - 13:15 Lab мог
+13:15 - 14:30 Lunch
+
+real
+
+14:30 - 16:00 (аһ worl
+16:00 - 18:00 Team bu
+
+ilding
+
+Day 4
+10:00 - 11:30 Feature
+11:30 - 11:45 Coffee b
+12:00 - 13:15 (аһ worl
+13:15 - 14:30 Lunch
+14:30 - 16:00 (аһ worl
+16:00 - 16:15 Coffee b
+16:15 - 18:00 Lab wor
+
+selection
+real
+
+real
+
+Day 5
+10:00 - 11:30 Suppor!
+11:30-11:45 Coffee b
+12:00 - 13:15 Lab worl
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab wor
+16:00 - 16:15 Coffee b
+
+vector machine (SVM)
+rea
+
+real
+
+16:15 - 18:00 Lab worl
+
+Michael Lipkovich
+Lead big data engineer,
+EPAM Systems
+
+YESSENOV
+DATA LAB
+
+SHAKHMARDAN
+YESSENOV
+FOUNDATION
+
+
+90
+
+ҮЕ55ЕМОУ
+|
+и
+т
+№ School's Syllabus
+Week 4. Neural Networks
+July 2-6
+а i
+00. Т ; Marina Gorlova
+:00 - 11:30 Neural networks: Introduction. Perceptron Analyst,
+11:30-11:45 Coffee brea Yandex Money
+
+12:00 - 13:15 Васк-ргорадайоп
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab work: Neural Network implementation
+16:00 - 16:15 Coffee brea
+16:15 - 18:00 Lab work: Neural Network implementation
+
+10:00 - 11:30 Keras library: Introduction
+11:30-11:45 Coffee brea
+12:00 - 13:15 Кегав library: Introduction. Continued
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab work
+16:00-16:15 Coffee breal
+16:15 - 18:00 Lab work
+
+10:00 - 14:30 Convolutional neural networks (CNN)
+11:30-11:45 Coffee brea
+12:00 - 13:15 Lab work: image analysis
+13:15 - 14:30 Lunch
+
+14:30 - 16:00 Lab work: image analysis
+16:00 - 18:00 Team building
+
+10:00 - 11:30 Recurrent neural network (RNN)
+11:30 - 11:45 Coffee brea
+12:00 - 13:15 Lab work: text analysis
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab work: text analysis
+16:00 - 16:15 Coffee brea
+16:15 - 18:00 Lab work: text analysis
+
+10:00 - 11:30 Problems of overfitting. Data augmentation
+11:30-11:45 Coffee brea
+12:00 - 13:15 Lab worl
+
+14:30 - 16:00 Lab wor
+16:00 - 16:15 Coffee brea
+16:15 - 18:00 Lab wor
+
+SHAKHMARDAN
+YESSENOV
+FOUNDATION
+
+UNIVERSITY
+
+
+
+90
+
+YESSENOV
+шә DATA LAB
+
+> School's Syllabus
+Week 5.
+Deep Learning in Computer Vision and
+Reinforcement Learning.
+Solving Kaggle cases?
+
+July 9-13
+
+Dmitriy Kotovenko
+AGT international
+10:00 - 11:30 MNIST, Fashion MNIST, LFW datasets classification compute! Vision
+
+11:30-11:45 Coffee brea
+12:00 - 13:15 Lab work: work оп an example
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab work: work on an example
+16:00 - 16:15 Coffee brea
+16:15 - 18:00 Lab work: work оп an example
+
+Day 2
+10:00 - 11:30 VGG,ResNet and Inception architectures. What neural networks see
+11:30 - 11:45 Coffee breal
+12:00 - 13:15 Lab work: work оп an example
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab work: work оп an example
+16:00 - 16:15 Coffee brea
+16:15 - 18:00 Lab work: work оп an example
+
+Day 3
+10:00 - 11:30 From classification to segmentation. Kaggle Challenges review
+11:30-11:45 Coffee brea
+12:00 - 13:15 — Lab work: work оп an example
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab work: work оп an example
+16:00 - 18:00 Team building
+
+Day 4
+10:00 - 14:30 Autoencoders and Variational Autoencoders. Pose estimation
+11:30-11:45 Coffee brea
+12:00 - 13:15 — Lab work: work оп an ехатр!
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab work: work оп an ехатр!
+16:00 - 16:15 Coffee brea
+16:15 - 18:00 Lab work: work оп an examp!
+
+>
+
+>
+
+>
+
+Day 5
+10:00 - 11:30 Reinforcement learning. Supervised learning limits
+11:30-11:45 Coffee brea
+12:00 - 13:15 Lab work: work оп an example
+13:15 - 14:30 Lunch
+14:30 - 16:00 Lab work: work on an example
+16:00 - 16:15 Coffee brea
+16:15 - 18:00 Lab work: work оп an example
+
+SHAKHMARDAN
+YESSENOV
+FOUNDATION
+
+
+
+№ 5сһо015 Syllabus
+Week 6. Kaspi Lab
+
+July 16-20
+
+Day 1 Who is an analyst and what does he work with?
+
+Who is an analyst and what is his purpose? (Part 1)
+
+10:00 - 11:30
+
+16:15 - 18:00
+
+Coffee brea
+
+Who is an analyst and what is his purpose? (Part 2)
+
+Lunch
+
+Practical case «Analyst dedication?». Part 1
+
+Coffee brea
+
+Practical case «Analyst dedication?». Part 2
+
+Day 2 Where to begin?
+
+Client analytics - what kind of «fruit» is it?
+
+10:00 - 11:30
+
+16:15 - 18:00
+
+Coffee brea
+CRM + Analytics
+Lunch
+
+Developing key skills of an analyst. Part 1
+
+Coffee brea
+
+Developing key skills of an analyst. Part 2
+
+Day 3 Intellectual risks
+
+Credit: to be or not to be, here is the question?
+
+10:00 - 11:30
+
+14:30 - 16:00
+
+16:00 - 16:15
+16:15 - 18:00
+
+Coffee brea
+
+«Measure thrice and cut once».
+
+Lunch
+
+Behavioral analytics as one of the main lines of protection
+
+in antifraud process. Part 1
+Coffee Бгеа
+
+Behavioral analytics as one of the main lines of protection
+
+in antifraud process. Part 2
+
+Day 4 Artificial intelligence in Kaspi
+
+Can you read between the lines? Part 1
+
+10:00 - 11:30
+
+16:15 - 18:00
+
+Coffee brea
+
+Can you read between the lines? Part 2
+
+Lunch
+When system knows better
+Coffee Бгеа
+When system knows better
+
+han the customer does. Part 1
+
+han the customer does. Part 2
+
+Day 5 Marketing cases
+
+What to do, what to do? Definitely to buy!
+
+10:00 - 11:30
+
+16:00 - 16:15
+16:15 - 18:00
+
+Coffee brea
+Practical case: «To each cus
+Lunch
+Practical case: «To each cus
+Coffee brea
+Practical case: «To each cus
+
+‘omer, own product». Part 1
+‘omer, own product». Part 2
+
+‘omer, own product». Part 3
+
+YESSENOV
+шә DATA LAB
+
+(7) Kaspi.kz
+
+Duman Uvatayev
+Chief Data Officer
+
+Aigerim Sagandykova
+Chief Analyst,
+Experimental Projects Group
+
+Ilyas Zhubanov
+Head of the data
+analytics department
+
+SHAKHMARDAN
+YESSENOV
+FOUNDATION
+
+
+
+90
+
+> School's Syllabus
+Week 7. Kaspi Lab
+
+July 23-27
+
+т Kaspi Lab in numbers
+
+8000+
+
+students have listened largest specialized
+
+YESSENOV
+DATA LAB
+
+(7) Kaspi.kz
+
+1 500+
+
+students attended
+
+presentation universities - partners exam
+
+100+ 420+
+
+students had successfully academic hours applied problems
+passed examination and listened solved
+
+completed the training
+
+16
+
+full-fledged analytical
+services developed
+
+of students have
+found a good job
+
+90%
+
+Kaspi Lab students on the basis
+of methods of
+machine learning have learnt to:
+
+> Asses the risk profile > Optimize work >
+of clients processes
+by developing architecture through centralization of decision
+of automatic decision making system making contour and decreasing
+by ‘credit conveyor” principles; recourse intensity processes;
+
+p> Develop, introduce p> Isolate primary from
+and evaluate secondary
+various advisory systems on website on creation of design report
+based on behavioral data from website; or presentation content/
+
+analytical summaries;
+>» Develop solutions > Understand business
+
+and implement data driven
+
+on computer vision processes in a company.
+
+detection, matching, tracing,
+and classification of products;
+
+Develop a fair
+evaluation of
+environment
+any marketing activities,
+
+regardless of communication
+channels ( mass or personalized);
+
+SHAKHMARDAN
+YESSENOV
+FOUNDATION
+
+
+
+YESSENOV
+шә DATA LAB
+
+> School's Syllabus
+Week 8. Project challenge
+
+July 30 - August 3
+Kazakhstani companies that use data analysis
+will provide the program participants with
+
+challenges of real businesses. Successful
+graduates of the School will receive job offers.
+
+ATF) Bank Hoe
+
+ChocoFamily
+
+Chocolife "* —§Jchocotravel Chocofood || Lensmark’ Сһосотаг”
+
+5 ALMA SHAKHMARDAN
+
+UNIVERSITY: YESSENOV
+FOUNDATION
+
+
+
+90
+
+ҮЕ55ЕМОУ
+
+[|
+OUR PROGRAMS
+Knowledge | Science | Resources
+(АЯ Yessenov Л ЕЗ Research (ІС! IT skills
+Lectures internships
+
+Yessenov
+scholarship
+
+Е English language (ше му Komanda SOS
+
+Promotion of
+science
+
+Graduate бо Personal
+studies performance
+
+$ Kazakhstan
+ФО Chess
+*33* Ғейегайоп
+
+< Almaty Marathon
+
+Ата
+
+тағу
+%» Triathlon
+Federation
+
+yessenovfoundation.org
+IN: info@yessenovfoundation.org
++7727 346 92 88
+
+
+
+SHAKHMARDAN
+YESSENOV
+FOUNDATION
+
+UNIVERSITY
+
+YESSENOV
+шә DATA (АВ
+a
+
+Almaty, 2018
+
+>
+
+In partnership with
+
+( Kaspi.kz

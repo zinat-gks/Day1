@@ -1,0 +1,447 @@
+SHAKHMARDAN YESSENOV
+FOUNDATION
+
+YESSENOV
+шә DATA LAB
+
+13 July - 14 August 2020
+Almaty
+
+
+ҮЕ55ЕМОУ
+шә DATA (АВ
+a
+
+» Table of Contents
+
+What is Yessenov data lab summer school?
+Ш Training program
+> Week 1. Python programming language
+> Week 2. Linear classification and regression models
+> Week 3. Data analysis, work with tags and trees
+> Week 4. Clustering and Neural Networks
+
+> Week 5. Computer Vision
+
+‘SHAKHMARDAN YESSENOV
+FOUNDATION
+
+
+
+YESSENOV
+шә DATA (АВ
+a
+
+№ What is Yessenov data lab summer school?
+
+Yessenov Data Lab 2020 Summer School is a 5-week intensive training of young
+Kazakhstan's scientists in basic skills of volume data analysis for further
+application of knowledge in real practical work, as well as the development of
+their communication skills
+
+GRADUATES WILL GAIN THE FOLLOWING SKILLS:
+“” Python programming as part of data analysis
+(2 Statistical analysis methods
+© Data pre-processing and preparation for subsequent analysis
+4 Data visualization and pattern recognition
+Ф Forecasting based оп historical data
+6. Understanding various learning algorithms
+11. The right choice of training model
+
+‘SHAKHMARDAN YESSENOV
+FOUNDATION
+
+
+
+YESSENOV
+шә DATA (АВ
+a
+
+№ Training Program
+Week 1. Python programming language
+
+Kuanysh Abeshev
+Dean of School of Engineering
+Management, AlmaU
+
+10:00 - 10:15 Opening, welcome words
+
+10:15 - 14:30 What is Data Science, Machine Learning, examples.
+11:45 - 13:15 Introduction to Python: variables, lists,
+
+14:30 - 16:00 Introduction to Python: conditions, cycles
+
+16:15 - 18:00 Laboratory work, mistake discussion
+
+Day 2
+10:00 - 11:30 Work with lines. Latex, MarkDown
+11:45 - 13:15 МитРу library review
+14:30 - 16:00 Laboratory work: NumPy tasks
+16:15 - 18:00 Laboratory work, mistake discussion
+
+Day 3
+
+10:00 - 11:30 Data structures: lists, sets, dictionaries
+11:45 - 13:15 Python algorithms: sorting, search
+
+14:30 - 16:00 Laboratory work: data structures and NumPy
+16:15 - 18:00 Laboratory work, mistake discussion
+
+Day 4
+
+10:00 - 11:30 Pandas, MatPlotLib library review
+
+11:45 - 13:15 Data grouping. Filters, sorting.
+
+14:30 - 16:00 Laboatory work: work with Pandas, MatPlotLib.
+16:15 - 18:00 Modern workspace, collaboration /
+
+eamwork and communication ==> Speaker
+? Almas Moldakanov
+
+ei Educational sector manager in
+10:00 - 11:30 Consolidation of knowledge in Pandas and MatPlotLib Kazakhstan and the CIS, Microsoft
+11:45 - 13:15 SeaBorn library review
+14:30 - 16:00 Laboratory work: Visualization
+16:15 - 18:00 Laboratory work, mistake discussion
+
+‘SHAKHMARDAN YESSENOV
+FOUNDATION
+
+
+
+YESSENOV
+шә DATA (АВ
+a
+
+№ Training Program
+Week 2. Linear classification and
+regression models
+
+Nazym Satbekova
+Machine Learning Engineer,
+Kolesa Group
+
+10:00 - 11:30 Linear regression models (Simple Linear Regression, MultReg, PolyReg)
+11:45 - 13:15 Quality metric (MSE, MAE, RMSE).
+
+14:30 - 16:00 Laboratory work
+
+16:15 - 18:00 Laboratory work, mistake discussion
+
+Day 2
+10:00 - 11:30 Classification goal
+11:45 - 13:15 К-Меагезі Neighbors (КММ) method, logistic regression
+14:30 - 16:00 Laboratory work.
+16:15 - 18:00 Laboratory work, mistake discussion
+
+Day 3
+
+10:00 - 11:30 Probabilistic methods. Naive Bayes
+11:45 - 13:15 Laboratory work.
+14:30 - 16:00 Laboratory work.
+16:15 - 18:00 Laboratory work, mistake discussion
+
+Day 4
+
+10:00 - 11:30 Support Vector Machines (SVM)
+11:45 - 13:15 Laboratory work.
+14:30 - 18:00 Laboratory work, mistake discussion
+
+Day 5
+10:00 - 11:30 Statistical analysis methods.
+11:45 - 13:15 Project work
+14:30 - 16:00 Project work
+16:15 - 18:00 Defence of results, mistake discussion
+
+‘SHAKHMARDAN YESSENOV
+FOUNDATION
+
+
+
+№ Training Program
+
+Week 3. Data analysis, work with tags and trees
+
+Day 1
+10:00 - 11:30
+11:45 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Regression and classification trees
+Correlation and covariance
+Laboratory work
+
+Laboratory work, mistake discussion
+
+Day 2
+10:00 - 11:30
+11:45 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Ensemble methods: bagging, boosting and random forest
+Laboratory work
+
+Laboratory work
+
+Laboratory work, mistake discussion
+
+Day 3
+10:00 - 11:30
+11:45 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Information content, construction and tag selection
+Data sampling
+
+Laboratory work
+
+Laboratory work, mistake discussion
+
+Day 4
+
+10:00 - 11:30
+11:45 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Ensemble methods: Bias-variance dilemma, XGBoost
+Laboratory work
+
+Laboratory work, mistake discussion
+
+А personal brand in professional social media helps open
+up new career opportunities. How to create an effective
+
+profile on LinkedIn? <=> Speaker
+
+Day 5
+
+10:00 - 11:30
+11:45 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Gradient descent on trees: CatBoost
+Project work
+
+Project work
+
+Defence of results, mistake discussion
+
+YESSENOV
+шә DATA (АВ
+a
+
+|
+
+av
+”)
+Darkhan Aimaganov
+Product Analyst, Arbuz.kz
+
+Almas Moldakanov
+
+Educational sector manager in
+Kazakhstan and the CIS, Microsoft
+
+‘SHAKHMARDAN YESSENOV
+FOUNDATION
+
+
+
+YESSENOV
+шә DATA (АВ
+a
+
+Week 4. Clustering and Neural Networks
+
+Aidos Sarsembayev
+Assistant Professor, IITU
+
+Day1
+10:00 - 11:30 Testing statistical hypotheses
+11:45 - 13:15 Statistical Models: Survival analysis
+14:30 - 16:00 Laboratory work
+16:15 - 18:00 Laboratory work, mistake discussion
+
+№ Training Program |
+
+Day 2
+10:00 - 11:30 Unsupervised learning: PCA, clustering
+11:45 -13:15 K-Means algorithm
+14:30 - 16:00 Laboratory work
+16:15 - 18:00 Laboratory work, mistake discussion
+
+Day 3
+10:00 - 11:30 Introduction to neural networks. Perceptron
+11:45 - 13:15  Васкргорадайоп Algorithm
+14:30 - 16:00 Laboratory work
+16:15 - 18:00 Laboratory work, mistake discussion
+
+Day 4
+
+10:00 - 11:30 Introduction to Keras library
+
+11:45 - 13:15 Convolutional Neural Networks
+
+14:30 - 16:00 Laboratory work, mistake discussion
+
+16:15 - 18:00 Atlas of new professions and competencies of Kazakhstan.
+
+The role of science in the formation of promising industries
+
+and professions ==> Speaker
+
+Sayasat Nurbek
+Day 5 Head of BTS Education
+
+10:00 - 11:30 Problem of retraining neural networks, data augmentation
+11:45 - 13:15 Project work
+
+14:30 - 16:00 Project work
+
+16:15 - 18:00 Defence of results, mistake discussion
+
+‘SHAKHMARDAN YESSENOV
+FOUNDATION
+
+
+
+№ Training Program
+
+Week 5. Natural Language Processing
+
+Day 1
+
+10:00 - 11:30
+11:45 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+YESSENOV
+шә DATA (АВ
+a
+
+Rustem Burkhanov
+
+Computer Vision Engineer,
+BTS Digital
+
+ntro to CV
+
+ntro to СММ5
+
+Laboratory work - Intro to Pytorch
+
+Laboratory work - Intro to CNNs
+
+Day 2
+10:00 - 11:30
+11:45 - 13:155
+14:30 - 16:00
+16:15 - 18:00
+
+Day 3
+
+Regularization (Dropout, Batchnorm, Augmentations)
+Classification Architectures
+
+Laboratory work - ML Pipeline
+
+Laboratory work - Dataloaders, Transfer Learning
+
+10:00 - 11:30
+11:45 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Optimization (Optimizers)
+
+Detection Architectures
+
+Laboratory work - Detection Pipeline
+
+Laboratory work - Segmentation Pipeline, Intro to Project
+
+Day 4
+
+10:00 - 11:30
+11:45 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Segmentation Architectures
+
+Project work - Pneumothorax Segmentation
+Project work - Pneumothorax Segmentation
+Project work - Pneumothorax Segmentation
+
+Day 5
+
+10:00 - 11:30
+11:45 - 13:15
+14:30 - 17:00
+17:00 - 17:30
+
+RNNs for CV (optional)
+
+Project work - Pneumothorax Segmentation
+Team Presentations
+
+Official closing
+
+‘SHAKHMARDAN YESSENOV
+FOUNDATION
+
+
+
+ҮЕ55ЕМОУ
+шә DATA (АВ
+a
+
+№ Training Program
+
+JOIN OUR EDUCATIONAL, SCIENCE
+AND RESOURCES PROGRAMS
+
+ооо
+
+Research Yessenov
+
+Internships scholarship
+Yessenov English Graduate Books
+Lectures language studies
+
+Almaty ATF
+т
+
+5ТАҮ: yessenovfoundation.org
+IN: info@yessenovfoundation.org
+TOUCH: +7727 346 92 88
+
+
+
+YESSENOV
+DATA LAB
+
+>
+5
+=
+Ш
+2
+ш5
+жш
+ЕЗІ
+=
+= 5
+<=
+Ек
+=
+ЕЗ
+ЕЗ
+ЕЗ
+a

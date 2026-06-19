@@ -1,0 +1,11 @@
+[theme]
+# Professional light theme by default. Yessenov teal primary, coral accent.
+base = "light"
+primaryColor = "#0E6B6B"
+backgroundColor = "#F7F6F2"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#1B2B2A"
+font = "sans serif"
+
+[server]
+headless = true

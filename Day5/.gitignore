@@ -1,0 +1,23 @@
+# === SECRETS — NEVER COMMIT ===
+API kays
+API*kays*
+*.env
+.env
+.env.*
+secrets*
+*secret*
+*_key*
+*apikey*
+config_secrets.py
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+
+# Large/raw data (optional — keep repo light)
+data/files/*.pdf

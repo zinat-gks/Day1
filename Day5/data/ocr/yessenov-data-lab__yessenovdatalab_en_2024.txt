@@ -1,0 +1,392 @@
+FOUNDATION
+
+SHAKHMARDAN YESSENOV
+
+|
+*
+‚ №” 7
+а)
+- | ;
+жай N
+ale > pe
+
+.
+Oe +
+// /
+
+*
+
+Si
+
+“A / 2;
+7 <
+*
+f
+
+ЕЕ:
+
+ea | 2
+|
+}
+
+*
+
+YESSENOV
+DATA LAB
+
+July 13
+
+Almaty 2024
+
+
+
+YESSENOV
+шә DATA LAB
+ш
+
+Ш What is Yessenov Data Lab 2024 Summer School?
+
+Ш Training Program:
+
+Week 1 Python for Data
+
+Week 2. Regression and Analysis
+
+Week 3. Data Classification
+
+Week 4. Deep Learning and Computer Vision
+
+““ SHAKHMARDAN YESSENOV
+FOUNDATION =m
+
+
+YESSENOV
+шә DATA LAB
+ш
+
+What is Yessenov Data Lab 2024 Summer School?
+
+Yessenov Data Lab Summer School 2024 is a 4-week intensive course.
+3 weeks of online training,
+1 week of offline training (in Almaty).
+
+Dates: June 17 - July 13, 2024
+
+A 4-WEEK SCHOOL GIVES YOU THE OPPORTUNITY TO:
+
+learn big data analysis skills that you can apply in practice;
+communicate with lecturers, ask your questions;
+meet like-minded people and build new connections.
+
+In addition to the YDL School certificate, excellent students will
+also receive an academic transcript/certificate from AlmaU,
+equivalent to a certificate of advanced training, which counts
+towards the students’ training.
+
+The Foundation covers return tickets, food and accommodation
+expenses for the winners of the Yessenov Data Lab contest who
+come to Almaty from other regions from July 8 to July 13.
+
+The School participants are provided with food during the
+offline training.
+
+SHAKHMARDAN YESSENOV Ц
+FOUNDATION =m
+
+
+ҮЕ55ЕМОУ
+as ED DATA LAB
+
+Training Program
+
+Lecturer:
+
+Timur Bakibayev
+Ph.D. in Computer Science, Professor at AlmaU
+
+Week 1. Python for Data
+
+Objective: to learn the basics of the Python programming language
+for data analysis
+
+Day 1 Artificial Intelligence and Work with ChatGPT
+10:00 - 10:10 Opening of the Summer School. Welcome Message
+10:10 - 14:30 What is Artificial Intelligence
+11:45 - 13:15 ChatGPT Principles
+14:30 - 16:00 Laboratory Work with ChatGPT API
+16:15 - 18:00 Laboratory Works’ Analysis
+
+Day 2 Working with Data
+10:00 - 11:30 МитРу and Pandas Libraries’ Review
+11:45 - 13:15 Data Grouping. Filters, Sorting
+14:30 - 16:00 Laboratory Work with Pandas
+16:15 - 18:00 Laboratory Works’ Analysis
+
+Day 3 Data Visualization
+
+10:00 - 11:30 Matplotlib Review
+
+11:45 - 13:15 Seaborn Library Review
+14:30 - 16:00 Laboratory Work: Visualization
+16:15 - 18:00 Laboratory Works’ Analysis
+
+Day 4 Basic Forecasting
+
+10:00 - 11:30 Regression Problem Review
+
+11:45 - 13:15 Feature Importance in Model Building
+
+14:30 - 16:00 Laboratory Work: Analysis and Data Preprocessing
+16:00 - 17:00 Laboratory Works’ Analysis
+
+17:00 - 18:00 Motivational Meeting
+
+Day 5 StreamLit: The Web of Data
+
+10:00 - 11:30 Streamlit Review
+
+11:45 - 13:15 Laboratory Work: Streamlit І І І
+14:50 - 16:00 Laboratory Work: Streamlit SHAKHMARDAN YESSENOV
+16:00 - 18:00 Streamlit Deployment FOUNDATION ==
+
+
+Оліле — МЕ.
+
+Training Program
+
+Lecturer:
+
+Kirill Yakunin
+
+Ph.D. in Computing Systems and Software,
+ML Engineer at Metaculus
+
+D> Week 2. Regressionand Analysis =
+
+Objective: Mastering the Theory and Skills of Statistical Analysis;
+Building Predictive Regression Models
+
+Day 1 Statistical Analysis
+10:00 - 11:30 Intelligence Analysis, Histograms, Outliers, Distributions, Correlation Analysis
+11:45 - 13:15 Hypothesis Testing. One-sample Test. Two-sample Test
+14:30 - 16:00 Laboratory Work
+16:15 - 18:00 Laboratory Work. Discussion
+
+Day 2 Regression Modelling P.1
+
+10:00 - 11:30 Linear Regression Basics. Metrics. Data Verification.
+11:45 - 13:15 Data Preprocessing
+
+14:30 - 16:00 Laboratory Work
+
+16:15 - 18:00 Laboratory Work. Discussion
+
+Day 3 Regression Modelling P.2
+
+10:00 - 11:30 Polynomial Regression. Regularization of Regression Models
+11:45 - 13:15 Gradient Descent
+
+14:30 - 16:00 Laboratory Work
+
+16:15 - 18:00 Laboratory Work. Discussion
+
+Day 4 Unsupervised Learning
+
+10:00 - 11:30 Feature Importance
+
+11:45 - 13:15 Unsupervised Learning. Dimensionality Reduction
+14:30 - 16:00 Laboratory Work
+
+16:00 - 17:00 Laboratory Work. Discussion
+
+17:00 - 18:00 Motivational Meeting
+
+Day 5 Project on Regression Modelling
+
+10:00 - 11:30 Complete Machine Learning Project
+
+11:45 - 13:15 Q&A
+
+14:30 - 16:00 Project Defence І | I
+16:15 - 18:00 Project Defence and Discussion of the Results SHAKHMARDAN YESSENOV mes
+
+FOUNDATION — мы
+
+
+Training Program
+
+Lecturer:
+
+Kuanysh Abeshev
+
+Ph.D. in Mathematics,
+Dean of the School of Digital Technologies,
+
+AlmaU
+
+Week 3.
+
+YESSENOV
+as ED DATA LAB
+Г]
+
+Data Classification
+
+Objective: building predictive data classification models
+
+Day 1 Performance Evaluation - Classification
+
+10:00 - 11:30
+11:45 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Metrics for Classification Problems
+
+Logistic Regression (Binary and Multi-Class)
+
+Laboratory Work
+
+Laboratory Works’ Analysis. Distribution of Datasets for the Project Defence
+
+Day 2 Instance-based Learning. Probabilistic Classification
+
+10:00 - 11:30
+11:45 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+-nearest Neighbors (КММ) Method
+Naive Bayes Classifier
+
+Laboratory Work
+
+Laboratory Works’ Analysis
+
+Day 5 Kernel-Based Models
+
+10:00 - 11:30
+11:45 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Support Vector Machines (SVM) - Classification
+Support Vector Machines (SVM) - Regression
+Laboratory Work
+
+Laboratory Works’ Analysis
+
+Day 4 Tree-Based Models
+
+10:00 - 11:30
+11:45 - 13:15
+14:30 - 16:00
+16:00 - 17:00
+17:00 - 18:00
+
+Decision Tree
+
+Ensemble Methods and Random Forests
+Laboratory Work
+
+Laboratory Works’ Analysis
+
+Motivational Meeting
+
+Day 5 Classification Project
+
+10:00 - 11:30
+11:45 - 13:15
+14:30 - 16:00
+16:15 - 18:00
+
+Principal Component Analysis (PCA)
+
+Laboratory Work
+Project Implementation |
+Presentation and Defence of the Project SHAKHMARDAN YESSENOV Hl
+
+FOUNDATION — мы
+
+
+YESSENOV
+(| DATA LAB
+ш
+
+Training Program
+
+Lecturer:
+
+Vlad Yushchenko
+
+M.Sc. Computer Science,
+Sr. Machine Learning Engineer
+at Cape Analytics
+
+Week 4.
+
+Objective: mastering deep learning methods and neural networks
+
+Day 1 Deep Learning (МІР, ANN)
+
+10:00 - 11:30 Introduction to Neural Networks. Multilayer Perceptron
+11:45 - 13:15 Backpropagation Algorithm
+
+14:30 - 16:00 Laboratory Work
+
+16:15 - 18:00 Laboratory Work. Discussion
+
+Day 2 Deep Learning with PyTorch
+
+10:00 - 11:30 Introduction to PyTorch Library
+
+11:45 - 13:15 Convolutional Neural Networks (CNN). Image Classification. Metrics
+14:30 - 16:00 Laboratory Work
+
+16:15 - 18:00 Laboratory Work. Discussion
+
+Day 3 Deep Learning on Image Data. Segmentation
+
+10:00 - 11:30 Image Segmentation Models. Data Preparation
+
+11:45 - 13:15 Ітаде Segmentation Models. Model Building, Training, Quality Metrics
+14:30 - 16:00 Laboratory Work
+
+16:15 - 18:00 Laboratory Work. Discussion
+
+Day 4 Deep Learning on Image Data. Object Detection
+
+10:00 - 11:30 Object Detection Models on Images. Data Preparation
+11:45 - 13:15 Model Building, Training, Quality Metrics
+
+14:30 - 16:00 Laboratory Work
+
+16:00 - 18:00 Laboratory Work. Discussion
+
+Day 5 Introduction to MLOps
+
+10:00 - 11:30 — Introduction to MLOps, Levels of Automation
+
+11:45 - 13:15 Experiment Tracking and Model Deployment. MLOps Best Practices
+14:30 - 16:00 Laboratory Work
+
+16:00 - 17:00 Laboratory Work. Discussion
+
+17:00 - 18:00 Motivational Meeting
+
+ы ih
+
+10:00 - 16:00 Closing of the Summer School. Team Building. Networking SHAKHMARDAN YESSENOV мы
+FOUNDATION --
+
+
+YESSENOV
+ШӘ DATA LAB
+a
+
+SHAKHMARDAN YESSENOV «ЛК
+FOUNDATION
+
+STAY IN yessenovfoundation.org
+TOUCH _ info@yessenovfoundation.org
+WITH US +7 771 759 5944

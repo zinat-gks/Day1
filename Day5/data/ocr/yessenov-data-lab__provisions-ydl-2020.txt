@@ -1,0 +1,188 @@
+Provisions of the “Yessenov Data Lab” Summer School Program
+of the Shakhmardan Yessenov Science and Education Foundation
+
+1. General provisions
+
+1.1. Yessenov Data Lab Summer School program (hereinafter referred to as the "Program") is a 5-week
+intensive training of Kazakhstan's young scientists in basic skills of volume data analysis for further application
+of knowledge in real practical work, as well as the development of their communication skills
+
+1.2. Тһе purpose of the program is to develop the skills of young scientists for working with large volumes of
+data focused on teaching the basics of mathematics, necessary for further independent development in this
+direction. It also implies the development of non-academic (communicative) skills and leadership qualities of
+young scientists.
+
+1.3. Іп these Provisions, the term “sponsorship” is equivalent to a financial support provided to participants
+residing outside of Almaty. For the duration of the Program, the sponsorship covers a two-way domestic flight to
+Almaty, accommodation and daily meals (on ground or a cash equivalent of the listed expenses). Participation
+in the Program is free of charge for all winners of the Program. Twenty-five (25) winners are selected
+annually amongst all competitors. The number of winners is subject to the quantity and the quality of
+applications and can be increased or decreased.
+
+1.4. The winners are selected in an open competition held at least once a year.
+1.5. The Program foresees a 5-week Data Science training from June 15, 2020 until July 17, 2020. The
+language of training is Russian, with the occasional usage of technical English.
+
+2. Participation requirements
+2.1. In order to take part in the Program one has to be a citizen of the Republic of Kazakhstan (over 18), а
+student (undergraduate, graduate or Ph.D.) or practicing specialist.
+
+2.2. Candidates must demonstrate high intellectual capacity, possess a wide range of professional skills, have
+commitment and be result-oriented, single-minded and flexible.
+
+2.3. Candidates must demonstrate their active professional, scientific, and social activities, and the conformity
+of their professional skills with the following requirements:
+
+Requirements to candidates:
+e Strong analytical skills
+e Basic knowledge of statistics and linear algebra
+e Тһе following is a plus:
+o Programming skills;
+o Knowledge of source control (git/svn/...), command line/ssh, testing, developer methodologies
+(Agile/spiral/...), cloud familiarity (AW S/Azure/...);
+о Certificates of successful completion of programming courses or a bachelor diploma in Science
+in CS or other tech discipline (math, physics, and engineering);
+o Upper intermediate English (6.5 IELTS or 90 TOEFL ibt or other way to show fluency).
+
+3. Competition stages
+
+3.1. Тһе competition has three (3) rounds. Applicants that demonstrated the best skills are selected upon the
+completion of each round. The competition is announced on the foundation’s website yessenovfoundation.org
+and its social networks.
+
+3.2. First round: applications’ submission and assessment.
+
+Candidates submit their applications from 24 February to 15 March 2020.
+The following documents must be included in the application:
+1. — А сору of the candidate’s national ID;
+2. Асору of the candidate’s transcript (all completed semesters) and a copy of Bachelor degree diploma
+with transcript (for graduates and specialists);
+3. Ап essay on the following topic “I want to study data analysis to...” (at least 7 sentences and not more
+than 2 pages);
+
+as
+
+A portfolio indicating the candidate's achievements in research and/or expressed interests in a
+particular scientific field with respective evidence:
+
+
+— омп scientific articles, materials, results of any research, etc. ;
+6. Certificate demonstrating the candidate’s good command of the English language (if any).
+
+An application with the entire package of documents must be submitted by filling out an online application form
+on the Foundation's website - yessenovfoundation.org
+
+A candidate’s submission of documents indicates the candidate compliance to the Program objectives and
+confirms his/her acceptance of and readiness to comply with the conditions of the competition described herein.
+
+Candidates can submit their documents in Kazakh, English or Russian.
+
+All applications are registered by an employee of the foundation, and a personal registration number is assigned
+to each candidate. Upon the verification of the completeness and the conformity of a candidate’s application to
+the formal criteria of the Program, a decision is rendered on whether the candidate is accepted or rejected. An
+acceptance/rejection notice is solely sent to the email address specified in a candidate’s application form.
+Russian is the Program’s working language.
+
+All duly submitted applications are reviewed and assessed by the foundation’s employees and independent
+experts in the period of 16-30 March 2020.
+
+The list of the first round’s successful candidates is posted on the foundation’s website. No more than 60
+candidates are selected for the second round.
+
+3.3. Second round: examination
+1. Mathematics and logic testing
+The test is composed of 30 question (60 minutes), and must be completed online;
+2. A Data Science test on the Kaggle platform.
+A simple regression task will be given, and the participants will be ranked by the root-mean-square
+error;
+3. А psychometric test.
+
+The second round is held on 31 March to 15 April 2020. The examination is intended to assess each
+candidate’s analytical skills.
+
+The examination requires basic knowledge in:
+1. Matrixes, simple equations
+2. Columns (math)
+. Linear regression, mean values, medians
+. Producing function graphs
+. Variables, cycles, conditions (in any programming language)
+. Massifs, sorting
+. Algorithms on columns (programming)
+. Basic knowledge of statistics and probability theory — probability distribution, random value, math
+expectation, covariance, normal distribution
+
+ANDOaABRW
+
+The list of successful second round candidates is posted on the foundation’s website. No more than 40
+candidates are selected for the third round.
+
+3.4 Third round: interviews
+The third round is held on 16-22 April 2020.
+
+The participants of the third round will be invited for a face-to-face or online interview with the experts.
+The following competencies are considered during the interview:
+
+е =Analytical skills;
+
+e Professional skills;
+
+e Programming skills and experience (if possible);
+
+e Personal qualities;
+
+e Other.
+
+The following qualities are also considered in the selection:
+e high intellectual capacity;
+e eagerness to continually develop their professional skills;
+e valuable contribution to social life, etc.
+
+
+Тһе Foundation takes а final decision before 30 Ари 2020. The list of winners of the competition is published on
+the Foundation's website. The results of the third round are reported to the winners by e-mail.
+
+3.5 A council of experts is formed to select the winners of the competition, which will select candidates on the
+base of the results of all three competitive rounds described above. The decision of the experts is submitted to
+be reviewed by the Board of Trustees of the Foundation.
+
+3.6 The decision of the Board of Trustees is approved by the Foundation in the form of an officially certified list
+of the Program’s winners.
+
+4 Sponsorship payment procedure
+
+4.1. The sponsorship is awarded to twenty-five (25) winners shortlisted in the course of the competition.
+The number of winners is subject to the quantity and the quality of the applications and can be increased or
+decreased.
+
+4.2. Following the results of the competition, the winners will undertake a 5-week long training on a
+gratuitous basis at the Yessenov Data Lab summer school from 15 June to 17 July 2020. The dates of the
+training may change, without exceeding 14 calendar days. The language of training is Russian with occasional
+usage of technical English.
+
+4.3 For the participant residing outside of Almaty, the Foundation will cover a two-way domestic flight to Almaty,
+accommodation and daily meals (on ground or a cash equivalent of the listed expenses) for the period of the
+Program. The foundation reserves the right of final say in the choice of accommodation for the winners receiving
+the sponsorship.
+
+4.4 A sponsorship agreement is signed between the Foundation and the Program winner before the start of the
+“Yessenov Data Lab” summer school training. The agreement may also provide for other arrangements made
+between the Program winner and the Foundation.
+
+4.5 The Foundation may provide other privileges upon further agreement, including online training, involvement
+in conferences, business meetings, etc.
+
+5. Additional information.
+Should there be any additional questions, please refer to the following contacts:
+
+Questions Contact person
+Competition: Toktar Yeskendirov +7 (727) 346-92-88
+e Round one: applications toktar.y@yessenovfoundation.org
+
+e Round two: exam venues
+
+е Round three: interviews
+Sponsorship to the non-Almaty _ resident
+candidates.
+
+Round two: exam content. Toktar Yeskendirov +7 (727) 346-92-88
+toktar.y@yessenovfoundation.org
